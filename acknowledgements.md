@@ -8,3 +8,4 @@ We would like to take this opportunity to acknowledge the contributions of our c
 * Manfred Heinz (zaphoxx aka CptSpiff)
 * Martin Weißbach
 * Patrick "HomeSen" Walker
+* Sebastian Döring
