@@ -1,0 +1,10 @@
+[book]
+title = "OWASP IoT Security Testing Guide"
+authors = ["Luca Pascal Rotsch", "Aaron Guzman"]
+description = "The OWASP IoT Security Testing Guide provides a comprehensive methodology for penetration tests in the IoT field."
+src = "src"
+language = "en"
+
+[build]
+build-dir = "book"
+create-missing = false
