@@ -2,20 +2,20 @@
 
 from os import walk
 from os.path import dirname, abspath, join
+from openpyxl import load_workbook
 
 
 ROOT_DIR = dirname(dirname(abspath(__file__)))
 
 CHECKLIST_DIR = join(ROOT_DIR, "checklists")
 TEST_CASE_DIR = join(ROOT_DIR, "src", "03_test_cases")
-TOOL_DIR = join(ROOT_DIR, "tools")
+TOOL_DIR = join(ROOT_DIR, "scripts")
 
 CHECKLIST_MARKDOWN = join(CHECKLIST_DIR, "checklist.md")
 CHECKLIST_TEMPLATE_MARKDOWN = join(TOOL_DIR, "checklist_template.md")
 
-# TODO: add Excel template and file
-CHECKLIST_EXCEL = join(CHECKLIST_DIR, "")
-CHECKLIST_TEMPLATE_EXCEL = join(TOOL_DIR, "")
+CHECKLIST_EXCEL = join(CHECKLIST_DIR, "checklist.xlsx")
+CHECKLIST_TEMPLATE_EXCEL = join(TOOL_DIR, "checklist_template.xlsx")
 
 MD_TABLE_HEADER = "|Test ID|Test Name|Status|Notes|\n|-|-|-|-|\n"
 MD_STYLE_CATEGORY = "**"
@@ -174,9 +174,48 @@ def export_test_cases_markdown(test_case_catalog, checklist=CHECKLIST_MARKDOWN, 
     file_checklist.close()
 
 
-# TODO: implement Excel export
-def export_test_cases_excel(test_cases, checklist=CHECKLIST_EXCEL, checklist_template=CHECKLIST_TEMPLATE_EXCEL):
-    pass
+def export_test_cases_excel(test_case_catalog, checklist=CHECKLIST_EXCEL, checklist_template=CHECKLIST_TEMPLATE_EXCEL):
+    # read content from template
+    excel_wb = load_workbook(checklist_template)
+    excel_ws = excel_wb["Checklist"]
+
+    row = 2
+
+    # loop through components
+    for component_id in sort_ids_by_chapter(test_case_catalog):
+        categories = test_case_catalog[component_id]["categories"]
+
+        # loop through categories
+        for category_id in categories:
+            test_cases = categories[category_id]["test_cases"]
+
+            # loop through test cases
+            for test_case_id in test_cases:
+                excel_ws["A" + str(row)] = test_case_id
+                excel_ws["B" + str(row)] = test_case_catalog[component_id]["title"]
+                excel_ws["C" + str(row)] = categories[category_id]["title"]
+                excel_ws["D" + str(row)] = test_cases[test_case_id]["title"]
+                row += 1
+
+        # loop through component specializations
+        if "specializations" in test_case_catalog[component_id]:
+            for specialization_id in sort_ids_by_chapter(test_case_catalog[component_id]["specializations"]):
+                categories = test_case_catalog[component_id]["specializations"][specialization_id]["categories"]
+
+                # loop through categories
+                for category_id in categories:
+                    test_cases = categories[category_id]["test_cases"]
+
+                    # loop through test cases
+                    for test_case_id in test_cases:
+                        excel_ws["A" + str(row)] = test_case_id
+                        excel_ws["B" + str(row)] = test_case_catalog[component_id]["specializations"][specialization_id]["title"]
+                        excel_ws["C" + str(row)] = categories[category_id]["title"]
+                        excel_ws["D" + str(row)] = test_cases[test_case_id]["title"]
+                        row += 1
+
+    # write output to file
+    excel_wb.save(checklist)
 
 
 main()
