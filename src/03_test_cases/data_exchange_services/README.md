@@ -1,32 +1,28 @@
 # 3.4. Data Exchange Services (IOT-DES)
 
 ## Table of Contents
-* [Overview](#overview)
-* [Authorization (IOT-DES-AUTHZ)](#authorization-iot-des-authz)
-  * [Unauthorized Access to the Data Exchange Service (IOT-DES-AUTHZ-001)](#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001)
-  * [Privilege Escalation (IOT-DES-AUTHZ-002)](#privilege-escalation-iot-des-authz-002)
-
-* [Information Gathering (IOT-DES-INFO)](#information-gathering-iot-des-info)
-  * [Disclosure of Implementation Details (IOT-DES-INFO-001)](#disclosure-of-implementation-details-iot-des-info-001)
-  * [Disclosure of Ecosystem Details (IOT-DES-INFO-002)](#disclosure-of-ecosystem-details-iot-des-info-002)
-  * [Disclosure of User Data (IOT-DES-INFO-003)](#disclosure-of-user-data-iot-des-info-003)
-
-* [Configuration and Patch Management (IOT-DES-CONF)](#configuration-and-patch-management-iot-des-conf)
-  * [Usage of Outdated Software (IOT-DES-CONF-001)](#usage-of-outdated-software-iot-des-conf-001)
-  * [Presence of Unnecessary Software and Functionalities (IOT-DES-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-des-conf-002)
-
-* [Secrets (IOT-DES-SCRT)](#secrets-iot-des-scrt)
-  * [Access to Confidential Data (IOT-DES-SCRT-001)](#access-to-confidential-data-iot-des-scrt-001)
-
-* [Cryptography (IOT-DES-CRYPT)](#cryptography-iot-des-crypt)
-  * [Usage of Weak Cryptographic Algorithms  (IOT-DES-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-des-crypt-001)
-
-* [Business Logic  (IOT-DES-LOGIC)](#business-logic-iot-des-logic)
-  * [Circumvention of the Intended Business Logic  (IOT-DES-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-des-logic-001)
-
-* [Input Validation (IOT-DES-INVAL)](#input-validation-iot-des-inval)
-  * [Insufficient Input Validation (IOT-DES-INVAL-001)](#insufficient-input-validation-iot-des-inval-001)
-  * [Code or Command Injection (IOT-DES-INVAL-002)](#code-or-command-injection-iot-des-inval-002)
+- [3.4. Data Exchange Services (IOT-DES)](#34-data-exchange-services-iot-des)
+	- [Table of Contents](#table-of-contents)
+	- [Overview](#overview)
+	- [Authorization (IOT-DES-AUTHZ)](#authorization-iot-des-authz)
+		- [Unauthorized Access to the Data Exchange Service (IOT-DES-AUTHZ-001)](#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001)
+		- [Privilege Escalation (IOT-DES-AUTHZ-002)](#privilege-escalation-iot-des-authz-002)
+	- [Information Gathering (IOT-DES-INFO)](#information-gathering-iot-des-info)
+		- [Disclosure of Implementation Details (IOT-DES-INFO-001)](#disclosure-of-implementation-details-iot-des-info-001)
+		- [Disclosure of Ecosystem Details (IOT-DES-INFO-002)](#disclosure-of-ecosystem-details-iot-des-info-002)
+		- [Disclosure of User Data (IOT-DES-INFO-003)](#disclosure-of-user-data-iot-des-info-003)
+	- [Configuration and Patch Management (IOT-DES-CONF)](#configuration-and-patch-management-iot-des-conf)
+		- [Usage of Outdated Software (IOT-DES-CONF-001)](#usage-of-outdated-software-iot-des-conf-001)
+		- [Presence of Unnecessary Software and Functionalities (IOT-DES-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-des-conf-002)
+	- [Secrets (IOT-DES-SCRT)](#secrets-iot-des-scrt)
+		- [Access to Confidential Data (IOT-DES-SCRT-001)](#access-to-confidential-data-iot-des-scrt-001)
+	- [Cryptography (IOT-DES-CRYPT)](#cryptography-iot-des-crypt)
+		- [Usage of Weak Cryptographic Algorithms (IOT-DES-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-des-crypt-001)
+	- [Business Logic (IOT-DES-LOGIC)](#business-logic-iot-des-logic)
+		- [Circumvention of the Intended Business Logic (IOT-DES-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-des-logic-001)
+	- [Input Validation (IOT-DES-INPV)](#input-validation-iot-des-inpv)
+		- [Insufficient Input Validation (IOT-DES-INPV-001)](#insufficient-input-validation-iot-des-inpv-001)
+		- [Code or Command Injection (IOT-DES-INPV-002)](#code-or-command-injection-iot-des-inpv-002)
 
 
 
@@ -479,11 +475,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Input Validation (IOT-DES-INVAL)
+## Input Validation (IOT-DES-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-DES-INVAL-001)
+### Insufficient Input Validation (IOT-DES-INPV-001)
 
 **Required Access Levels**
 
@@ -522,7 +518,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Code or Command Injection (IOT-DES-INVAL-002)
+### Code or Command Injection (IOT-DES-INPV-002)
 
 **Required Access Levels**
 
@@ -543,7 +539,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-DES-INVAL-001](#insufficient-input-validation-iot-des-inval-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [IOT-DES-INPV-001](#insufficient-input-validation-iot-des-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 

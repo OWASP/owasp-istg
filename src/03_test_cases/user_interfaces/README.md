@@ -1,26 +1,28 @@
 # 3.8. User Interfaces (IOT-UI)
 
 ## Table of Contents
-* [Overview](#overview)
-* [Authorization (IOT-UI-AUTHZ)](#authorization-iot-ui-authz)
-  * [Unauthorized Access to the Interface (IOT-UI-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-ui-authz-001)
-  * [Privilege Escalation (IOT-UI-AUTHZ-002)](#privilege-escalation-iot-ui-authz-002)
-* [Information Gathering (IOT-UI-INFO)](#information-gathering-iot-ui-info)
-  * [Disclosure of Implementation Details (IOT-UI-INFO-001)](#disclosure-of-implementation-details-iot-ui-info-001)
-  * [Disclosure of Ecosystem Details (IOT-UI-INFO-002)](#disclosure-of-ecosystem-details-iot-ui-info-002)
-  * [Disclosure of User Data (IOT-UI-INFO-003)](#disclosure-of-user-data-iot-ui-info-003)
-* [Configuration and Patch Management (IOT-UI-CONF)](#configuration-and-patch-management-iot-ui-conf)
-  * [Usage of Outdated Software (IOT-UI-CONF-001)](#usage-of-outdated-software-iot-ui-conf-001)
-  * [Presence of Unnecessary Software and Functionalities (IOT-UI-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-ui-conf-002)
-* [Secrets (IOT-UI-SCRT)](#secrets-iot-ui-scrt)
-  * [Access to Confidential Data (IOT-UI-SCRT-001)](#access-to-confidential-data-iot-ui-scrt-001)
-* [Cryptography (IOT-UI-CRYPT)](#cryptography-iot-ui-crypt)
-  * [Usage of Weak Cryptographic Algorithms (IOT-UI-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-ui-crypt-001)
-* [Business Logic (IOT-UI-LOGIC)](#business-logic-iot-ui-logic)
-  * [Circumvention of the Intended Business Logic (IOT-UI-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-ui-logic-001)
-* [Input Validation (IOT-UI-INVAL)](#input-validation-iot-ui-inval)
-  * [Insufficient Input Validation (IOT-UI-INVAL-001)](#insufficient-input-validation-iot-ui-inval-001)
-  * [Code or Command Injection (IOT-UI-INVAL-002)](#code-or-command-injection-iot-ui-inval-002)
+- [3.8. User Interfaces (IOT-UI)](#38-user-interfaces-iot-ui)
+	- [Table of Contents](#table-of-contents)
+	- [Overview](#overview)
+	- [Authorization (IOT-UI-AUTHZ)](#authorization-iot-ui-authz)
+		- [Unauthorized Access to the Interface (IOT-UI-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-ui-authz-001)
+		- [Privilege Escalation (IOT-UI-AUTHZ-002)](#privilege-escalation-iot-ui-authz-002)
+	- [Information Gathering (IOT-UI-INFO)](#information-gathering-iot-ui-info)
+		- [Disclosure of Implementation Details (IOT-UI-INFO-001)](#disclosure-of-implementation-details-iot-ui-info-001)
+		- [Disclosure of Ecosystem Details (IOT-UI-INFO-002)](#disclosure-of-ecosystem-details-iot-ui-info-002)
+		- [Disclosure of User Data (IOT-UI-INFO-003)](#disclosure-of-user-data-iot-ui-info-003)
+	- [Configuration and Patch Management (IOT-UI-CONF)](#configuration-and-patch-management-iot-ui-conf)
+		- [Usage of Outdated Software (IOT-UI-CONF-001)](#usage-of-outdated-software-iot-ui-conf-001)
+		- [Presence of Unnecessary Software and Functionalities (IOT-UI-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-ui-conf-002)
+	- [Secrets (IOT-UI-SCRT)](#secrets-iot-ui-scrt)
+		- [Access to Confidential Data (IOT-UI-SCRT-001)](#access-to-confidential-data-iot-ui-scrt-001)
+	- [Cryptography (IOT-UI-CRYPT)](#cryptography-iot-ui-crypt)
+		- [Usage of Weak Cryptographic Algorithms (IOT-UI-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-ui-crypt-001)
+	- [Business Logic (IOT-UI-LOGIC)](#business-logic-iot-ui-logic)
+		- [Circumvention of the Intended Business Logic (IOT-UI-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-ui-logic-001)
+	- [Input Validation (IOT-UI-INPV)](#input-validation-iot-ui-inpv)
+		- [Insufficient Input Validation (IOT-UI-INPV-001)](#insufficient-input-validation-iot-ui-inpv-001)
+		- [Code or Command Injection (IOT-UI-INPV-002)](#code-or-command-injection-iot-ui-inpv-002)
 
 
 
@@ -478,11 +480,11 @@ This test case is based on: [IOT-DES-LOGIC-001](../data_exchange_services/README
 
 
 
-## Input Validation (IOT-UI-INVAL)
+## Input Validation (IOT-UI-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-UI-INVAL-001)
+### Insufficient Input Validation (IOT-UI-INPV-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -520,9 +522,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INVAL-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inval-001).
+This test case is based on: [IOT-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inpv-001).
 
-### Code or Command Injection (IOT-UI-INVAL-002)
+### Code or Command Injection (IOT-UI-INPV-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -541,7 +543,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-UI-INVAL-001](#insufficient-input-validation-iot-ui-inval-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [IOT-UI-INPV-001](#insufficient-input-validation-iot-ui-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 
@@ -558,7 +560,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INVAL-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inval-002).
+This test case is based on: [IOT-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inpv-002).
 
 
 

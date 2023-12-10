@@ -166,7 +166,7 @@ Another way to expand the catalog is to add custom components, categories and te
             <td>Business Logic</td>
         </tr>
         <tr>
-            <td>IOT-*-INVAL</td>
+            <td>IOT-*-INPV</td>
             <td>Input Validation</td>
         </tr>
         <tr>

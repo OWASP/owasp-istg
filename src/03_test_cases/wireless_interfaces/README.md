@@ -1,26 +1,28 @@
 # 3.7. Wireless Interfaces (IOT-WRLS)
 
 ## Table of Contents
-* [Overview](#overview)
-* [Authorization (IOT-WRLS-AUTHZ)](#authorization-iot-wrls-authz)
-  * [Unauthorized Access to the Interface (IOT-WRLS-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-wrls-authz-001)
-  * [Privilege Escalation (IOT-WRLS-AUTHZ-002)](#privilege-escalation-iot-wrls-authz-002)
-* [Information Gathering (IOT-WRLS-INFO)](#information-gathering-iot-wrls-info)
-  * [Disclosure of Implementation Details (IOT-WRLS-INFO-001)](#disclosure-of-implementation-details-iot-wrls-info-001)
-  * [Disclosure of Ecosystem Details (IOT-WRLS-INFO-002)](#disclosure-of-ecosystem-details-iot-wrls-info-002)
-  * [Disclosure of User Data (IOT-WRLS-INFO-003)](#disclosure-of-user-data-iot-wrls-info-003)
-* [Configuration and Patch Management (IOT-WRLS-CONF)](#configuration-and-patch-management-iot-wrls-conf)
-  * [Usage of Outdated Software (IOT-WRLS-CONF-001)](#usage-of-outdated-software-iot-wrls-conf-001)
-  * [Presence of Unnecessary Software and Functionalities (IOT-WRLS-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-wrls-conf-002)
-* [Secrets (IOT-WRLS-SCRT)](#secrets-iot-wrls-scrt)
-  * [Access to Confidential Data (IOT-WRLS-SCRT-001)](#access-to-confidential-data-iot-wrls-scrt-001)
-* [Cryptography (IOT-WRLS-CRYPT)](#cryptography-iot-wrls-crypt)
-  * [Usage of Weak Cryptographic Algorithms (IOT-WRLS-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-wrls-crypt-001)
-* [Business Logic (IOT-WRLS-LOGIC)](#business-logic-iot-wrls-logic)
-  * [Circumvention of the Intended Business Logic (IOT-WRLS-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-wrls-logic-001)
-* [Input Validation (IOT-WRLS-INVAL)](#input-validation-iot-wrls-inval)
-  * [Insufficient Input Validation (IOT-WRLS-INVAL-001)](#insufficient-input-validation-iot-wrls-inval-001)
-  * [Code or Command Injection (IOT-WRLS-INVAL-002)](#code-or-command-injection-iot-wrls-inval-002)
+- [3.7. Wireless Interfaces (IOT-WRLS)](#37-wireless-interfaces-iot-wrls)
+	- [Table of Contents](#table-of-contents)
+	- [Overview](#overview)
+	- [Authorization (IOT-WRLS-AUTHZ)](#authorization-iot-wrls-authz)
+		- [Unauthorized Access to the Interface (IOT-WRLS-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-wrls-authz-001)
+		- [Privilege Escalation (IOT-WRLS-AUTHZ-002)](#privilege-escalation-iot-wrls-authz-002)
+	- [Information Gathering (IOT-WRLS-INFO)](#information-gathering-iot-wrls-info)
+		- [Disclosure of Implementation Details (IOT-WRLS-INFO-001)](#disclosure-of-implementation-details-iot-wrls-info-001)
+		- [Disclosure of Ecosystem Details (IOT-WRLS-INFO-002)](#disclosure-of-ecosystem-details-iot-wrls-info-002)
+		- [Disclosure of User Data (IOT-WRLS-INFO-003)](#disclosure-of-user-data-iot-wrls-info-003)
+	- [Configuration and Patch Management (IOT-WRLS-CONF)](#configuration-and-patch-management-iot-wrls-conf)
+		- [Usage of Outdated Software (IOT-WRLS-CONF-001)](#usage-of-outdated-software-iot-wrls-conf-001)
+		- [Presence of Unnecessary Software and Functionalities (IOT-WRLS-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-wrls-conf-002)
+	- [Secrets (IOT-WRLS-SCRT)](#secrets-iot-wrls-scrt)
+		- [Access to Confidential Data (IOT-WRLS-SCRT-001)](#access-to-confidential-data-iot-wrls-scrt-001)
+	- [Cryptography (IOT-WRLS-CRYPT)](#cryptography-iot-wrls-crypt)
+		- [Usage of Weak Cryptographic Algorithms (IOT-WRLS-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-wrls-crypt-001)
+	- [Business Logic (IOT-WRLS-LOGIC)](#business-logic-iot-wrls-logic)
+		- [Circumvention of the Intended Business Logic (IOT-WRLS-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-wrls-logic-001)
+	- [Input Validation (IOT-WRLS-INPV)](#input-validation-iot-wrls-inpv)
+		- [Insufficient Input Validation (IOT-WRLS-INPV-001)](#insufficient-input-validation-iot-wrls-inpv-001)
+		- [Code or Command Injection (IOT-WRLS-INPV-002)](#code-or-command-injection-iot-wrls-inpv-002)
 
 
 
@@ -480,11 +482,11 @@ This test case is based on: [IOT-DES-LOGIC-001](../data_exchange_services/README
 
 
 
-## Input Validation (IOT-WRLS-INVAL)
+## Input Validation (IOT-WRLS-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-WRLS-INVAL-001)
+### Insufficient Input Validation (IOT-WRLS-INPV-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -521,9 +523,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INVAL-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inval-001).
+This test case is based on: [IOT-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inpv-001).
 
-### Code or Command Injection (IOT-WRLS-INVAL-002)
+### Code or Command Injection (IOT-WRLS-INPV-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -542,7 +544,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-WRLS-INVAL-001](#insufficient-input-validation-iot-wrls-inval-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [IOT-WRLS-INPV-001](#insufficient-input-validation-iot-wrls-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 
@@ -558,7 +560,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INVAL-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inval-002).
+This test case is based on: [IOT-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inpv-002).
 
 
 
