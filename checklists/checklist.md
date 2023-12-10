@@ -89,9 +89,9 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |IOT-DES-CRYPT-001|Usage of Weak Cryptographic Algorithms|||
 |**IOT-DES-LOGIC**|**Business Logic**|||
 |IOT-DES-LOGIC-001|Circumvention of the Intended Business Logic|||
-|**IOT-DES-INVAL**|**Input Validation**|||
-|IOT-DES-INVAL-001|Insufficient Input Validation|||
-|IOT-DES-INVAL-002|Code or Command Injection|||
+|**IOT-DES-INPV**|**Input Validation**|||
+|IOT-DES-INPV-001|Insufficient Input Validation|||
+|IOT-DES-INPV-002|Code or Command Injection|||
 
 ## Internal Interfaces (IOT-INT)
 |Test ID|Test Name|Status|Notes|
@@ -112,9 +112,9 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |IOT-INT-CRYPT-001|Usage of Weak Cryptographic Algorithms|||
 |**IOT-INT-LOGIC**|**Business Logic**|||
 |IOT-INT-LOGIC-001|Circumvention of the Intended Business Logic|||
-|**IOT-INT-INVAL**|**Input Validation**|||
-|IOT-INT-INVAL-001|Insufficient Input Validation|||
-|IOT-INT-INVAL-002|Code or Command Injection|||
+|**IOT-INT-INPV**|**Input Validation**|||
+|IOT-INT-INPV-001|Insufficient Input Validation|||
+|IOT-INT-INPV-002|Code or Command Injection|||
 
 ## Physical Interfaces (IOT-PHY)
 |Test ID|Test Name|Status|Notes|
@@ -135,9 +135,9 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |IOT-PHY-CRYPT-001|Usage of Weak Cryptographic Algorithms|||
 |**IOT-PHY-LOGIC**|**Business Logic**|||
 |IOT-PHY-LOGIC-001|Circumvention of the Intended Business Logic|||
-|**IOT-PHY-INVAL**|**Input Validation**|||
-|IOT-PHY-INVAL-001|Insufficient Input Validation|||
-|IOT-PHY-INVAL-002|Code or Command Injection|||
+|**IOT-PHY-INPV**|**Input Validation**|||
+|IOT-PHY-INPV-001|Insufficient Input Validation|||
+|IOT-PHY-INPV-002|Code or Command Injection|||
 
 ## Wireless Interfaces (IOT-WRLS)
 |Test ID|Test Name|Status|Notes|
@@ -158,9 +158,9 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |IOT-WRLS-CRYPT-001|Usage of Weak Cryptographic Algorithms|||
 |**IOT-WRLS-LOGIC**|**Business Logic**|||
 |IOT-WRLS-LOGIC-001|Circumvention of the Intended Business Logic|||
-|**IOT-WRLS-INVAL**|**Input Validation**|||
-|IOT-WRLS-INVAL-001|Insufficient Input Validation|||
-|IOT-WRLS-INVAL-002|Code or Command Injection|||
+|**IOT-WRLS-INPV**|**Input Validation**|||
+|IOT-WRLS-INPV-001|Insufficient Input Validation|||
+|IOT-WRLS-INPV-002|Code or Command Injection|||
 
 ## User Interfaces (IOT-UI)
 |Test ID|Test Name|Status|Notes|
@@ -181,6 +181,6 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |IOT-UI-CRYPT-001|Usage of Weak Cryptographic Algorithms|||
 |**IOT-UI-LOGIC**|**Business Logic**|||
 |IOT-UI-LOGIC-001|Circumvention of the Intended Business Logic|||
-|**IOT-UI-INVAL**|**Input Validation**|||
-|IOT-UI-INVAL-001|Insufficient Input Validation|||
-|IOT-UI-INVAL-002|Code or Command Injection|||
+|**IOT-UI-INPV**|**Input Validation**|||
+|IOT-UI-INPV-001|Insufficient Input Validation|||
+|IOT-UI-INPV-002|Code or Command Injection|||

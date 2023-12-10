@@ -61,12 +61,12 @@ Depending on the access model for a given device, only certain individuals might
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
+		<th align="left">Authorization</th>
 		<td><i>LA-1</i></tr>
 </table>
 **Summary**
 
-Depending on the specific implementation of a given device, access to an internal interface might be restricted to individuals with a certain logical access level, e.g., *LA-2*, *LA-3* or *LA-4*. If the device fails to correctly verify access permissions, any attacker (*LA-1*) might be able to get access.
+Depending on the specific implementation of a given device, access to an internal interface might be restricted to individuals with a certain authorization access level, e.g., *AA-2*, *AA-3* or *AA-4*. If the device fails to correctly verify access permissions, any attacker (*AA-1*) might be able to get access.
 
 **Test Objectives**
 
@@ -99,12 +99,12 @@ This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
+		<th align="left">Authorization</th>
 		<td><i>LA-2</i> - <i>LA-3</i><br>(depending on the access model for the given device)</tr>
 </table>
 **Summary**
 
-Depending on the specific implementation of a given device, access to some functionalities via an internal interface might be restricted to individuals with a certain logical access level, e.g., *LA-3* or *LA-4*. If the interface fails to correctly verify access permissions, an attacker with a lower logical access level than intended might be able to get access to the restricted functionalities.
+Depending on the specific implementation of a given device, access to some functionalities via an internal interface might be restricted to individuals with a certain authorization access level, e.g., *LA-3* or *LA-4*. If the interface fails to correctly verify access permissions, an attacker with a lower authorization access level than intended might be able to get access to the restricted functionalities.
 
 **Test Objectives**
 
@@ -112,7 +112,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Remediation**
 
-Proper authorization checks need to be implemented, which ensure that access to restricted functionalities is only possible for individuals with the required logical access levels.
+Proper authorization checks need to be implemented, which ensure that access to restricted functionalities is only possible for individuals with the required authorization access levels.
 
 **References**
 
@@ -133,8 +133,8 @@ Internal interfaces might disclose various information, which could reveal detai
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -178,8 +178,8 @@ This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-o
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br> depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br> depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -217,8 +217,8 @@ This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-o
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -260,8 +260,8 @@ Since IoT devices can have a long lifespan, it is important to make sure that t
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -303,8 +303,8 @@ This test case is based on: [IOT-FW-CONF-001](../firmware/README.md#usage-of-out
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -350,8 +350,8 @@ IoT devices are often operated outside of the control space of their manufactur
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -393,8 +393,8 @@ Many IoT devices need to implement cryptographic algorithms, e.g., to securely 
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -442,8 +442,8 @@ Even if all other aspects of the internal interface are securely implemented and
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -485,8 +485,8 @@ In order to ensure that only valid and well-formed data enters the processing fl
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
@@ -524,8 +524,8 @@ This test case is based on: [IOT-DES-INPV-001](../data_exchange_services/README.
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device)</tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
 </table>
 
 **Summary**
