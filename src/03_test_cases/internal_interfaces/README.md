@@ -62,7 +62,7 @@ Depending on the access model for a given device, only certain individuals might
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>LA-1</i></tr>
+		<td><i>AA-1</i></tr>
 </table>
 **Summary**
 
@@ -100,11 +100,11 @@ This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>LA-2</i> - <i>LA-3</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-2</i> - <i>AA-3</i><br>(depending on the access model for the given device)</tr>
 </table>
 **Summary**
 
-Depending on the specific implementation of a given device, access to some functionalities via an internal interface might be restricted to individuals with a certain authorization access level, e.g., *LA-3* or *LA-4*. If the interface fails to correctly verify access permissions, an attacker with a lower authorization access level than intended might be able to get access to the restricted functionalities.
+Depending on the specific implementation of a given device, access to some functionalities via an internal interface might be restricted to individuals with a certain authorization access level, e.g., *AA-3* or *AA-4*. If the interface fails to correctly verify access permissions, an attacker with a lower authorization access level than intended might be able to get access to the restricted functionalities.
 
 **Test Objectives**
 

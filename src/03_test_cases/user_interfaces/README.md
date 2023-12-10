@@ -102,7 +102,7 @@ This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>LA-2</i> - <i>LA-3</i><br>(depending-on-the-access-model-for-the-given-device)</tr>
+		<td><i>AA-2</i> - <i>AA-3</i><br>(depending-on-the-access-model-for-the-given-device)</tr>
 </table>
 
 **Summary**
