@@ -60,6 +60,7 @@ Depending on the access model for a given device, only certain individuals might
 		<td><i>AA-1</i></td>
 	</tr>
 </table>
+
 **Summary**
 
 Depending on the specific implementation of a given device, access to a data exchange service might be restricted to individuals with a certain authorization access level, e.g., *AA-2*, *AA-3* or *AA-4*. If the device fails to correctly verify access permissions, any attacker (*AA-1*) might be able to get access.
@@ -101,6 +102,7 @@ For this test case, data from the following sources was consolidated:
 		<td><i>AA-2</i> - <i>AA-3</i><br>(depending on the access model for the given device)</td>
 	</tr>
 </table>
+
 **Summary**
 
 Depending on the specific implementation of a given device, access to some functionalities via a data exchange service might be restricted to individuals with a certain authorization access level, e.g., *AA-3* or *AA-4*. If the device fails to correctly verify access permissions, an attacker with a lower authorization access level than intended might be able to get access to the restricted functionalities.
@@ -140,6 +142,7 @@ Data exchange service might disclose various information, which could reveal det
 		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
+
 **Summary**
 
 If details about the implementation, e.g., algorithms in use or the authentication procedure, are available to potential attackers, flaws and entry points for successful attacks are easier to detect. While the disclosure of such details alone is not considered to be a vulnerability, it facilitates the identification of potential attack vectors, thus allowing an attacker to exploit insecure implementations faster.
@@ -186,6 +189,7 @@ This test case is based on: [IOT-FW-INFO-001](../firmware/README.md#disclosure-o
 		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
+
 **Summary**
 
 A data exchange service might disclose information about the surrounding IoT ecosystem, e.g., sensitive URLs, IP addresses, software in use etc. An attacker might be able to use this information to prepare and execute attacks against the ecosystem.
@@ -226,6 +230,7 @@ This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-o
 		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
+
 **Summary**
 
 During runtime, a device is accumulating and processing data of different kinds, such as personal data of its users. If this data is disclosed, an attacker might be able to get access to it.
