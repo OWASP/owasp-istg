@@ -41,14 +41,14 @@ Depending on the access model for a given device, only certain individuals might
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></td>
 	</tr>
 </table>
 
 **Summary**
 
-Depending on the specific implementation of a given device, access to a processing unit might be restricted to entities with a certain logical access level, e.g., *LA-2*, *LA-3* or *LA-4*. If the device fails to correctly verify access permissions, any attacker (*LA-1*) might be able to get access.
+Depending on the specific implementation of a given device, access to a processing unit might be restricted to entities with a certain authorization access level, e.g., *AA-2*, *AA-3* or *AA-4*. If the device fails to correctly verify access permissions, any attacker (*AA-1*) might be able to get access.
 
 **Test Objectives**
 
@@ -74,14 +74,14 @@ This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README
 		<td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-2</i> - <i>LA-3</i><br>(depending on the access model for the given device)</td>
+		<th align="left">Authorization</th>
+		<td><i>AA-2</i> - <i>AA-3</i><br>(depending on the access model for the given device)</td>
 	</tr>
 </table>
 
 **Summary**
 
-Depending on the specific implementation of a given device, access to some functionalities of a processing unit might be restricted to individuals with a certain logical access level, e.g., *LA-3* or *LA-4*. If the processing unit fails to correctly verify access permissions, an attacker with a lower logical access level than intended might be able to get access to the restricted functionalities.
+Depending on the specific implementation of a given device, access to some functionalities of a processing unit might be restricted to individuals with a certain authorization access level, e.g., *AA-3* or *AA-4*. If the processing unit fails to correctly verify access permissions, an attacker with a lower authorization access level than intended might be able to get access to the restricted functionalities.
 
 **Test Objectives**
 
@@ -89,7 +89,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Remediation**
 
-Proper authorization checks need to be implemented, which ensure that access to restricted functionalities is only possible for individuals with the required logical access levels.
+Proper authorization checks need to be implemented, which ensure that access to restricted functionalities is only possible for individuals with the required authorization access levels.
 
 **References**
 
@@ -111,8 +111,8 @@ Issues in the underlying logic of a processing unit might render the device vuln
 		<td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on what level of privileges is required to successfully submit instructions to the processing unit)</td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on what level of privileges is required to successfully submit instructions to the processing unit)</td>
 	</tr>
 </table>
 **Summary**
@@ -149,15 +149,15 @@ Side-channel attacks, such as timing and glitching attacks, are usually targeted
 		<td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on how the attack is being performed; see summary for more details)</td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on how the attack is being performed; see summary for more details)</td>
 	</tr>
 </table>
 **Summary**
 
 As mentioned above, side-channel attacks can be used by an attacker to get access to sensitive data or to manipulate the device operation. Usually, side-channel attacks are customized attacks tailored to a specific hardware implementation.
 
-Depending on how the attack is being performed, different levels of logical access might be required. Some side-channel attacks, such as glitching attacks, do not require logical access at all since the attack is performed on a physical level by manipulating the power supply. Other side-channel attack vectors, such as the Meltdown vulnerability, require the execution of code by an attacker. Thus, some kind of logical access is necessary.
+Depending on how the attack is being performed, different levels of authorization access might be required. Some side-channel attacks, such as glitching attacks, do not require authorization access at all since the attack is performed on a physical level by manipulating the power supply. Other side-channel attack vectors, such as the Meltdown vulnerability, require the execution of code by an attacker. Thus, some kind of authorization access is necessary.
 
 **Test Objectives**
 

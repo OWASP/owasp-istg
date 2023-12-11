@@ -33,14 +33,14 @@ Usually, only certain individuals, e.g., administrators, should be allowed to ac
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></td>
 	</tr>
 </table>
 
 **Summary**
 
-Depending on the specific implementation of a given device, access to the firmware or its functions might be restricted to individuals with a certain logical access level, e.g., *LA-2*, *LA-3* or *LA-4*. If the device firmware fails to correctly verify access permissions, any attacker (*LA-1*) might be able to get access to the firmware.
+Depending on the specific implementation of a given device, access to the firmware or its functions might be restricted to individuals with a certain authorization access level, e.g., *AA-2*, *AA-3* or *AA-4*. If the device firmware fails to correctly verify access permissions, any attacker (*AA-1*) might be able to get access to the firmware.
 
 **Test Objectives**
 
@@ -74,14 +74,14 @@ This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-3</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-3</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
 **Summary**
 
-Depending on the specific implementation of a given device, access to parts of the firmware or its functions might be restricted to individuals with a certain logical access level, e.g., *LA-3* or *LA-4*. If the device firmware fails to correctly verify access permissions, an attacker with a lower logical access level than intended might be able to get access to the restricted firmware parts.
+Depending on the specific implementation of a given device, access to parts of the firmware or its functions might be restricted to individuals with a certain authorization access level, e.g., *AA-3* or *AA-4*. If the device firmware fails to correctly verify access permissions, an attacker with a lower authorization access level than intended might be able to get access to the restricted firmware parts.
 
 **Test Objectives**
 
@@ -89,7 +89,7 @@ Depending on the specific implementation of a given device, access to parts of t
 
 **Remediation**
 
-Proper authorization checks need to be implemented, which ensure that access to restricted parts of the firmware is only possible for individuals with the required logical access levels.
+Proper authorization checks need to be implemented, which ensure that access to restricted parts of the firmware is only possible for individuals with the required authorization access levels.
 
 **References**
 
@@ -111,8 +111,8 @@ As mentioned above, during the dynamic analysis, it is also possible to test whe
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
@@ -154,8 +154,8 @@ Many IoT devices need to implement cryptographic algorithms, e.g., to securely 
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 

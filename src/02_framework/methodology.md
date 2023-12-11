@@ -207,7 +207,7 @@ Another way to expand the catalog is to add custom components, categories and te
 
 Each individual test case, which is represented by a leaf node, is divided into the following sections:
 
--   **Requirements:** The requirements section will define which physical and logical access levels are required to carry out the test case. Since these requirements also depend on the given test conditions, e.g., the specific implementation of the target device and its operational environment, a range of access levels might be defined which apply to the test case in general.
+-   **Requirements:** The requirements section will define which physical and authorization access levels are required to carry out the test case. Since these requirements also depend on the given test conditions, e.g., the specific implementation of the target device and its operational environment, a range of access levels might be defined which apply to the test case in general.
 
 -   **Summary:** The summary section includes an overall description of the security issue, which the test case is based on.
 

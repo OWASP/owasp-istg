@@ -40,14 +40,14 @@ Since the test of the firmware update mechanism is also a dynamic analysis, it i
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-3</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-3</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
 **Summary**
 
-Depending on the specific implementation of a given device, the permission to perform firmware updates might be restricted to individuals with a certain logical access level, e.g., *LA-2*, *LA-3* or *LA-4*. If the device firmware fails to correctly verify these permissions, any attacker (*LA-1*) or an attacker with a lower logical access level than intended might be able to perform unintended firmware updates.
+Depending on the specific implementation of a given device, the permission to perform firmware updates might be restricted to individuals with a certain authorization access level, e.g., *AA-2*, *AA-3* or *AA-4*. If the device firmware fails to correctly verify these permissions, any attacker (*AA-1*) or an attacker with a lower authorization access level than intended might be able to perform unintended firmware updates.
 
 **Test Objectives**
 
@@ -57,7 +57,7 @@ Depending on the specific implementation of a given device, the permission to pe
 
 **Remediation**
 
-Proper authorization checks need to be implemented, which ensure that a firmware update can only be performed by individuals with certain logical access levels.
+Proper authorization checks need to be implemented, which ensure that a firmware update can only be performed by individuals with certain authorization access levels.
 
 **References**
 
@@ -82,8 +82,8 @@ During the firmware update process, cryptographic algorithms are used to verify 
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
@@ -122,8 +122,8 @@ For this test case, data from the following sources was consolidated:
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
@@ -164,8 +164,8 @@ For this test case, data from the following sources was consolidated:
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
@@ -204,8 +204,8 @@ For this test case, data from the following sources was consolidated:
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 
@@ -246,8 +246,8 @@ Even if all other aspects of the firmware update are securely implemented, issue
  <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i> - <i>LA-4</i><br>(depending on the access model for the given device) </td>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
 	</tr>
 </table>
 

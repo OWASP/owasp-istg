@@ -33,7 +33,7 @@ In regards to test case categories that are relevant for memory, the following w
 
 The memory of an IoT device can include various data, which, if disclosed, could reveal details regarding the inner workings of the device or the underlying IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-Tests on the device memory are performed by directly accessing the memory chips. Thus, invasive physical access (*PA-4*) is required while no user accounts are used (*LA-1*).
+Tests on the device memory are performed by directly accessing the memory chips. Thus, invasive physical access (*PA-4*) is required while no user accounts are used (*AA-1*).
 
 ### Disclosure of Source Code (IOT-MEM-INFO-001)
 **Required Access Levels**
@@ -44,8 +44,8 @@ Tests on the device memory are performed by directly accessing the memory chips.
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
 </table>
 
 **Summary**
@@ -87,8 +87,8 @@ This test case is based on: [IOT-FW-INFO-001](../firmware/README.md#disclosure-o
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
 </table>
 
 **Summary**
@@ -128,8 +128,8 @@ This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-o
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
 </table>
 
 **Summary**
@@ -165,8 +165,8 @@ This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-o
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
 </table>
 
 **Summary**
@@ -206,8 +206,8 @@ IoT devices are often operated outside of the control space their manufacturer.
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
 </table>
 
 **Summary**
@@ -248,8 +248,8 @@ Many IoT devices need to implement cryptographic algorithms, e.g., to securely 
  <td><i>PA-4</i></td>
 	</tr>
 	<tr valign="top">
-		<th align="left">Logical</th>
-		<td><i>LA-1</i></tr>
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
 </table>
 
 **Summary**
