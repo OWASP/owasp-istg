@@ -201,7 +201,7 @@ Another way to expand the catalog is to add custom components, categories and te
 </table>
 
 
-![image](../img/Mindmap.png)
+![image](../img/Component_Overview.png)
 
 ### Structure of Test Cases
 
