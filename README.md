@@ -4,7 +4,11 @@
 
 The OWASP IoT Security Testing Guide provides a comprehensive methodology for penetration tests in the IoT field offering flexibility to adapt innovations and developments on the IoT market while still ensuring comparability of test results. The guide provides an understanding of communication between manufacturers and operators of IoT devices as well as penetration testing teams that’s facilitated by establishing a common terminology. 
 
-The methodology, the underlying models and the catalog of test cases present tools that can be used separately and in conjunction with each other. Read the latest version of the guide https://owasp.org/owasp-istg/
+Security assurance and test coverage can be demonstrated with the overview of IoT components and test case categories applicable to each below. The methodology, underlying models, and catalog of test cases present tools that can be used separately and in conjunction with each other. 
+
+![Component Overview](/src/img/Component_Overview.png)
+
+🔔[Click here to read the OWASP ISTG 📖📚]( https://owasp.org/owasp-istg/)🔔
 
 ## Table of Contents
 
