@@ -74,7 +74,7 @@ Within this guide, the following kinds of interfaces will be differentiated, all
 
 - **User interfaces (human-to-machine):** In contrast to all other above-mentioned interfaces, user interfaces are not utilized to establish a connection between two machines. Instead, their purpose is to allow interactions between device-internal elements and a user. These interactions can either be based on a physical connection, e.g., in case of a touch display, or wireless connections, e.g., in case of a camera or microphone.
 
-  *Examples: touch display, camera, microphone*
+  *Examples: touch display, camera, microphone, local web application (hosted on the device)*
 
 
 

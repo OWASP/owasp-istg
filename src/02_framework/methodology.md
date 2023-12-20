@@ -48,7 +48,7 @@ The following hierarchic levels and types of nodes are defined:
 
   *Short representation: 2 - 5 uppercase alphabetic characters in square brackets*
 
-  *Examples: IOT-FW, IOT-FW*
+  *Examples: IOT-FW[INST], IOT-FW[UPDT]*
 
 - **Category:** The second main hierarchy level is the category, which can be used to group test cases, e.g., all test cases related to authorization can be grouped in the category AUTHZ.
 
