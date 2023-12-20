@@ -4,7 +4,6 @@ on:
   # Runs on pushes targeting the main branch, only if files in the src directory were changed
   push:
     branches: ["main"]
-    paths: [ "src/**" ]
 
   # Allows to run this workflow manually from the actions tab
   workflow_dispatch:
