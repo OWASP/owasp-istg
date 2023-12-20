@@ -1,3 +1,5 @@
+<a href="https://owasp.org/owasp-istg/"><img width="180px" align="right" style="float: right;" src="src/img/istg_cover.png"></a>
+
 # OWASP IoT Security Testing Guide
 
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
@@ -6,11 +8,18 @@ The OWASP IoT Security Testing Guide provides a comprehensive methodology for pe
 
 Security assurance and test coverage can be demonstrated with the overview of IoT components and test case categories applicable to each below. The methodology, underlying models, and catalog of test cases present tools that can be used separately and in conjunction with each other. 
 
-![Component Overview](/src/img/Component_Overview.png)
+
+
+![Component Overview](src/img/Component_Overview.png)
+
+
+
 
 - 🔔[Click here to read the OWASP ISTG 📖📚]( https://owasp.org/owasp-istg/)🔔
 - ✅ [Get the latest ISTG Checklists](https://github.com/OWASP/owasp-istg/tree/main/checklists)✅ 
 - 📝 🔍 [Contribute to ISTG](https://owasp.org/www-project-iot-security-testing-guide/#div-contributing)
+
+
 
 ## Table of Contents
 
