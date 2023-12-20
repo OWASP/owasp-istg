@@ -115,12 +115,12 @@ For example, relevant information might be included in files of various types li
 **Test Objectives**
 
 - Accessible details regarding the implementation must be assessed in order to prepare further tests. For example, this includes:
+  - Cryptographic algorithms in use
 
- - Cryptographic algorithms in use
+  - Authentication and authorization mechanisms
 
- - Authentication and authorization mechanisms
+  - Local paths and environment details
 
- - Local paths and environment details
 
 **Remediation**
 
