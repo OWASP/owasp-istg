@@ -2,7 +2,7 @@
 
 # OWASP IoT Security Testing Guide
 
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa] [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/8419/badge)](https://www.bestpractices.dev/projects/8419)
 
 The OWASP IoT Security Testing Guide provides a comprehensive methodology for penetration tests in the IoT field offering flexibility to adapt innovations and developments on the IoT market while still ensuring comparability of test results. The guide provides an understanding of communication between manufacturers and operators of IoT devices as well as penetration testing teams that’s facilitated by establishing a common terminology. 
 
