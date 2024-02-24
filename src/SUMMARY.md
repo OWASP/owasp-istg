@@ -1,12 +1,9 @@
 # Summary
 
 [OWASP IoT Security Testing Guide](./README.md)
-[Ackownlegdements](./acknowledgements.md)
-[License](./LICENSE.md)
 
 # Introduction
 - [Introduction](./01_introduction/README.md)
-  - [Roadmap](./01_introduction/roadmap.md)
 
 
 # IoT Security Testing Framework
@@ -28,3 +25,5 @@
   - [Wireless Interfaces (ISTG-WRLS)](./03_test_cases/wireless_interfaces/README.md)
   - [User Interfaces (ISTG-UI)](./03_test_cases/user_interfaces/README.md)
 
+[Acknowlegdements](./acknowledgements.md)
+[License](./LICENSE.md)
