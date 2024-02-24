@@ -35,25 +35,25 @@ Security assurance and test coverage can be demonstrated with the overview of Io
 
 3. [**Test Case Catalog**](./src/03_test_cases/README.md)
 
-   3.1. [Processing Units (IOT-PROC)](./src/03_test_cases/processing_units/README.md)
+   3.1. [Processing Units (ISTG-PROC)](./src/03_test_cases/processing_units/README.md)
 
-   3.2. [Memory (IOT-MEM)](./src/03_test_cases/memory/README.md)
+   3.2. [Memory (ISTG-MEM)](./src/03_test_cases/memory/README.md)
 
-   3.3. [Firmware (IOT-FW)](./src/03_test_cases/firmware/README.md)
+   3.3. [Firmware (ISTG-FW)](./src/03_test_cases/firmware/README.md)
 
-      3.3.1. [Installed Firmware (IOT-FW[INST])](./src/03_test_cases/firmware/installed_firmware.md)
+      3.3.1. [Installed Firmware (ISTG-FW[INST])](./src/03_test_cases/firmware/installed_firmware.md)
 
-      3.3.1. [Firmware Update Mechnanism (IOT-FW[UPDT])](./src/03_test_cases/firmware/firmware_update_mechanism.md)
+      3.3.1. [Firmware Update Mechnanism (ISTG-FW[UPDT])](./src/03_test_cases/firmware/firmware_update_mechanism.md)
 
-   3.4. [Data Exchange Services (IOT-DES)](./src/03_test_cases/data_exchange_services/README.md)
+   3.4. [Data Exchange Services (ISTG-DES)](./src/03_test_cases/data_exchange_services/README.md)
 
-   3.5. [Internal Interfaces (IOT-INT)](./src/03_test_cases/internal_interfaces/README.md)
+   3.5. [Internal Interfaces (ISTG-INT)](./src/03_test_cases/internal_interfaces/README.md)
 
-   3.6. [Physical Interfaces (IOT-PHY)](./src/03_test_cases/physical_interfaces/README.md)
+   3.6. [Physical Interfaces (ISTG-PHY)](./src/03_test_cases/physical_interfaces/README.md)
 
-   3.7. [Wireless Interfaces (IOT-WRLS)](./src/03_test_cases/wireless_interfaces/README.md)
+   3.7. [Wireless Interfaces (ISTG-WRLS)](./src/03_test_cases/wireless_interfaces/README.md)
 
-   3.8. [User Interfaces (IOT-UI)](./src/03_test_cases/user_interfaces/README.md)
+   3.8. [User Interfaces (ISTG-UI)](./src/03_test_cases/user_interfaces/README.md)
 
 
 

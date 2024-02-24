@@ -1,14 +1,14 @@
-# 3.1. Processing Units (IOT-PROC)
+# 3.1. Processing Units (ISTG-PROC)
 
 ## Table of Contents
 * [Overview](#overview)
-* [Authorization (IOT-PROC-AUTHZ)](#authorization-iot-proc-authz)
-  * [Unauthorized Access to the Processing Unit (IOT-PROC-AUTHZ-001)](#unauthorized-access-to-the-processing-unit-iot-proc-authz-001)
-  * [Privilege Escalation (IOT-PROC-AUTHZ-002)](#privilege-escalation-iot-proc-authz-002)
-* [Business Logic (IOT-PROC-LOGIC)](#business-logic-iot-proc-logic)
-  * [Insecure Implementation of Instructions (IOT-PROC-LOGIC-001)](#insecure-implementation-of-instructions-iot-proc-logic-001)
-* [Side-Channel Attacks (IOT-PROC-SIDEC)](#side-channel-attacks-iot-proc-sidec)
-  * [Insufficient Protection Against Side-Channel Attacks (IOT-PROC-SIDEC-001)](#insufficient-protection-against-side-channel-attacks-iot-proc-sidec-001)
+* [Authorization (ISTG-PROC-AUTHZ)](#authorization-istg-proc-authz)
+  * [Unauthorized Access to the Processing Unit (ISTG-PROC-AUTHZ-001)](#unauthorized-access-to-the-processing-unit-istg-proc-authz-001)
+  * [Privilege Escalation (ISTG-PROC-AUTHZ-002)](#privilege-escalation-istg-proc-authz-002)
+* [Business Logic (ISTG-PROC-LOGIC)](#business-logic-istg-proc-logic)
+  * [Insecure Implementation of Instructions (ISTG-PROC-LOGIC-001)](#insecure-implementation-of-instructions-istg-proc-logic-001)
+* [Side-Channel Attacks (ISTG-PROC-SIDEC)](#side-channel-attacks-istg-proc-sidec)
+  * [Insufficient Protection Against Side-Channel Attacks (ISTG-PROC-SIDEC-001)](#insufficient-protection-against-side-channel-attacks-istg-proc-sidec-001)
 
 
 
@@ -27,11 +27,11 @@ The following test case categories, relevant for processing units, were identifi
 
 
 
-## Authorization (IOT-PROC-AUTHZ)
+## Authorization (ISTG-PROC-AUTHZ)
 
 Depending on the access model for a given device, only certain individuals might be allowed to access a processing unit directly. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized entities can get access.
 
-### Unauthorized Access to the Processing Unit (IOT-PROC-AUTHZ-001)
+### Unauthorized Access to the Processing Unit (ISTG-PROC-AUTHZ-001)
 
 **Required Access Levels**
 
@@ -62,9 +62,9 @@ Proper authorization checks need to be implemented, which ensure that access to 
 
 **References**
 
-This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001).
+This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001).
 
-### Privilege Escalation (IOT-PROC-AUTHZ-002)
+### Privilege Escalation (ISTG-PROC-AUTHZ-002)
 
 **Required Access Levels**
 
@@ -85,7 +85,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Test Objectives**
 
-- Based on [IOT-PROC-AUTHZ-001](#unauthorized-access-to-the-processing-unit-iot-proc-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
+- Based on [ISTG-PROC-AUTHZ-001](#unauthorized-access-to-the-processing-unit-istg-proc-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
 
 **Remediation**
 
@@ -93,15 +93,15 @@ Proper authorization checks need to be implemented, which ensure that access to 
 
 **References**
 
-This test case is based on: [IOT-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-iot-des-authz-002).
+This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-istg-des-authz-002).
 
 
 
-## Business Logic (IOT-PROC-LOGIC)
+## Business Logic (ISTG-PROC-LOGIC)
 
 Issues in the underlying logic of a processing unit might render the device vulnerable to attacks. Thus, it must be verified if the processing unit and its functionalities are working as intended and if exceptions are detected and properly handled.
 
-### Insecure Implementation of Instructions (IOT-PROC-LOGIC-001)
+### Insecure Implementation of Instructions (ISTG-PROC-LOGIC-001)
 
 **Required Access Levels**
 
@@ -131,15 +131,15 @@ The device should not end up in an unknown state. Anomalies in the workflow must
 
 **References**
 
-This test case is based on: [IOT-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-iot-des-logic-001).
+This test case is based on: [ISTG-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-istg-des-logic-001).
 
 
 
-## Side-Channel Attacks (IOT-PROC-SIDEC)
+## Side-Channel Attacks (ISTG-PROC-SIDEC)
 
 Side-channel attacks, such as timing and glitching attacks, are usually targeted against the physical implementation of a device or more specifically a processing unit instead of the device firmware or its interfaces. The goal of such attacks is to gather information about cryptographic algorithms and operations, performed by a processing unit, in order to retrieve key material, manipulate the cryptographic calculations or gain access to protected information.
 
-### Insufficient Protection Against Side-Channel Attacks (IOT-PROC-SIDEC-001)
+### Insufficient Protection Against Side-Channel Attacks (ISTG-PROC-SIDEC-001)
 
 **Required Access Levels**
 

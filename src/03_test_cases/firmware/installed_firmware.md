@@ -1,14 +1,14 @@
-# 3.3.1. Installed Firmware (IOT-FW[INST])
+# 3.3.1. Installed Firmware (ISTG-FW[INST])
 
 ## Table of Contents
 * [Overview](#overview)
-* [Authorization (IOT-FW-AUTHZ)](#authorization-iot-fw[inst]-authz)
-  * [Unauthorized Access to the Firmware (IOT-FW-AUTHZ-001)](#unauthorized-access-to-the-firmware-iot-fw[inst]-authz-001)
-  * [Privilege Escalation (IOT-FW-AUTHZ-002)](#privilege-escalation-iot-fw[inst]-authz-002)
-* [Information Gathering (IOT-FW-INFO)](#information-gathering-iot-fw[inst]-info)
-  * [Disclosure of User Data (IOT-FW-INFO-001)](#disclosure-of-user-data-iot-fw[inst]-info-001)
-* [Cryptography (IOT-FW-CRYPT)](#cryptography-iot-fw[inst]-crypt)
-  * [Insufficient Verification of the Bootloader Signature (IOT-FW-CRYPT-001)](#insufficient-verification-of-the-bootloader-signature-iot-fw[inst]-crypt-001)
+* [Authorization (ISTG-FW-AUTHZ)](#authorization-istg-fw[inst]-authz)
+  * [Unauthorized Access to the Firmware (ISTG-FW-AUTHZ-001)](#unauthorized-access-to-the-firmware-istg-fw[inst]-authz-001)
+  * [Privilege Escalation (ISTG-FW-AUTHZ-002)](#privilege-escalation-istg-fw[inst]-authz-002)
+* [Information Gathering (ISTG-FW-INFO)](#information-gathering-istg-fw[inst]-info)
+  * [Disclosure of User Data (ISTG-FW-INFO-001)](#disclosure-of-user-data-istg-fw[inst]-info-001)
+* [Cryptography (ISTG-FW-CRYPT)](#cryptography-istg-fw[inst]-crypt)
+  * [Insufficient Verification of the Bootloader Signature (ISTG-FW-CRYPT-001)](#insufficient-verification-of-the-bootloader-signature-istg-fw[inst]-crypt-001)
 
 
 
@@ -19,11 +19,11 @@ One specialization of the component firmware is the installed form of a firmware
 
 
 
-## Authorization (IOT-FW[INST]-AUTHZ)
+## Authorization (ISTG-FW[INST]-AUTHZ)
 
 Usually, only certain individuals, e.g., administrators, should be allowed to access the device firmware during runtime. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized users can get access to the firmware.
 
-### Unauthorized Access to the Firmware (IOT-FW[INST]-AUTHZ-001)
+### Unauthorized Access to the Firmware (ISTG-FW[INST]-AUTHZ-001)
 
 **Required Access Levels**
 
@@ -62,9 +62,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001).
+This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001).
 
-### Privilege Escalation (IOT-FW[INST]-AUTHZ-002)
+### Privilege Escalation (ISTG-FW[INST]-AUTHZ-002)
 
 **Required Access Levels**
 
@@ -85,7 +85,7 @@ Depending on the specific implementation of a given device, access to parts of t
 
 **Test Objectives**
 
-- Based on *IOT-FW-AUTHZ-001*, it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functions or parts of the firmware.
+- Based on *ISTG-FW-AUTHZ-001*, it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functions or parts of the firmware.
 
 **Remediation**
 
@@ -93,15 +93,15 @@ Proper authorization checks need to be implemented, which ensure that access to 
 
 **References**
 
-This test case is based on: [IOT-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-iot-des-authz-002).
+This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-istg-des-authz-002).
 
 
 
-## Information Gathering (IOT-FW[INST]-INFO)
+## Information Gathering (ISTG-FW[INST]-INFO)
 
 As mentioned above, during the dynamic analysis, it is also possible to test whether user data is securely stored on the device during runtime.
 
-### Disclosure of User Data (IOT-FW[INST]-INFO-001)
+### Disclosure of User Data (ISTG-FW[INST]-INFO-001)
 
 **Required Access Levels**
 
@@ -140,11 +140,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Cryptography (IOT-FW[INST]-CRYPT)
+## Cryptography (ISTG-FW[INST]-CRYPT)
 
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Insufficient Verification of the Bootloader Signature (IOT-FW[INST]-CRYPT-001)
+### Insufficient Verification of the Bootloader Signature (ISTG-FW[INST]-CRYPT-001)
 
 **Required Access Levels**
 

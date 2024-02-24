@@ -1,28 +1,28 @@
-# 3.8. User Interfaces (IOT-UI)
+# 3.8. User Interfaces (ISTG-UI)
 
 ## Table of Contents
-- [3.8. User Interfaces (IOT-UI)](#38-user-interfaces-iot-ui)
+- [3.8. User Interfaces (ISTG-UI)](#38-user-interfaces-istg-ui)
 	- [Table of Contents](#table-of-contents)
 	- [Overview](#overview)
-	- [Authorization (IOT-UI-AUTHZ)](#authorization-iot-ui-authz)
-	  - [Unauthorized Access to the Interface (IOT-UI-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-ui-authz-001)
-	  - [Privilege Escalation (IOT-UI-AUTHZ-002)](#privilege-escalation-iot-ui-authz-002)
-	- [Information Gathering (IOT-UI-INFO)](#information-gathering-iot-ui-info)
-	  - [Disclosure of Implementation Details (IOT-UI-INFO-001)](#disclosure-of-implementation-details-iot-ui-info-001)
-	  - [Disclosure of Ecosystem Details (IOT-UI-INFO-002)](#disclosure-of-ecosystem-details-iot-ui-info-002)
-	  - [Disclosure of User Data (IOT-UI-INFO-003)](#disclosure-of-user-data-iot-ui-info-003)
-	- [Configuration and Patch Management (IOT-UI-CONF)](#configuration-and-patch-management-iot-ui-conf)
-	  - [Usage of Outdated Software (IOT-UI-CONF-001)](#usage-of-outdated-software-iot-ui-conf-001)
-	  - [Presence of Unnecessary Software and Functionalities (IOT-UI-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-ui-conf-002)
-	- [Secrets (IOT-UI-SCRT)](#secrets-iot-ui-scrt)
-	  - [Access to Confidential Data (IOT-UI-SCRT-001)](#access-to-confidential-data-iot-ui-scrt-001)
-	- [Cryptography (IOT-UI-CRYPT)](#cryptography-iot-ui-crypt)
-	  - [Usage of Weak Cryptographic Algorithms (IOT-UI-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-ui-crypt-001)
-	- [Business Logic (IOT-UI-LOGIC)](#business-logic-iot-ui-logic)
-	  - [Circumvention of the Intended Business Logic (IOT-UI-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-ui-logic-001)
-	- [Input Validation (IOT-UI-INPV)](#input-validation-iot-ui-inpv)
-	  - [Insufficient Input Validation (IOT-UI-INPV-001)](#insufficient-input-validation-iot-ui-inpv-001)
-	  - [Code or Command Injection (IOT-UI-INPV-002)](#code-or-command-injection-iot-ui-inpv-002)
+	- [Authorization (ISTG-UI-AUTHZ)](#authorization-istg-ui-authz)
+	  - [Unauthorized Access to the Interface (ISTG-UI-AUTHZ-001)](#unauthorized-access-to-the-interface-istg-ui-authz-001)
+	  - [Privilege Escalation (ISTG-UI-AUTHZ-002)](#privilege-escalation-istg-ui-authz-002)
+	- [Information Gathering (ISTG-UI-INFO)](#information-gathering-istg-ui-info)
+	  - [Disclosure of Implementation Details (ISTG-UI-INFO-001)](#disclosure-of-implementation-details-istg-ui-info-001)
+	  - [Disclosure of Ecosystem Details (ISTG-UI-INFO-002)](#disclosure-of-ecosystem-details-istg-ui-info-002)
+	  - [Disclosure of User Data (ISTG-UI-INFO-003)](#disclosure-of-user-data-istg-ui-info-003)
+	- [Configuration and Patch Management (ISTG-UI-CONF)](#configuration-and-patch-management-istg-ui-conf)
+	  - [Usage of Outdated Software (ISTG-UI-CONF-001)](#usage-of-outdated-software-istg-ui-conf-001)
+	  - [Presence of Unnecessary Software and Functionalities (ISTG-UI-CONF-002)](#presence-of-unnecessary-software-and-functionalities-istg-ui-conf-002)
+	- [Secrets (ISTG-UI-SCRT)](#secrets-istg-ui-scrt)
+	  - [Access to Confidential Data (ISTG-UI-SCRT-001)](#access-to-confidential-data-istg-ui-scrt-001)
+	- [Cryptography (ISTG-UI-CRYPT)](#cryptography-istg-ui-crypt)
+	  - [Usage of Weak Cryptographic Algorithms (ISTG-UI-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-ui-crypt-001)
+	- [Business Logic (ISTG-UI-LOGIC)](#business-logic-istg-ui-logic)
+	  - [Circumvention of the Intended Business Logic (ISTG-UI-LOGIC-001)](#circumvention-of-the-intended-business-logic-istg-ui-logic-001)
+	- [Input Validation (ISTG-UI-INPV)](#input-validation-istg-ui-inpv)
+	  - [Insufficient Input Validation (ISTG-UI-INPV-001)](#insufficient-input-validation-istg-ui-inpv-001)
+	  - [Code or Command Injection (ISTG-UI-INPV-002)](#code-or-command-injection-istg-ui-inpv-002)
 
 
 
@@ -48,11 +48,11 @@ In regards to test case categories that are relevant for a user interface, the f
 
 
 
-## Authorization (IOT-UI-AUTHZ)
+## Authorization (ISTG-UI-AUTHZ)
 
 Depending on the access model for a given device, only certain individuals might be allowed to access a user interface. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized users can get access.
 
-### Unauthorized Access to the Interface (IOT-UI-AUTHZ-001)
+### Unauthorized Access to the Interface (ISTG-UI-AUTHZ-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -90,9 +90,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001).
+This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001).
 
-### Privilege Escalation (IOT-UI-AUTHZ-002)
+### Privilege Escalation (ISTG-UI-AUTHZ-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -111,7 +111,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Test Objectives**
 
-- Based on [IOT-UI-AUTHZ-001](#unauthorized-access-to-the-interface-iot-ui-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
+- Based on [ISTG-UI-AUTHZ-001](#unauthorized-access-to-the-interface-istg-ui-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
 
 **Remediation**
 
@@ -128,15 +128,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-iot-des-authz-002).
+This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-istg-des-authz-002).
 
 
 
-## Information Gathering (IOT-UI-INFO)
+## Information Gathering (ISTG-UI-INFO)
 
-User interface might disclose various information, which could reveal details regarding the inner workings of the device or the surrounding IoT-ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
+User interface might disclose various information, which could reveal details regarding the inner workings of the device or the surrounding ISTG-ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-### Disclosure of Implementation Details (IOT-UI-INFO-001)
+### Disclosure of Implementation Details (ISTG-UI-INFO-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -180,9 +180,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-iot-fw-info-002).
+This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-istg-fw-info-002).
 
-### Disclosure of Ecosystem Details (IOT-UI-INFO-002)
+### Disclosure of Ecosystem Details (ISTG-UI-INFO-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -197,7 +197,7 @@ This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-o
 
 **Summary**
 
-A user interface might disclose information about the surrounding IoT-ecosystem, e.g., sensitive URLs, IP addresses, software in use etc. An attacker might be able to use this information to prepare and execute attacks against the ecosystem.
+A user interface might disclose information about the surrounding ISTG-ecosystem, e.g., sensitive URLs, IP addresses, software in use etc. An attacker might be able to use this information to prepare and execute attacks against the ecosystem.
 
 For example, relevant information might be included in service banners, response headers or error messages.
 
@@ -220,9 +220,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-iot-fw-info-003).
+This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
-### Disclosure of User Data (IOT-UI-INFO-003)
+### Disclosure of User Data (ISTG-UI-INFO-003)
 **Required Access Levels**
 
 <table width="100%">
@@ -258,15 +258,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-iot-fw[inst]-info-001).
+This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-istg-fw[inst]-info-001).
 
 
 
-## Configuration and Patch Management (IOT-UI-CONF)
+## Configuration and Patch Management (ISTG-UI-CONF)
 
-Since IoT-devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [IOT-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
+Since ISTG-devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [ISTG-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
 
-### Usage of Outdated Software (IOT-UI-CONF-001)
+### Usage of Outdated Software (ISTG-UI-CONF-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -304,9 +304,9 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Web Security Testing Guide"][owasp_wstg]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-iot-fw-conf-001).
+This test case is based on: [ISTG-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-istg-fw-conf-001).
 
-### Presence of Unnecessary Software and Functionalities (IOT-UI-CONF-002)
+### Presence of Unnecessary Software and Functionalities (ISTG-UI-CONF-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -342,15 +342,15 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Web Security Testing Guide"][owasp_wstg]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-iot-fw-conf-002).
+This test case is based on: [ISTG-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-istg-fw-conf-002).
 
 
 
-## Secrets (IOT-UI-SCRT)
+## Secrets (ISTG-UI-SCRT)
 
-IoT-devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT-ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
+ISTG-devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the ISTG-ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
-### Access to Confidential Data (IOT-UI-SCRT-001)
+### Access to Confidential Data (ISTG-UI-SCRT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -386,15 +386,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-SCRT-001](../data_exchange_services/README.md#access-to-confidential-data-iot-des-scrt-001).
+This test case is based on: [ISTG-DES-SCRT-001](../data_exchange_services/README.md#access-to-confidential-data-istg-des-scrt-001).
 
 
 
-## Cryptography (IOT-UI-CRYPT)
+## Cryptography (ISTG-UI-CRYPT)
 
-Many IoT-devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
+Many ISTG-devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Usage of Weak Cryptographic Algorithms (IOT-UI-CRYPT-001)
+### Usage of Weak Cryptographic Algorithms (ISTG-UI-CRYPT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -417,7 +417,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, processed by the interface, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [IOT-UI-INFO-001](#disclosure-of-implementation-details-iot-ui-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-UI-INFO-001](#disclosure-of-implementation-details-istg-ui-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
 
@@ -432,15 +432,15 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Web Security Testing Guide"][owasp_wstg]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001).
+This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001).
 
 
 
-## Business Logic (IOT-UI-LOGIC)
+## Business Logic (ISTG-UI-LOGIC)
 
 Even if all other aspects of the user interface are securely implemented and configured, issues in the underlying logic itself might render the device vulnerable to attacks. Thus, it must be verified if the user interface and its functionalities are working as intended and if exceptions are detected and properly handled.
 
-### Circumvention of the Intended Business Logic (IOT-UI-LOGIC-001)
+### Circumvention of the Intended Business Logic (ISTG-UI-LOGIC-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -476,15 +476,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-iot-des-logic-001).
+This test case is based on: [ISTG-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-istg-des-logic-001).
 
 
 
-## Input Validation (IOT-UI-INPV)
+## Input Validation (ISTG-UI-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-UI-INPV-001)
+### Insufficient Input Validation (ISTG-UI-INPV-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -522,9 +522,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inpv-001).
+This test case is based on: [ISTG-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-istg-des-inpv-001).
 
-### Code or Command Injection (IOT-UI-INPV-002)
+### Code or Command Injection (ISTG-UI-INPV-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -543,7 +543,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-UI-INPV-001](#insufficient-input-validation-iot-ui-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [ISTG-UI-INPV-001](#insufficient-input-validation-istg-ui-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 
@@ -560,7 +560,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inpv-002).
+This test case is based on: [ISTG-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-istg-des-inpv-002).
 
 
 

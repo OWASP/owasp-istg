@@ -1,27 +1,27 @@
-# 3.3. Firmware (IOT-FW)
+# 3.3. Firmware (ISTG-FW)
 
 ## Table of Contents
 * [Overview](#overview)
-* [Information Gathering (IOT-FW-INFO)](#information-gathering-iot-fw-info)
-  * [Disclosure of Source Code (IOT-FW-INFO-001)](#disclosure-of-source-code-iot-fw-info-001)
-  * [Disclosure of Implementation Details (IOT-FW-INFO-002)](#disclosure-of-implementation-details-iot-fw-info-002)
-  * [Disclosure of Ecosystem Details (IOT-FW-INFO-003)](#disclosure-of-ecosystem-details-iot-fw-info-003)
-* [Configuration and Patch Management (IOT-FW-CONF)](#configuration-and-patch-management-iot-fw-conf)
-  * [Usage of Outdated Software (IOT-FW-CONF-001)](#usage-of-outdated-software-iot-fw-conf-001)
-  * [Presence of Unnecessary Software and Functionalities (IOT-FW-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-fw-conf-002)
-* [Secrets (IOT-FW-SCRT)](#secrets-iot-fw-scrt)
-  * [Secrets Stored in Public Storage (IOT-FW-SCRT-001)](#secrets-stored-in-public-storage-iot-fw-scrt-001)
-  * [Unencrypted Storage of Secrets (IOT-FW-SCRT-002)](#unencrypted-storage-of-secrets-iot-fw-scrt-002)
-  * [Usage of Hardcoded Secrets (IOT-FW-SCRT-003)](#usage-of-hardcoded-secrets-iot-fw-scrt-003)
-* [Cryptography (IOT-FW-CRYPT)](#cryptography-iot-fw-crypt)
-  * [Usage of Weak Cryptographic Algorithms (IOT-FW-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001)
+* [Information Gathering (ISTG-FW-INFO)](#information-gathering-istg-fw-info)
+  * [Disclosure of Source Code (ISTG-FW-INFO-001)](#disclosure-of-source-code-istg-fw-info-001)
+  * [Disclosure of Implementation Details (ISTG-FW-INFO-002)](#disclosure-of-implementation-details-istg-fw-info-002)
+  * [Disclosure of Ecosystem Details (ISTG-FW-INFO-003)](#disclosure-of-ecosystem-details-istg-fw-info-003)
+* [Configuration and Patch Management (ISTG-FW-CONF)](#configuration-and-patch-management-istg-fw-conf)
+  * [Usage of Outdated Software (ISTG-FW-CONF-001)](#usage-of-outdated-software-istg-fw-conf-001)
+  * [Presence of Unnecessary Software and Functionalities (ISTG-FW-CONF-002)](#presence-of-unnecessary-software-and-functionalities-istg-fw-conf-002)
+* [Secrets (ISTG-FW-SCRT)](#secrets-istg-fw-scrt)
+  * [Secrets Stored in Public Storage (ISTG-FW-SCRT-001)](#secrets-stored-in-public-storage-istg-fw-scrt-001)
+  * [Unencrypted Storage of Secrets (ISTG-FW-SCRT-002)](#unencrypted-storage-of-secrets-istg-fw-scrt-002)
+  * [Usage of Hardcoded Secrets (ISTG-FW-SCRT-003)](#usage-of-hardcoded-secrets-istg-fw-scrt-003)
+* [Cryptography (ISTG-FW-CRYPT)](#cryptography-istg-fw-crypt)
+  * [Usage of Weak Cryptographic Algorithms (ISTG-FW-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001)
 
 
 
 
 ## Overview
 
-This section includes test cases and categories for the component firmware and the component specializations installed firmware ([IOT-FW[INST]](./installed_firmware.md)) and firmware update mechanism ([IOT-FW[UPDT]](./firmware_update_mechanism.md)) respectively. The firmware might be accessible with all physical access levels, depending on how this access is implemented in detail.
+This section includes test cases and categories for the component firmware and the component specializations installed firmware ([ISTG-FW[INST]](./installed_firmware.md)) and firmware update mechanism ([ISTG-FW[UPDT]](./firmware_update_mechanism.md)) respectively. The firmware might be accessible with all physical access levels, depending on how this access is implemented in detail.
 
 In regards to test case categories that are relevant for processing units, the following were identified:
 
@@ -37,15 +37,15 @@ In regards to test case categories that are relevant for processing units, the f
 
 - **Business Logic  (Firmware Update Process):** Focuses on vulnerabilities in the design and implementation of the firmware update process.
 
-All test cases and categories for the component [IOT-FW](./README.md) focus on generic firmware analysis aspects, without regards to the specifics of specializations for this component.
+All test cases and categories for the component [ISTG-FW](./README.md) focus on generic firmware analysis aspects, without regards to the specifics of specializations for this component.
 
 
 
-## Information Gathering (IOT-FW-INFO)
+## Information Gathering (ISTG-FW-INFO)
 
 The firmware of an IoT device can include various information, which, if disclosed, could reveal details regarding the inner workings of the device or the surrounding IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-### Disclosure of Source Code (IOT-FW-INFO-001)
+### Disclosure of Source Code (ISTG-FW-INFO-001)
 
 **Required Access Levels**
 
@@ -70,7 +70,7 @@ Similar to uncompiled source code, compiled binaries might also disclose relevan
 
 - It must be checked if uncompiled source code can be identified within the firmware.
 
-- If uncompiled source code is detected, its content must be analyzed for the presence of sensitive data, which might be useful for potential attackers (also see [IOT-FW-SCRT-003](#usage-of-hardcoded-secrets-iot-fw-scrt-003)).
+- If uncompiled source code is detected, its content must be analyzed for the presence of sensitive data, which might be useful for potential attackers (also see [ISTG-FW-SCRT-003](#usage-of-hardcoded-secrets-istg-fw-scrt-003)).
 
 - Reverse-engineering of selected binaries should be performed in order to obtain useful information regarding the firmware implementation and the processing of sensitive data.
 
@@ -91,7 +91,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Disclosure of Implementation Details (IOT-FW-INFO-002)
+### Disclosure of Implementation Details (ISTG-FW-INFO-002)
 
 **Required Access Levels**
 
@@ -137,7 +137,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Disclosure of Ecosystem Details (IOT-FW-INFO-003)
+### Disclosure of Ecosystem Details (ISTG-FW-INFO-003)
 
 **Required Access Levels**
 
@@ -179,11 +179,11 @@ For this test case, data from the following available sources was consolidated:
 
 
 
-## Configuration and Patch Management (IOT-FW-CONF)
+## Configuration and Patch Management (ISTG-FW-CONF)
 
-Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [IOT-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are included in the firmware, are up-to-date as well.
+Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [ISTG-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are included in the firmware, are up-to-date as well.
 
-### Usage of Outdated Software (IOT-FW-CONF-001)
+### Usage of Outdated Software (ISTG-FW-CONF-001)
 
 **Required Access Levels**
 
@@ -225,7 +225,7 @@ For this test case, data from the following available sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Presence of Unnecessary Software and Functionalities (IOT-FW-CONF-002)
+### Presence of Unnecessary Software and Functionalities (ISTG-FW-CONF-002)
 
 **Required Access Levels**
 
@@ -267,11 +267,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Secrets (IOT-FW-SCRT)
+## Secrets (ISTG-FW-SCRT)
 
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
-### Secrets Stored in Public Storage (IOT-FW-SCRT-001)
+### Secrets Stored in Public Storage (ISTG-FW-SCRT-001)
 
 **Required Access Levels**
 
@@ -309,7 +309,7 @@ For this test case, data from the following available sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Unencrypted Storage of Secrets (IOT-FW-SCRT-002)
+### Unencrypted Storage of Secrets (ISTG-FW-SCRT-002)
 
 **Required Access Levels**
 
@@ -328,7 +328,7 @@ For this test case, data from the following available sources was consolidated:
 
 Sensitive data and secrets should be stored in an encrypted manner, so that even if an attacker has managed to get access to it, he has no access to the respective plaintext data.
 
-Contrary to [IOT-FW-SCRT-001](#secrets-stored-in-public-storage-iot-fw-scrt-001), it does not matter if the secrets are stored in public or restricted storage spaces, since it is assumed that the attacker has already gotten access to the data, e.g., by circumventing access restrictions or by exploiting a process with access to the restricted storage. Furthermore, the strength of the cryptographic algorithms in use will be covered by [IOT-FW-CRYPT-001](#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001) and has no relevance for this test case.
+Contrary to [ISTG-FW-SCRT-001](#secrets-stored-in-public-storage-istg-fw-scrt-001), it does not matter if the secrets are stored in public or restricted storage spaces, since it is assumed that the attacker has already gotten access to the data, e.g., by circumventing access restrictions or by exploiting a process with access to the restricted storage. Furthermore, the strength of the cryptographic algorithms in use will be covered by [ISTG-FW-CRYPT-001](#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001) and has no relevance for this test case.
 
 **Test Objectives**
 
@@ -349,7 +349,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Usage of Hardcoded Secrets (IOT-FW-SCRT-003)
+### Usage of Hardcoded Secrets (ISTG-FW-SCRT-003)
 
 **Required Access Levels**
 
@@ -376,11 +376,11 @@ Sometimes, developers tend to incorporate secrets directly into the source code 
 
 **Test Objectives**
 
-- Based on [IOT-FW-INFO-001](#disclosure-of-source-code-iot-fw-info-001), it must be checked if any hard-coded secrets can be identified.
+- Based on [ISTG-FW-INFO-001](#disclosure-of-source-code-istg-fw-info-001), it must be checked if any hard-coded secrets can be identified.
 
 **Remediation**
 
-Secrets should not be hard-coded into the source code. Instead, secrets should be stored in a secure manner (see [IOT-FW-SCRT-001](#secrets-stored-in-public-storage-iot-fw-scrt-001) and [IOT-FW-SCRT-002](#unencrypted-storage-of-secrets-iot-fw-scrt-002)) and the software process should dynamically retrieve the secrets from the secure storage during runtime.
+Secrets should not be hard-coded into the source code. Instead, secrets should be stored in a secure manner (see [ISTG-FW-SCRT-001](#secrets-stored-in-public-storage-istg-fw-scrt-001) and [ISTG-FW-SCRT-002](#unencrypted-storage-of-secrets-istg-fw-scrt-002)) and the software process should dynamically retrieve the secrets from the secure storage during runtime.
 
 **References**
 
@@ -395,11 +395,11 @@ For this test case, data from the following available sources was consolidated:
 
 
 
-## Cryptography (IOT-FW-CRYPT)
+## Cryptography (ISTG-FW-CRYPT)
 
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Usage of Weak Cryptographic Algorithms (IOT-FW-CRYPT-001)
+### Usage of Weak Cryptographic Algorithms (ISTG-FW-CRYPT-001)
 
 **Required Access Levels**
 
@@ -424,7 +424,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, stored by or within the firmware, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [IOT-FW-INFO-001](#disclosure-of-source-code-iot-fw-info-001) and [IOT-FW-INFO-002](#disclosure-of-implementation-details-iot-fw-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-FW-INFO-001](#disclosure-of-source-code-istg-fw-info-001) and [ISTG-FW-INFO-002](#disclosure-of-implementation-details-istg-fw-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
 

@@ -1,28 +1,28 @@
-# 3.6. Physical Interfaces (IOT-PHY)
+# 3.6. Physical Interfaces (ISTG-PHY)
 
 ## Table of Contents
-- [3.6. Physical Interfaces (IOT-PHY)](#36-physical-interfaces-iot-phy)
+- [3.6. Physical Interfaces (ISTG-PHY)](#36-physical-interfaces-istg-phy)
 	- [Table of Contents](#table-of-contents)
 	- [Overview](#overview)
-	- [Authorization (IOT-PHY-AUTHZ)](#authorization-iot-phy-authz)
-	  - [Unauthorized Access to the Interface (IOT-PHY-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-phy-authz-001)
-	  - [Privilege Escalation (IOT-PHY-AUTHZ-002)](#privilege-escalation-iot-phy-authz-002)
-	- [Information Gathering (IOT-PHY-INFO)](#information-gathering-iot-phy-info)
-	  - [Disclosure of Implementation Details (IOT-PHY-INFO-001)](#disclosure-of-implementation-details-iot-phy-info-001)
-	  - [Disclosure of Ecosystem Details (IOT-PHY-INFO-002)](#disclosure-of-ecosystem-details-iot-phy-info-002)
-	  - [Disclosure of User Data (IOT-PHY-INFO-003)](#disclosure-of-user-data-iot-phy-info-003)
-	- [Configuration and Patch Management (IOT-PHY-CONF)](#configuration-and-patch-management-iot-phy-conf)
-	  - [Usage of Outdated Software (IOT-PHY-CONF-001)](#usage-of-outdated-software-iot-phy-conf-001)
-	  - [Presence of Unnecessary Software and Functionalities (IOT-PHY-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-phy-conf-002)
-	- [Secrets (IOT-PHY-SCRT)](#secrets-iot-phy-scrt)
-	  - [Access to Confidential Data (IOT-PHY-SCRT-001)](#access-to-confidential-data-iot-phy-scrt-001)
-	- [Cryptography (IOT-PHY-CRYPT)](#cryptography-iot-phy-crypt)
-	  - [Usage of Weak Cryptographic Algorithms (IOT-PHY-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-phy-crypt-001)
-	- [Business Logic (IOT-PHY-LOGIC)](#business-logic-iot-phy-logic)
-	  - [Circumvention of the Intended Business Logic (IOT-PHY-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-phy-logic-001)
-	- [Input Validation (IOT-PHY-INPV)](#input-validation-iot-phy-inpv)
-	  - [Insufficient Input Validation (IOT-PHY-INPV-001)](#insufficient-input-validation-iot-phy-inpv-001)
-	  - [Code or Command Injection (IOT-PHY-INPV-002)](#code-or-command-injection-iot-phy-inpv-002)
+	- [Authorization (ISTG-PHY-AUTHZ)](#authorization-istg-phy-authz)
+	  - [Unauthorized Access to the Interface (ISTG-PHY-AUTHZ-001)](#unauthorized-access-to-the-interface-istg-phy-authz-001)
+	  - [Privilege Escalation (ISTG-PHY-AUTHZ-002)](#privilege-escalation-istg-phy-authz-002)
+	- [Information Gathering (ISTG-PHY-INFO)](#information-gathering-istg-phy-info)
+	  - [Disclosure of Implementation Details (ISTG-PHY-INFO-001)](#disclosure-of-implementation-details-istg-phy-info-001)
+	  - [Disclosure of Ecosystem Details (ISTG-PHY-INFO-002)](#disclosure-of-ecosystem-details-istg-phy-info-002)
+	  - [Disclosure of User Data (ISTG-PHY-INFO-003)](#disclosure-of-user-data-istg-phy-info-003)
+	- [Configuration and Patch Management (ISTG-PHY-CONF)](#configuration-and-patch-management-istg-phy-conf)
+	  - [Usage of Outdated Software (ISTG-PHY-CONF-001)](#usage-of-outdated-software-istg-phy-conf-001)
+	  - [Presence of Unnecessary Software and Functionalities (ISTG-PHY-CONF-002)](#presence-of-unnecessary-software-and-functionalities-istg-phy-conf-002)
+	- [Secrets (ISTG-PHY-SCRT)](#secrets-istg-phy-scrt)
+	  - [Access to Confidential Data (ISTG-PHY-SCRT-001)](#access-to-confidential-data-istg-phy-scrt-001)
+	- [Cryptography (ISTG-PHY-CRYPT)](#cryptography-istg-phy-crypt)
+	  - [Usage of Weak Cryptographic Algorithms (ISTG-PHY-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-phy-crypt-001)
+	- [Business Logic (ISTG-PHY-LOGIC)](#business-logic-istg-phy-logic)
+	  - [Circumvention of the Intended Business Logic (ISTG-PHY-LOGIC-001)](#circumvention-of-the-intended-business-logic-istg-phy-logic-001)
+	- [Input Validation (ISTG-PHY-INPV)](#input-validation-istg-phy-inpv)
+	  - [Insufficient Input Validation (ISTG-PHY-INPV-001)](#insufficient-input-validation-istg-phy-inpv-001)
+	  - [Code or Command Injection (ISTG-PHY-INPV-002)](#code-or-command-injection-istg-phy-inpv-002)
 
 
 
@@ -49,11 +49,11 @@ In regards of test case categories that are relevant for a physical interface, t
 
 
 
-## Authorization (IOT-PHY-AUTHZ)
+## Authorization (ISTG-PHY-AUTHZ)
 
 Depending on the access model for a given device, only certain individuals might be allowed to access a physical interface. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized users can get access.
 
-### Unauthorized Access to the Interface (IOT-PHY-AUTHZ-001)
+### Unauthorized Access to the Interface (ISTG-PHY-AUTHZ-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -88,9 +88,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001).
+This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001).
 
-### Privilege Escalation (IOT-PHY-AUTHZ-002)
+### Privilege Escalation (ISTG-PHY-AUTHZ-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -109,7 +109,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Test Objectives**
 
-- Based on [IOT-PHY-AUTHZ-001](#unauthorized-access-to-the-interface-iot-phy-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
+- Based on [ISTG-PHY-AUTHZ-001](#unauthorized-access-to-the-interface-istg-phy-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
 
 **Remediation**
 
@@ -122,15 +122,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-iot-des-authz-002).
+This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-istg-des-authz-002).
 
 
 
-## Information Gathering (IOT-PHY-INFO)
+## Information Gathering (ISTG-PHY-INFO)
 
 Physical interfaces might disclose various information, which could reveal details regarding the inner workings of the device or the surrounding IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-### Disclosure of Implementation Details (IOT-PHY-INFO-001)
+### Disclosure of Implementation Details (ISTG-PHY-INFO-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -170,9 +170,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-iot-fw-info-002).
+This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-istg-fw-info-002).
 
-### Disclosure of Ecosystem Details (IOT-PHY-INFO-002)
+### Disclosure of Ecosystem Details (ISTG-PHY-INFO-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -206,9 +206,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-iot-fw-info-003).
+This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
-### Disclosure of User Data (IOT-PHY-INFO-003)
+### Disclosure of User Data (ISTG-PHY-INFO-003)
 **Required Access Levels**
 
 <table width="100%">
@@ -240,15 +240,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-iot-fw[inst]-info-001).
+This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-istg-fw[inst]-info-001).
 
 
 
-## Configuration and Patch Management (IOT-PHY-CONF)
+## Configuration and Patch Management (ISTG-PHY-CONF)
 
-Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [IOT-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
+Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [ISTG-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
 
-### Usage of Outdated Software (IOT-PHY-CONF-001)
+### Usage of Outdated Software (ISTG-PHY-CONF-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -286,9 +286,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-iot-fw-conf-001).
+This test case is based on: [ISTG-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-istg-fw-conf-001).
 
-### Presence of Unnecessary Software and Functionalities (IOT-PHY-CONF-002)
+### Presence of Unnecessary Software and Functionalities (ISTG-PHY-CONF-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -324,15 +324,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-iot-fw-conf-002).
+This test case is based on: [ISTG-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-istg-fw-conf-002).
 
 
 
-## Secrets (IOT-PHY-SCRT)
+## Secrets (ISTG-PHY-SCRT)
 
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
-### Access to Confidential Data (IOT-PHY-SCRT-001)
+### Access to Confidential Data (ISTG-PHY-SCRT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -364,15 +364,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-SCRT-001](../data_exchange_services/README.md#access-to-confidential-data-iot-des-scrt-001).
+This test case is based on: [ISTG-DES-SCRT-001](../data_exchange_services/README.md#access-to-confidential-data-istg-des-scrt-001).
 
 
 
-## Cryptography (IOT-PHY-CRYPT)
+## Cryptography (ISTG-PHY-CRYPT)
 
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Usage of Weak Cryptographic Algorithms (IOT-PHY-CRYPT-001)
+### Usage of Weak Cryptographic Algorithms (ISTG-PHY-CRYPT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -395,7 +395,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, processed by the interface, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [IOT-PHY-INFO-001](#disclosure-of-implementation-details-iot-phy-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-PHY-INFO-001](#disclosure-of-implementation-details-istg-phy-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf __blob=publicationFile&v=10) by the BSI.
 
@@ -410,15 +410,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001).
+This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001).
 
 
 
-## Business Logic (IOT-PHY-LOGIC)
+## Business Logic (ISTG-PHY-LOGIC)
 
 Even if all other aspects of the physical interface are securely implemented and configured, issues in the underlying logic itself might render the device vulnerable to attacks. Thus, it must be verified if the physical interface and its functionalities are working as intended and if exceptions are detected and properly handled.
 
-### Circumvention of the Intended Business Logic (IOT-PHY-LOGIC-001)
+### Circumvention of the Intended Business Logic (ISTG-PHY-LOGIC-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -450,15 +450,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-iot-des-logic-001).
+This test case is based on: [ISTG-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-istg-des-logic-001).
 
 
 
-## Input Validation (IOT-PHY-INPV)
+## Input Validation (ISTG-PHY-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-PHY-INPV-001)
+### Insufficient Input Validation (ISTG-PHY-INPV-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -492,9 +492,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inpv-001).
+This test case is based on: [ISTG-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-istg-des-inpv-001).
 
-### Code or Command Injection (IOT-PHY-INPV-002)
+### Code or Command Injection (ISTG-PHY-INPV-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -513,7 +513,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-PHY-INPV-001](#insufficient-input-validation-iot-phy-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [ISTG-PHY-INPV-001](#insufficient-input-validation-istg-phy-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 
@@ -526,7 +526,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inpv-002).
+This test case is based on: [ISTG-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-istg-des-inpv-002).
 
 
 

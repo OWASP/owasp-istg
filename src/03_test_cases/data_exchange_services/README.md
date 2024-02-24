@@ -1,28 +1,28 @@
-# 3.4. Data Exchange Services (IOT-DES)
+# 3.4. Data Exchange Services (ISTG-DES)
 
 ## Table of Contents
-- [3.4. Data Exchange Services (IOT-DES)](#34-data-exchange-services-iot-des)
+- [3.4. Data Exchange Services (ISTG-DES)](#34-data-exchange-services-istg-des)
 	- [Table of Contents](#table-of-contents)
 	- [Overview](#overview)
-	- [Authorization (IOT-DES-AUTHZ)](#authorization-iot-des-authz)
-	  - [Unauthorized Access to the Data Exchange Service (IOT-DES-AUTHZ-001)](#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001)
-	  - [Privilege Escalation (IOT-DES-AUTHZ-002)](#privilege-escalation-iot-des-authz-002)
-	- [Information Gathering (IOT-DES-INFO)](#information-gathering-iot-des-info)
-	  - [Disclosure of Implementation Details (IOT-DES-INFO-001)](#disclosure-of-implementation-details-iot-des-info-001)
-	  - [Disclosure of Ecosystem Details (IOT-DES-INFO-002)](#disclosure-of-ecosystem-details-iot-des-info-002)
-	  - [Disclosure of User Data (IOT-DES-INFO-003)](#disclosure-of-user-data-iot-des-info-003)
-	- [Configuration and Patch Management (IOT-DES-CONF)](#configuration-and-patch-management-iot-des-conf)
-	  - [Usage of Outdated Software (IOT-DES-CONF-001)](#usage-of-outdated-software-iot-des-conf-001)
-	  - [Presence of Unnecessary Software and Functionalities (IOT-DES-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-des-conf-002)
-	- [Secrets (IOT-DES-SCRT)](#secrets-iot-des-scrt)
-	  - [Access to Confidential Data (IOT-DES-SCRT-001)](#access-to-confidential-data-iot-des-scrt-001)
-	- [Cryptography (IOT-DES-CRYPT)](#cryptography-iot-des-crypt)
-	  - [Usage of Weak Cryptographic Algorithms (IOT-DES-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-des-crypt-001)
-	- [Business Logic (IOT-DES-LOGIC)](#business-logic-iot-des-logic)
-	  - [Circumvention of the Intended Business Logic (IOT-DES-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-des-logic-001)
-	- [Input Validation (IOT-DES-INPV)](#input-validation-iot-des-inpv)
-	  - [Insufficient Input Validation (IOT-DES-INPV-001)](#insufficient-input-validation-iot-des-inpv-001)
-	  - [Code or Command Injection (IOT-DES-INPV-002)](#code-or-command-injection-iot-des-inpv-002)
+	- [Authorization (ISTG-DES-AUTHZ)](#authorization-istg-des-authz)
+	  - [Unauthorized Access to the Data Exchange Service (ISTG-DES-AUTHZ-001)](#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001)
+	  - [Privilege Escalation (ISTG-DES-AUTHZ-002)](#privilege-escalation-istg-des-authz-002)
+	- [Information Gathering (ISTG-DES-INFO)](#information-gathering-istg-des-info)
+	  - [Disclosure of Implementation Details (ISTG-DES-INFO-001)](#disclosure-of-implementation-details-istg-des-info-001)
+	  - [Disclosure of Ecosystem Details (ISTG-DES-INFO-002)](#disclosure-of-ecosystem-details-istg-des-info-002)
+	  - [Disclosure of User Data (ISTG-DES-INFO-003)](#disclosure-of-user-data-istg-des-info-003)
+	- [Configuration and Patch Management (ISTG-DES-CONF)](#configuration-and-patch-management-istg-des-conf)
+	  - [Usage of Outdated Software (ISTG-DES-CONF-001)](#usage-of-outdated-software-istg-des-conf-001)
+	  - [Presence of Unnecessary Software and Functionalities (ISTG-DES-CONF-002)](#presence-of-unnecessary-software-and-functionalities-istg-des-conf-002)
+	- [Secrets (ISTG-DES-SCRT)](#secrets-istg-des-scrt)
+	  - [Access to Confidential Data (ISTG-DES-SCRT-001)](#access-to-confidential-data-istg-des-scrt-001)
+	- [Cryptography (ISTG-DES-CRYPT)](#cryptography-istg-des-crypt)
+	  - [Usage of Weak Cryptographic Algorithms (ISTG-DES-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-des-crypt-001)
+	- [Business Logic (ISTG-DES-LOGIC)](#business-logic-istg-des-logic)
+	  - [Circumvention of the Intended Business Logic (ISTG-DES-LOGIC-001)](#circumvention-of-the-intended-business-logic-istg-des-logic-001)
+	- [Input Validation (ISTG-DES-INPV)](#input-validation-istg-des-inpv)
+	  - [Insufficient Input Validation (ISTG-DES-INPV-001)](#insufficient-input-validation-istg-des-inpv-001)
+	  - [Code or Command Injection (ISTG-DES-INPV-002)](#code-or-command-injection-istg-des-inpv-002)
 
 
 
@@ -42,11 +42,11 @@ In regards to test case categories that are relevant for memory, the following w
 
 
 
-## Authorization (IOT-DES-AUTHZ)
+## Authorization (ISTG-DES-AUTHZ)
 
 Depending on the access model for a given device, only certain individuals might be allowed to access a data exchange service. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized users can get access.
 
-### Unauthorized Access to the Data Exchange Service (IOT-DES-AUTHZ-001)
+### Unauthorized Access to the Data Exchange Service (ISTG-DES-AUTHZ-001)
 
 **Required Access Levels**
 
@@ -88,7 +88,7 @@ For this test case, data from the following sources was consolidated:
 
 
 
-### Privilege Escalation (IOT-DES-AUTHZ-002)
+### Privilege Escalation (ISTG-DES-AUTHZ-002)
 
 **Required Access Levels**
 
@@ -109,7 +109,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Test Objectives**
 
-- Based on [IOT-DES-AUTHZ-001](#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
+- Based on [ISTG-DES-AUTHZ-001](#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
 
 **Remediation**
 
@@ -124,11 +124,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Information Gathering (IOT-DES-INFO)
+## Information Gathering (ISTG-DES-INFO)
 
 Data exchange service might disclose various information, which could reveal details regarding the inner workings of the device or the surrounding IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-### Disclosure of Implementation Details (IOT-DES-INFO-001)
+### Disclosure of Implementation Details (ISTG-DES-INFO-001)
 
 **Required Access Levels**
 
@@ -173,9 +173,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-iot-fw-info-001).
+This test case is based on: [ISTG-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-istg-fw-info-001).
 
-### Disclosure of Ecosystem Details (IOT-DES-INFO-002)
+### Disclosure of Ecosystem Details (ISTG-DES-INFO-002)
 
 **Required Access Levels**
 
@@ -214,9 +214,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-iot-fw-info-003).
+This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
-### Disclosure of User Data (IOT-DES-INFO-003)
+### Disclosure of User Data (ISTG-DES-INFO-003)
 
 **Required Access Levels**
 
@@ -253,15 +253,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-iot-fw[inst]-info-001).
+This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-istg-fw[inst]-info-001).
 
 
 
-## Configuration and Patch Management (IOT-DES-CONF)
+## Configuration and Patch Management (ISTG-DES-CONF)
 
-Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [IOT-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and are handling data exchange processes, are up-to-date as well.
+Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [ISTG-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and are handling data exchange processes, are up-to-date as well.
 
-### Usage of Outdated Software (IOT-DES-CONF-001)
+### Usage of Outdated Software (ISTG-DES-CONF-001)
 
 **Required Access Levels**
 
@@ -301,9 +301,9 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Web Security Testing Guide"][owasp_wstg]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-iot-fw-conf-001).
+This test case is based on: [ISTG-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-istg-fw-conf-001).
 
-### Presence of Unnecessary Software and Functionalities (IOT-DES-CONF-002)
+### Presence of Unnecessary Software and Functionalities (ISTG-DES-CONF-002)
 
 **Required Access Levels**
 
@@ -341,15 +341,15 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Web Security Testing Guide"][owasp_wstg]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-iot-fw-conf-002).
+This test case is based on: [ISTG-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-istg-fw-conf-002).
 
 
 
-## Secrets (IOT-DES-SCRT)
+## Secrets (ISTG-DES-SCRT)
 
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes withinthe IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
-### Access to Confidential Data (IOT-DES-SCRT-001)
+### Access to Confidential Data (ISTG-DES-SCRT-001)
 
 **Required Access Levels**
 
@@ -388,11 +388,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Cryptography (IOT-DES-CRYPT)
+## Cryptography (ISTG-DES-CRYPT)
 
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Usage of Weak Cryptographic Algorithms (IOT-DES-CRYPT-001)
+### Usage of Weak Cryptographic Algorithms (ISTG-DES-CRYPT-001)
 
 **Required Access Levels**
 
@@ -417,7 +417,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, processed by the data exchange service, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [IOT-DES-INFO-001](#disclosure-of-implementation-details-iot-des-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-DES-INFO-001](#disclosure-of-implementation-details-istg-des-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing,
  e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
@@ -433,15 +433,15 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Web Security Testing Guide"][owasp_wstg]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001).
+This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001).
 
 
 
-## Business Logic (IOT-DES-LOGIC)
+## Business Logic (ISTG-DES-LOGIC)
 
 Even if all other aspects of the data exchange service are securely implemented and configured, issues in the underlying logic itself might render the device vulnerable to attacks. Thus, it must be verified if the data exchange service and its functionalities are working as intended and if exceptions are detected and properly handled.
 
-### Circumvention of the Intended Business Logic (IOT-DES-LOGIC-001)
+### Circumvention of the Intended Business Logic (ISTG-DES-LOGIC-001)
 
 **Required Access Levels**
 
@@ -480,11 +480,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Input Validation (IOT-DES-INPV)
+## Input Validation (ISTG-DES-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-DES-INPV-001)
+### Insufficient Input Validation (ISTG-DES-INPV-001)
 
 **Required Access Levels**
 
@@ -523,7 +523,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Code or Command Injection (IOT-DES-INPV-002)
+### Code or Command Injection (ISTG-DES-INPV-002)
 
 **Required Access Levels**
 
@@ -544,7 +544,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-DES-INPV-001](#insufficient-input-validation-iot-des-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [ISTG-DES-INPV-001](#insufficient-input-validation-istg-des-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 

@@ -1,28 +1,28 @@
-# 3.7. Wireless Interfaces (IOT-WRLS)
+# 3.7. Wireless Interfaces (ISTG-WRLS)
 
 ## Table of Contents
-- [3.7. Wireless Interfaces (IOT-WRLS)](#37-wireless-interfaces-iot-wrls)
+- [3.7. Wireless Interfaces (ISTG-WRLS)](#37-wireless-interfaces-istg-wrls)
 	- [Table of Contents](#table-of-contents)
 	- [Overview](#overview)
-	- [Authorization (IOT-WRLS-AUTHZ)](#authorization-iot-wrls-authz)
-	  - [Unauthorized Access to the Interface (IOT-WRLS-AUTHZ-001)](#unauthorized-access-to-the-interface-iot-wrls-authz-001)
-	  - [Privilege Escalation (IOT-WRLS-AUTHZ-002)](#privilege-escalation-iot-wrls-authz-002)
-	- [Information Gathering (IOT-WRLS-INFO)](#information-gathering-iot-wrls-info)
-	  - [Disclosure of Implementation Details (IOT-WRLS-INFO-001)](#disclosure-of-implementation-details-iot-wrls-info-001)
-	  - [Disclosure of Ecosystem Details (IOT-WRLS-INFO-002)](#disclosure-of-ecosystem-details-iot-wrls-info-002)
-	  - [Disclosure of User Data (IOT-WRLS-INFO-003)](#disclosure-of-user-data-iot-wrls-info-003)
-	- [Configuration and Patch Management (IOT-WRLS-CONF)](#configuration-and-patch-management-iot-wrls-conf)
-	  - [Usage of Outdated Software (IOT-WRLS-CONF-001)](#usage-of-outdated-software-iot-wrls-conf-001)
-	  - [Presence of Unnecessary Software and Functionalities (IOT-WRLS-CONF-002)](#presence-of-unnecessary-software-and-functionalities-iot-wrls-conf-002)
-	- [Secrets (IOT-WRLS-SCRT)](#secrets-iot-wrls-scrt)
-	  - [Access to Confidential Data (IOT-WRLS-SCRT-001)](#access-to-confidential-data-iot-wrls-scrt-001)
-	- [Cryptography (IOT-WRLS-CRYPT)](#cryptography-iot-wrls-crypt)
-	  - [Usage of Weak Cryptographic Algorithms (IOT-WRLS-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-wrls-crypt-001)
-	- [Business Logic (IOT-WRLS-LOGIC)](#business-logic-iot-wrls-logic)
-	  - [Circumvention of the Intended Business Logic (IOT-WRLS-LOGIC-001)](#circumvention-of-the-intended-business-logic-iot-wrls-logic-001)
-	- [Input Validation (IOT-WRLS-INPV)](#input-validation-iot-wrls-inpv)
-	  - [Insufficient Input Validation (IOT-WRLS-INPV-001)](#insufficient-input-validation-iot-wrls-inpv-001)
-	  - [Code or Command Injection (IOT-WRLS-INPV-002)](#code-or-command-injection-iot-wrls-inpv-002)
+	- [Authorization (ISTG-WRLS-AUTHZ)](#authorization-istg-wrls-authz)
+	  - [Unauthorized Access to the Interface (ISTG-WRLS-AUTHZ-001)](#unauthorized-access-to-the-interface-istg-wrls-authz-001)
+	  - [Privilege Escalation (ISTG-WRLS-AUTHZ-002)](#privilege-escalation-istg-wrls-authz-002)
+	- [Information Gathering (ISTG-WRLS-INFO)](#information-gathering-istg-wrls-info)
+	  - [Disclosure of Implementation Details (ISTG-WRLS-INFO-001)](#disclosure-of-implementation-details-istg-wrls-info-001)
+	  - [Disclosure of Ecosystem Details (ISTG-WRLS-INFO-002)](#disclosure-of-ecosystem-details-istg-wrls-info-002)
+	  - [Disclosure of User Data (ISTG-WRLS-INFO-003)](#disclosure-of-user-data-istg-wrls-info-003)
+	- [Configuration and Patch Management (ISTG-WRLS-CONF)](#configuration-and-patch-management-istg-wrls-conf)
+	  - [Usage of Outdated Software (ISTG-WRLS-CONF-001)](#usage-of-outdated-software-istg-wrls-conf-001)
+	  - [Presence of Unnecessary Software and Functionalities (ISTG-WRLS-CONF-002)](#presence-of-unnecessary-software-and-functionalities-istg-wrls-conf-002)
+	- [Secrets (ISTG-WRLS-SCRT)](#secrets-istg-wrls-scrt)
+	  - [Access to Confidential Data (ISTG-WRLS-SCRT-001)](#access-to-confidential-data-istg-wrls-scrt-001)
+	- [Cryptography (ISTG-WRLS-CRYPT)](#cryptography-istg-wrls-crypt)
+	  - [Usage of Weak Cryptographic Algorithms (ISTG-WRLS-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-wrls-crypt-001)
+	- [Business Logic (ISTG-WRLS-LOGIC)](#business-logic-istg-wrls-logic)
+	  - [Circumvention of the Intended Business Logic (ISTG-WRLS-LOGIC-001)](#circumvention-of-the-intended-business-logic-istg-wrls-logic-001)
+	- [Input Validation (ISTG-WRLS-INPV)](#input-validation-istg-wrls-inpv)
+	  - [Insufficient Input Validation (ISTG-WRLS-INPV-001)](#insufficient-input-validation-istg-wrls-inpv-001)
+	  - [Code or Command Injection (ISTG-WRLS-INPV-002)](#code-or-command-injection-istg-wrls-inpv-002)
 
 
 
@@ -49,11 +49,11 @@ In regards of test case categories that are relevant for a wireless interface, t
 
 
 
-## Authorization (IOT-WRLS-AUTHZ)
+## Authorization (ISTG-WRLS-AUTHZ)
 
 Depending on the access model for a given device, only certain individuals might be allowed to access a wireless interface. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized users can get access.
 
-### Unauthorized Access to the Interface (IOT-WRLS-AUTHZ-001)
+### Unauthorized Access to the Interface (ISTG-WRLS-AUTHZ-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -90,9 +90,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-iot-des-authz-001).
+This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001).
 
-### Privilege Escalation (IOT-WRLS-AUTHZ-002)
+### Privilege Escalation (ISTG-WRLS-AUTHZ-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -111,7 +111,7 @@ Depending on the specific implementation of a given device, access to some funct
 
 **Test Objectives**
 
-- Based on [IOT-WRLS-AUTHZ-001](#unauthorized-access-to-the-interface-iot-wrls-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
+- Based on [ISTG-WRLS-AUTHZ-001](#unauthorized-access-to-the-interface-istg-wrls-authz-001), it must be determined whether there is a way to elevate the given access privileges and thus to access restricted functionalities.
 
 **Remediation**
 
@@ -127,15 +127,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-iot-des-authz-002).
+This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-istg-des-authz-002).
 
 
 
-## Information Gathering (IOT-WRLS-INFO)
+## Information Gathering (ISTG-WRLS-INFO)
 
 Wireless interface might disclose various information, which could reveal details regarding the inner workings of the device or the surrounding IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-### Disclosure of Implementation Details (IOT-WRLS-INFO-001)
+### Disclosure of Implementation Details (ISTG-WRLS-INFO-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -178,9 +178,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-iot-fw-info-002).
+This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-istg-fw-info-002).
 
-### Disclosure of Ecosystem Details (IOT-WRLS-INFO-002)
+### Disclosure of Ecosystem Details (ISTG-WRLS-INFO-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -217,9 +217,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-iot-fw-info-003).
+This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
-### Disclosure of User Data (IOT-WRLS-INFO-003)
+### Disclosure of User Data (ISTG-WRLS-INFO-003)
 **Required Access Levels**
 
 <table width="100%">
@@ -254,15 +254,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-iot-fw[inst]-info-001).
+This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-istg-fw[inst]-info-001).
 
 
 
-## Configuration and Patch Management (IOT-WRLS-CONF)
+## Configuration and Patch Management (ISTG-WRLS-CONF)
 
-Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [IOT-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
+Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [ISTG-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
 
-### Usage of Outdated Software (IOT-WRLS-CONF-001)
+### Usage of Outdated Software (ISTG-WRLS-CONF-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -303,9 +303,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-iot-fw-conf-001).
+This test case is based on: [ISTG-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-istg-fw-conf-001).
 
-### Presence of Unnecessary Software and Functionalities (IOT-WRLS-CONF-002)
+### Presence of Unnecessary Software and Functionalities (ISTG-WRLS-CONF-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -344,15 +344,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-iot-fw-conf-002).
+This test case is based on: [ISTG-FW-CONF-002](../firmware/README.md#presence-of-unnecessary-software-and-functionalities-istg-fw-conf-002).
 
 
 
-## Secrets (IOT-WRLS-SCRT)
+## Secrets (ISTG-WRLS-SCRT)
 
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
-### Access to Confidential Data (IOT-WRLS-SCRT-001)
+### Access to Confidential Data (ISTG-WRLS-SCRT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -387,15 +387,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-SCRT-001](../data_exchange_services/README.md#access-to-confidential-data-iot-des-scrt-001).
+This test case is based on: [ISTG-DES-SCRT-001](../data_exchange_services/README.md#access-to-confidential-data-istg-des-scrt-001).
 
 
 
-## Cryptography (IOT-WRLS-CRYPT)
+## Cryptography (ISTG-WRLS-CRYPT)
 
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Usage of Weak Cryptographic Algorithms (IOT-WRLS-CRYPT-001)
+### Usage of Weak Cryptographic Algorithms (ISTG-WRLS-CRYPT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -418,7 +418,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, processed by the interface, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [IOT-WRLS-INFO-001](#disclosure-of-implementation-details-iot-wrls-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-WRLS-INFO-001](#disclosure-of-implementation-details-istg-wrls-info-001), it must be checked whether headers, system messages etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
 
@@ -436,15 +436,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001).
+This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001).
 
 
 
-## Business Logic (IOT-WRLS-LOGIC)
+## Business Logic (ISTG-WRLS-LOGIC)
 
 Even if all other aspects of the wireless interface are securely implemented and configured, issues in the underlying logic itself might render the device vulnerable to attacks. Thus, it must be verified if the wireless interface and its functionalities are working as intended and if exceptions are detected and properly handled.
 
-### Circumvention of the Intended Business Logic (IOT-WRLS-LOGIC-001)
+### Circumvention of the Intended Business Logic (ISTG-WRLS-LOGIC-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -479,15 +479,15 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-iot-des-logic-001).
+This test case is based on: [ISTG-DES-LOGIC-001](../data_exchange_services/README.md#circumvention-of-the-intended-business-logic-istg-des-logic-001).
 
 
 
-## Input Validation (IOT-WRLS-INPV)
+## Input Validation (ISTG-WRLS-INPV)
 
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
-### Insufficient Input Validation (IOT-WRLS-INPV-001)
+### Insufficient Input Validation (ISTG-WRLS-INPV-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -524,9 +524,9 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-iot-des-inpv-001).
+This test case is based on: [ISTG-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-istg-des-inpv-001).
 
-### Code or Command Injection (IOT-WRLS-INPV-002)
+### Code or Command Injection (ISTG-WRLS-INPV-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -545,7 +545,7 @@ If no input validation is performed or only an insufficient input validation mec
 
 **Test Objectives**
 
-- Based on [IOT-WRLS-INPV-001](#insufficient-input-validation-iot-wrls-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
+- Based on [ISTG-WRLS-INPV-001](#insufficient-input-validation-istg-wrls-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system.
 
 **Remediation**
 
@@ -561,7 +561,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-This test case is based on: [IOT-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-iot-des-inpv-002).
+This test case is based on: [ISTG-DES-INPV-002](../data_exchange_services/README.md#code-or-command-injection-istg-des-inpv-002).
 
 
 

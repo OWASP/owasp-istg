@@ -1,16 +1,16 @@
-# 3.3.2. Firmware Update Mechanism (IOT-FW[UPDT])
+# 3.3.2. Firmware Update Mechanism (ISTG-FW[UPDT])
 
 ## Table of Contents
 * [Overview](#overview)
-* [Authorization (IOT-FW-AUTHZ)](#authorization-iot-fw[updt]-authz)
-  * [Unauthorized Firmware Update (IOT-FW-AUTHZ-001)](#unauthorized-firmware-update-iot-fw[updt]-authz-001)
-* [Cryptography (IOT-FW-CRYPT)](#cryptography-iot-fw[updt]-crypt)
-  * [Insufficient Firmware Update Signature (IOT-FW-CRYPT-001)](#insufficient-firmware-update-signature-iot-fw[updt]-crypt-001)
-  * [Insufficient Firmware Update Encryption (IOT-FW-CRYPT-002)](#insufficient-firmware-update-encryption-iot-fw[updt]-crypt-002)
-  * [Insecure Transmission of the Firmware Update (IOT-FW-CRYPT-003)](#insecure-transmission-of-the-firmware-update-iot-fw[updt]-crypt-003)
-  * [Insufficient Verification of the Firmware Update Signature (IOT-FW-CRYPT-004)](#insufficient-verification-of-the-firmware-update-signature-iot-fw[updt]-crypt-004)
-* [Business Logic (IOT-FW-LOGIC)](#business-logic-iot-fw[updt]-logic)
-  * [Insufficient Rollback Protection (IOT-FW-LOGIC-001)](#insufficient-rollback-protection-iot-fw[updt]-logic-001)
+* [Authorization (ISTG-FW-AUTHZ)](#authorization-istg-fw[updt]-authz)
+  * [Unauthorized Firmware Update (ISTG-FW-AUTHZ-001)](#unauthorized-firmware-update-istg-fw[updt]-authz-001)
+* [Cryptography (ISTG-FW-CRYPT)](#cryptography-istg-fw[updt]-crypt)
+  * [Insufficient Firmware Update Signature (ISTG-FW-CRYPT-001)](#insufficient-firmware-update-signature-istg-fw[updt]-crypt-001)
+  * [Insufficient Firmware Update Encryption (ISTG-FW-CRYPT-002)](#insufficient-firmware-update-encryption-istg-fw[updt]-crypt-002)
+  * [Insecure Transmission of the Firmware Update (ISTG-FW-CRYPT-003)](#insecure-transmission-of-the-firmware-update-istg-fw[updt]-crypt-003)
+  * [Insufficient Verification of the Firmware Update Signature (ISTG-FW-CRYPT-004)](#insufficient-verification-of-the-firmware-update-signature-istg-fw[updt]-crypt-004)
+* [Business Logic (ISTG-FW-LOGIC)](#business-logic-istg-fw[updt]-logic)
+  * [Insufficient Rollback Protection (ISTG-FW-LOGIC-001)](#insufficient-rollback-protection-istg-fw[updt]-logic-001)
 
 
 
@@ -18,19 +18,19 @@
 
 Another important aspect of the device firmware is the firmware update mechanism. Failing to implement a secure update mechanism might enable attackers to install a custom, manipulated firmware on the device, thus gaining complete control over it.
 
-The following categories are not inherited by the specialization [IOT-FW[UPDT]](./firmware_update_mechanism.md):
+The following categories are not inherited by the specialization [ISTG-FW[UPDT]](./firmware_update_mechanism.md):
 
-- **Configuration and Patch Management ([IOT-FW-CONF](./README.md#configuration-and-patch-management-iot-fw-conf))**: This category focuses on the configuration and patch management aspects of a firmware file. Since [IOT-FW[UPDT]](./firmware_update_mechanism.md) focuses on the firmware update mechanism rather than a specific firmware file, the respective test cases are not applicable.
+- **Configuration and Patch Management ([ISTG-FW-CONF](./README.md#configuration-and-patch-management-istg-fw-conf))**: This category focuses on the configuration and patch management aspects of a firmware file. Since [ISTG-FW[UPDT]](./firmware_update_mechanism.md) focuses on the firmware update mechanism rather than a specific firmware file, the respective test cases are not applicable.
 
-- **Secrets ([IOT-FW-SCRT](./README.md#secrets-iot-fw-scrt))**: This category focuses on the handling of secrets within a firmware file. Since [IOT-FW[UPDT]](./firmware_update_mechanism.md) focuses on the firmware update mechanism rather than a specific firmware file, the respective test cases are not applicable.
+- **Secrets ([ISTG-FW-SCRT](./README.md#secrets-istg-fw-scrt))**: This category focuses on the handling of secrets within a firmware file. Since [ISTG-FW[UPDT]](./firmware_update_mechanism.md) focuses on the firmware update mechanism rather than a specific firmware file, the respective test cases are not applicable.
 
 
 
-## Authorization (IOT-FW[UPDT]-AUTHZ)
+## Authorization (ISTG-FW[UPDT]-AUTHZ)
 
 Since the test of the firmware update mechanism is also a dynamic analysis, it is possible to check if only authorized individuals can initialize and perform an update.
 
-### Unauthorized Firmware Update (IOT-FW[UPDT]-AUTHZ-001)
+### Unauthorized Firmware Update (ISTG-FW[UPDT]-AUTHZ-001)
 
 **Required Access Levels**
 
@@ -68,11 +68,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Cryptography (IOT-FW[UPDT]-CRYPT)
+## Cryptography (ISTG-FW[UPDT]-CRYPT)
 
 During the firmware update process, cryptographic algorithms are used to verify the integrity of the new firmware and to ensure that no sensitive data is disclosed in transit.
 
-### Insufficient Firmware Update Signature (IOT-FW[UPDT]-CRYPT-001)
+### Insufficient Firmware Update Signature (ISTG-FW[UPDT]-CRYPT-001)
 
 **Required Access Levels**
 
@@ -97,7 +97,7 @@ One way to manipulate a device would be to install a manipulated firmware packag
 
 - If a digital signature is available, it must be checked whether the validity of the signature can be verified.
 
-- Based on [IOT-FW-CRYPT-001](./README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001), the cryptographic algorithm, used for generating the digital signature, has to be assessed in order to determine whether a weak our outdated algorithm was used.
+- Based on [ISTG-FW-CRYPT-001](./README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001), the cryptographic algorithm, used for generating the digital signature, has to be assessed in order to determine whether a weak our outdated algorithm was used.
 
 **Remediation**
 
@@ -112,7 +112,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Insufficient Firmware Update Encryption (IOT-FW[UPDT]-CRYPT-002)
+### Insufficient Firmware Update Encryption (ISTG-FW[UPDT]-CRYPT-002)
 
 **Required Access Levels**
 
@@ -137,7 +137,7 @@ Firmware update packages might include confidential data of the soft- and hardwa
 
 - If encryption is required, it must be determined whether the package is encrypted.
 
-- Based on [IOT-FW-CRYPT-001](./README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001), it has to be determined whether proper algorithms were used for encryption.
+- Based on [ISTG-FW-CRYPT-001](./README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001), it has to be determined whether proper algorithms were used for encryption.
 
 **Remediation**
 
@@ -154,7 +154,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Insecure Transmission of the Firmware Update (IOT-FW[UPDT]-CRYPT-003)
+### Insecure Transmission of the Firmware Update (ISTG-FW[UPDT]-CRYPT-003)
 
 **Required Access Levels**
 
@@ -194,7 +194,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-### Insufficient Verification of the Firmware Update Signature (IOT-FW[UPDT]-CRYPT-004)
+### Insufficient Verification of the Firmware Update Signature (ISTG-FW[UPDT]-CRYPT-004)
 
 **Required Access Levels**
 
@@ -215,7 +215,7 @@ Even if the firmware update package is digitally signed, an attacker could insta
 
 **Test Objectives**
 
-- Based on [IOT-FW-CRYPT-001](./README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001), it must be checked if the signature of the firmware update package is properly verified by the device during the update process.
+- Based on [ISTG-FW-CRYPT-001](./README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001), it must be checked if the signature of the firmware update package is properly verified by the device during the update process.
 
 **Remediation**
 
@@ -232,11 +232,11 @@ For this test case, data from the following sources was consolidated:
 
 
 
-## Business Logic (IOT-FW[UPDT]-LOGIC)
+## Business Logic (ISTG-FW[UPDT]-LOGIC)
 
 Even if all other aspects of the firmware update are securely implemented, issues in the underlying logic of the update process itself might render the device vulnerable to attacks. Thus, it must be verified if the process is working as intended and if exceptions are detected and properly handled.
 
-### Insufficient Rollback Protection (IOT-FW[UPDT]-LOGIC-001)
+### Insufficient Rollback Protection (ISTG-FW[UPDT]-LOGIC-001)
 
 **Required Access Levels**
 

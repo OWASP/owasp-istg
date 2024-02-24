@@ -1,16 +1,16 @@
-# 3.2. Memory (IOT-MEM)
+# 3.2. Memory (ISTG-MEM)
 
 ## Table of Contents
 * [Overview](#overview)
-* [Information Gathering (IOT-MEM-INFO)](#information-gathering-iot-mem-info)
-  * [Disclosure of Source Code (IOT-MEM-INFO-001)](#disclosure-of-source-code-iot-mem-info-001)
-  * [Disclosure of Implementation Details (IOT-MEM-INFO-002)](#disclosure-of-implementation-details-iot-mem-info-002)
-  * [Disclosure of Ecosystem Details (IOT-MEM-INFO-003)](#disclosure-of-ecosystem-details-iot-mem-info-003)
-  * [Disclosure of User Data (IOT-MEM-INFO-004)](#disclosure-of-user-data-iot-mem-info-004)
-* [Secrets (IOT-MEM-SCRT)](#secrets-iot-mem-scrt)
-  * [Unencrypted Storage of Secrets (IOT-MEM-SCRT-001)](#unencrypted-storage-of-secrets-iot-mem-scrt-001)
-* [Cryptography (IOT-MEM-CRYPT)](#cryptography-iot-mem-crypt)
-  * [Usage of Weak Cryptographic Algorithms (IOT-MEM-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-iot-mem-crypt-001)
+* [Information Gathering (ISTG-MEM-INFO)](#information-gathering-istg-mem-info)
+  * [Disclosure of Source Code (ISTG-MEM-INFO-001)](#disclosure-of-source-code-istg-mem-info-001)
+  * [Disclosure of Implementation Details (ISTG-MEM-INFO-002)](#disclosure-of-implementation-details-istg-mem-info-002)
+  * [Disclosure of Ecosystem Details (ISTG-MEM-INFO-003)](#disclosure-of-ecosystem-details-istg-mem-info-003)
+  * [Disclosure of User Data (ISTG-MEM-INFO-004)](#disclosure-of-user-data-istg-mem-info-004)
+* [Secrets (ISTG-MEM-SCRT)](#secrets-istg-mem-scrt)
+  * [Unencrypted Storage of Secrets (ISTG-MEM-SCRT-001)](#unencrypted-storage-of-secrets-istg-mem-scrt-001)
+* [Cryptography (ISTG-MEM-CRYPT)](#cryptography-istg-mem-crypt)
+  * [Usage of Weak Cryptographic Algorithms (ISTG-MEM-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-mem-crypt-001)
 
 
 
@@ -29,13 +29,13 @@ In regards to test case categories that are relevant for memory, the following w
 
 
 
-## Information Gathering (IOT-MEM-INFO)
+## Information Gathering (ISTG-MEM-INFO)
 
 The memory of an IoT device can include various data, which, if disclosed, could reveal details regarding the inner workings of the device or the underlying IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
 Tests on the device memory are performed by directly accessing the memory chips. Thus, invasive physical access (*PA-4*) is required while no user accounts are used (*AA-1*).
 
-### Disclosure of Source Code (IOT-MEM-INFO-001)
+### Disclosure of Source Code (ISTG-MEM-INFO-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -76,9 +76,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 
-This test case is based on: [IOT-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-iot-fw-info-001).
+This test case is based on: [ISTG-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-istg-fw-info-001).
 
-### Disclosure of Implementation Details (IOT-MEM-INFO-002)
+### Disclosure of Implementation Details (ISTG-MEM-INFO-002)
 **Required Access Levels**
 
 <table width="100%">
@@ -117,9 +117,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 
-This test case is based on: [IOT-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-iot-fw-info-002).
+This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-istg-fw-info-002).
 
-### Disclosure of Ecosystem Details (IOT-MEM-INFO-003)
+### Disclosure of Ecosystem Details (ISTG-MEM-INFO-003)
 **Required Access Levels**
 
 <table width="100%">
@@ -154,9 +154,9 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 
-This test case is based on: [IOT-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-iot-fw-info-003).
+This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
-### Disclosure of User Data (IOT-MEM-INFO-004)
+### Disclosure of User Data (ISTG-MEM-INFO-004)
 **Required Access Levels**
 
 <table width="100%">
@@ -189,15 +189,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 
-This test case is based on: [IOT-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-iot-fw[inst]-info-001).
+This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmware.md#disclosure-of-user-data-istg-fw[inst]-info-001).
 
 
 
-## Secrets (IOT-MEM-SCRT)
+## Secrets (ISTG-MEM-SCRT)
 
 IoT devices are often operated outside of the control space their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device can provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
-### Unencrypted Storage of Secrets (IOT-MEM-SCRT-001)
+### Unencrypted Storage of Secrets (ISTG-MEM-SCRT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -214,7 +214,7 @@ IoT devices are often operated outside of the control space their manufacturer.
 
 Sensitive data and secrets should be stored in an encrypted manner, so that even if an attacker has managed to get access to the memory, he has no access to the respective plaintext data.
 
-The strength of the cryptographic algorithms in use will be covered by [IOT-MEM-CRYPT-001](#usage-of-weak-cryptographic-algorithms-iot-mem-crypt-001) and has no relevance for this test case.
+The strength of the cryptographic algorithms in use will be covered by [ISTG-MEM-CRYPT-001](#usage-of-weak-cryptographic-algorithms-istg-mem-crypt-001) and has no relevance for this test case.
 
 **Test Objectives**
 
@@ -231,15 +231,15 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 
-This test case is based on: [IOT-FW-SCRT-002](../firmware/README.md#unencrypted-storage-of-secrets-iot-fw-scrt-002).
+This test case is based on: [ISTG-FW-SCRT-002](../firmware/README.md#unencrypted-storage-of-secrets-istg-fw-scrt-002).
 
 
 
-## Cryptography (IOT-MEM-CRYPT)
+## Cryptography (ISTG-MEM-CRYPT)
 
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
-### Usage of Weak Cryptographic Algorithms (IOT-MEM-CRYPT-001)
+### Usage of Weak Cryptographic Algorithms (ISTG-MEM-CRYPT-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -262,7 +262,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, stored on the device, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [IOT-MEM-INFO-001](#disclosure-of-source-code-iot-mem-info-001) and [IOT-MEM-INFO-002](#disclosure-of-implementation-details-iot-mem-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-MEM-INFO-001](#disclosure-of-source-code-istg-mem-info-001) and [ISTG-MEM-INFO-002](#disclosure-of-implementation-details-istg-mem-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
 
@@ -277,7 +277,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 
-This test case is based on: [IOT-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-iot-fw-crypt-001).
+This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001).
 
 
 

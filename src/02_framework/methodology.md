@@ -36,31 +36,31 @@ The following hierarchic levels and types of nodes are defined:
 
   *Short representation: 2 - 5 uppercase alphabetic characters*
 
-  *Examples: IOT-PROC, IOT-MEM, IOT-FW, IOT-DES, IOT-INT, IOT-PHY, IOT-WRLS, IOT-UI*
+  *Examples: ISTG-PROC, ISTG-MEM, ISTG-FW, ISTG-DES, ISTG-INT, ISTG-PHY, ISTG-WRLS, ISTG-UI*
 
-- **Component Specialization (Optional):** Optional component specializations can be used to define test cases that are only relevant for certain parts or exemplars of a component (e.g., installed firmware - IOT-FW[INST] - as specialization for the component firmware - IOT-FW - or SPI - IOT-INT[SPI] - as specialization for the component internal interface - IOT-INT).
+- **Component Specialization (Optional):** Optional component specializations can be used to define test cases that are only relevant for certain parts or exemplars of a component (e.g., installed firmware - ISTG-FW[INST] - as specialization for the component firmware - ISTG-FW - or SPI - ISTG-INT[SPI] - as specialization for the component internal interface - ISTG-INT).
 
-  By default, component specializations inherit all categories and test cases, defined for their parent node (e.g., all test cases defined for the component firmware - IOT-FW - are inherited by the specialization installed firmware - IOT-FW[INST]).
+  By default, component specializations inherit all categories and test cases, defined for their parent node (e.g., all test cases defined for the component firmware - ISTG-FW - are inherited by the specialization installed firmware - ISTG-FW[INST]).
 
-  If required, it is allowed to chain specializations, for example over-the-air firmware updates - IOT-FW\[UPDT][OTA] - as specialization of firmware update - IOT-FW[UPDT]. In this case, the second specialization inherits all categories and test cases, defined for the first specialization, thus also inheriting all test cases, defined for the component in general.
+  If required, it is allowed to chain specializations, for example over-the-air firmware updates - ISTG-FW\[UPDT][OTA] - as specialization of firmware update - ISTG-FW[UPDT]. In this case, the second specialization inherits all categories and test cases, defined for the first specialization, thus also inheriting all test cases, defined for the component in general.
 
   Furthermore, if required, it is also allowed to define a list of categories or test cases, which should be excluded from being inherited by a component specialization.
 
   *Short representation: 2 - 5 uppercase alphabetic characters in square brackets*
 
-  *Examples: IOT-FW[INST], IOT-FW[UPDT]*
+  *Examples: ISTG-FW[INST], ISTG-FW[UPDT]*
 
 - **Category:** The second main hierarchy level is the category, which can be used to group test cases, e.g., all test cases related to authorization can be grouped in the category AUTHZ.
 
   *Short representation: 2 - 5 uppercase alphabetic characters*
 
-  *Examples: IOT-\*-AUTHZ, IOT-\*-INFO, IOT-\*-CONF*
+  *Examples: ISTG-\*-AUTHZ, ISTG-\*-INFO, ISTG-\*-CONF*
 
 - **Test Case:** The third main hierarchy level is the test case. See [3. Test Case Catalog](../03_test_cases/README.md) for more details.
 
   *Short representation: three-digit incremental number of the test case.*
 
-  *Examples: IOT-FW-INFO-001, IOT-FW-INFO-002, IOT-FW-INFO-003*
+  *Examples: ISTG-FW-INFO-001, ISTG-FW-INFO-002, ISTG-FW-INFO-003*
 
 This kind of structure allows to efficiently determine applicable subtrees by deselecting nodes (e.g., components, component specializations and categories) that are not relevant for a given device or test scenario. The table below shows an exemplary list of nodes for each hierarchy level. An overview of all components and categories that are included in this guide can be seen in the figure below the table.
 
@@ -87,54 +87,54 @@ Another way to expand the catalog is to add custom components, categories and te
             <td colspan="2"><b>Component</b></td>
         </tr>
         <tr>
-            <td>IOT-PROC</td>
+            <td>ISTG-PROC</td>
             <td>Processing Unit</td>
         </tr>
         <tr>
-            <td>IOT-MEM</td>
+            <td>ISTG-MEM</td>
             <td>Memory</td>
         </tr>
         <tr>
-            <td>IOT-FW</td>
+            <td>ISTG-FW</td>
             <td>Firmware</td>
         </tr>
         <tr>
-            <td>IOT-DES</td>
+            <td>ISTG-DES</td>
             <td>Data Exchange Service</td>
         </tr>
         <tr>
-            <td>IOT-INT</td>
+            <td>ISTG-INT</td>
             <td>Internal Interface</td>
         </tr>
         <tr>
-            <td>IOT-PHY</td>
+            <td>ISTG-PHY</td>
             <td>Physical Interface</td>
         </tr>
         <tr>
-            <td>IOT-WRLS</td>
+            <td>ISTG-WRLS</td>
             <td>Wireless Interface</td>
         </tr>
         <tr>
-            <td>IOT-UI</td>
+            <td>ISTG-UI</td>
             <td>User Interface</td>
         </tr>
         <tr>
-            <td>IOT-*</td>
+            <td>ISTG-*</td>
             <td>Custom Component <i>(placeholder for future extensions)</i></td>
         </tr>
         <tr>
             <td colspan="2"><b>Component Specialization (Optional)</b></td>
         </tr>
         <tr>
-            <td>IOT-FW[INST]</td>
+            <td>ISTG-FW[INST]</td>
             <td>Installed Firmware</td>
         </tr>
         <tr>
-            <td>IOT-FW[UPDT]</td>
+            <td>ISTG-FW[UPDT]</td>
             <td>Firmware Update Mechanism</td>
         </tr>
         <tr>
-            <td>IOT-*[*]</td>
+            <td>ISTG-*[*]</td>
             <td>Custom Component Specialization <i>(placeholder for future extensions)</i></td>
         </tr>
         <tr>
@@ -142,39 +142,39 @@ Another way to expand the catalog is to add custom components, categories and te
             <td colspan="2"><b>Category</b></td>
         </tr>
         <tr>
-            <td>IOT-*-AUTHZ</td>
+            <td>ISTG-*-AUTHZ</td>
             <td>Authorization</td>
         </tr>
         <tr>
-            <td>IOT-*-INFO</td>
+            <td>ISTG-*-INFO</td>
             <td>Information Gathering</td>
         </tr>
         <tr>
-            <td>IOT-*-CRYPT</td>
+            <td>ISTG-*-CRYPT</td>
             <td>Cryptography</td>
         </tr>
         <tr>
-            <td>IOT-*-SCRT</td>
+            <td>ISTG-*-SCRT</td>
             <td>Secrets</td>
         </tr>
         <tr>
-            <td>IOT-*-CONF</td>
+            <td>ISTG-*-CONF</td>
             <td>Configuration and Patch Management</td>
         </tr>
         <tr>
-            <td>IOT-*-LOGIC</td>
+            <td>ISTG-*-LOGIC</td>
             <td>Business Logic</td>
         </tr>
         <tr>
-            <td>IOT-*-INPV</td>
+            <td>ISTG-*-INPV</td>
             <td>Input Validation</td>
         </tr>
         <tr>
-            <td>IOT-*-SIDEC</td>
+            <td>ISTG-*-SIDEC</td>
             <td>Side-Channel Attacks</td>
         </tr>
         <tr>
-            <td>IOT-*-*</td>
+            <td>ISTG-*-*</td>
             <td>Custom Category <i>(placeholder for future extensions)</i></td>
         </tr>
         <tr>
@@ -182,19 +182,19 @@ Another way to expand the catalog is to add custom components, categories and te
             <td colspan="2"><b>Test Case</b></td>
         </tr>
         <tr>
-            <td>IOT-*-INFO-001</td>
+            <td>ISTG-*-INFO-001</td>
             <td>Disclosure of Source Code</td>
         </tr>
         <tr>
-            <td>IOT-*-INFO-002</td>
+            <td>ISTG-*-INFO-002</td>
             <td>Disclosure of Implementation Details</td>
         </tr>
         <tr>
-            <td>IOT-*-INFO-003</td>
+            <td>ISTG-*-INFO-003</td>
             <td>Disclosure of Ecosystem Details</td>
         </tr>
         <tr>
-            <td>IOT-*-*-*</td>
+            <td>ISTG-*-*-*</td>
             <td>Custom Test Case <i>(placeholder for future extensions)</i></td>
         </tr>
     </tbody>
