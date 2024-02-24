@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Overview](#overview)
 * [Information Gathering (ISTG-FW-INFO)](#information-gathering-istg-fw-info)
-  * [Disclosure of Source Code (ISTG-FW-INFO-001)](#disclosure-of-source-code-istg-fw-info-001)
+  * [Disclosure of Source Code and Binaries (ISTG-FW-INFO-001)](#disclosure-of-source-code-and-binaries-istg-fw-info-001)
   * [Disclosure of Implementation Details (ISTG-FW-INFO-002)](#disclosure-of-implementation-details-istg-fw-info-002)
   * [Disclosure of Ecosystem Details (ISTG-FW-INFO-003)](#disclosure-of-ecosystem-details-istg-fw-info-003)
 * [Configuration and Patch Management (ISTG-FW-CONF)](#configuration-and-patch-management-istg-fw-conf)
@@ -45,7 +45,7 @@ All test cases and categories for the component [ISTG-FW](./README.md) focus on
 
 The firmware of an IoT device can include various information, which, if disclosed, could reveal details regarding the inner workings of the device or the surrounding IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
-### Disclosure of Source Code (ISTG-FW-INFO-001)
+### Disclosure of Source Code and Binaries (ISTG-FW-INFO-001)
 
 **Required Access Levels**
 
@@ -376,7 +376,7 @@ Sometimes, developers tend to incorporate secrets directly into the source code 
 
 **Test Objectives**
 
-- Based on [ISTG-FW-INFO-001](#disclosure-of-source-code-istg-fw-info-001), it must be checked if any hard-coded secrets can be identified.
+- Based on [ISTG-FW-INFO-001](#disclosure-of-source-code-and-binaries-istg-fw-info-001), it must be checked if any hard-coded secrets can be identified.
 
 **Remediation**
 
@@ -424,7 +424,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, stored by or within the firmware, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [ISTG-FW-INFO-001](#disclosure-of-source-code-istg-fw-info-001) and [ISTG-FW-INFO-002](#disclosure-of-implementation-details-istg-fw-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-FW-INFO-001](#disclosure-of-source-code-and-binaries-istg-fw-info-001) and [ISTG-FW-INFO-002](#disclosure-of-implementation-details-istg-fw-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
 

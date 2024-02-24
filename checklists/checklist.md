@@ -20,7 +20,7 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |Test ID|Test Name|Status|Notes|
 |-|-|-|-|
 |**ISTG-MEM-INFO**|**Information Gathering**|||
-|ISTG-MEM-INFO-001|Disclosure of Source Code|||
+|ISTG-MEM-INFO-001|Disclosure of Source Code and Binaries|||
 |ISTG-MEM-INFO-002|Disclosure of Implementation Details|||
 |ISTG-MEM-INFO-003|Disclosure of Ecosystem Details|||
 |ISTG-MEM-INFO-004|Disclosure of User Data|||
@@ -33,7 +33,7 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |Test ID|Test Name|Status|Notes|
 |-|-|-|-|
 |**ISTG-FW-INFO**|**Information Gathering**|||
-|ISTG-FW-INFO-001|Disclosure of Source Code|||
+|ISTG-FW-INFO-001|Disclosure of Source Code and Binaries|||
 |ISTG-FW-INFO-002|Disclosure of Implementation Details|||
 |ISTG-FW-INFO-003|Disclosure of Ecosystem Details|||
 |**ISTG-FW-CONF**|**Configuration and Patch Management**|||

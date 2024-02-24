@@ -183,7 +183,7 @@ Another way to expand the catalog is to add custom components, categories and te
         </tr>
         <tr>
             <td>ISTG-*-INFO-001</td>
-            <td>Disclosure of Source Code</td>
+            <td>Disclosure of Source Code and Binaries</td>
         </tr>
         <tr>
             <td>ISTG-*-INFO-002</td>

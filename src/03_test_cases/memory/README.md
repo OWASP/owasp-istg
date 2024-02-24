@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Overview](#overview)
 * [Information Gathering (ISTG-MEM-INFO)](#information-gathering-istg-mem-info)
-  * [Disclosure of Source Code (ISTG-MEM-INFO-001)](#disclosure-of-source-code-istg-mem-info-001)
+  * [Disclosure of Source Code and Binaries (ISTG-MEM-INFO-001)](#disclosure-of-source-code-and-binaries-istg-mem-info-001)
   * [Disclosure of Implementation Details (ISTG-MEM-INFO-002)](#disclosure-of-implementation-details-istg-mem-info-002)
   * [Disclosure of Ecosystem Details (ISTG-MEM-INFO-003)](#disclosure-of-ecosystem-details-istg-mem-info-003)
   * [Disclosure of User Data (ISTG-MEM-INFO-004)](#disclosure-of-user-data-istg-mem-info-004)
@@ -35,7 +35,7 @@ The memory of an IoT device can include various data, which, if disclosed, coul
 
 Tests on the device memory are performed by directly accessing the memory chips. Thus, invasive physical access (*PA-4*) is required while no user accounts are used (*AA-1*).
 
-### Disclosure of Source Code (ISTG-MEM-INFO-001)
+### Disclosure of Source Code and Binaries (ISTG-MEM-INFO-001)
 **Required Access Levels**
 
 <table width="100%">
@@ -76,7 +76,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 
-This test case is based on: [ISTG-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-istg-fw-info-001).
+This test case is based on: [ISTG-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-and-binaries-istg-fw-info-001).
 
 ### Disclosure of Implementation Details (ISTG-MEM-INFO-002)
 **Required Access Levels**
@@ -262,7 +262,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 - The data, stored on the device, must be checked for the presence of encrypted data segments. In case that encrypted data segments are found, it must be checked whether the cryptographic algorithms in use can be identified.
 
-- Furthermore, based on [ISTG-MEM-INFO-001](#disclosure-of-source-code-istg-mem-info-001) and [ISTG-MEM-INFO-002](#disclosure-of-implementation-details-istg-mem-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
+- Furthermore, based on [ISTG-MEM-INFO-001](#disclosure-of-source-code-and-binaries-istg-mem-info-001) and [ISTG-MEM-INFO-002](#disclosure-of-implementation-details-istg-mem-info-002), it must be checked whether any source code, configuration files etc. disclose the usage of certain cryptographic algorithms.
 
 - In case that cryptographic algorithms can be identified, it must be determined whether the algorithms in use and their configuration are providing a sufficient level of security at the time of testing, e.g., by consulting cryptography guidelines like the technical guideline [TR-02102-1](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.pdf?__blob=publicationFile&v=10) by the BSI.
 
