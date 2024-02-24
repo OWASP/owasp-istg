@@ -6,21 +6,21 @@
   - [x] Discuss and implement feedback - @ all collaborators
   - [x] Review changes and, if needed, iteratively repeat the previous steps - @ all collaborators
   - [x] Prepare OWASP project requirements - @ all collaborators
-- [ ] **Milestone 1: OWASP IoT Security Testing Guide Project Launched**
+- [x] **Milestone 1: OWASP IoT Security Testing Guide Project Launched**
   - [x] Submit OWASP project request - @ project leaders
   - [x] Approve project request and provide project repositories - @ OWASP project board
   - [x] Set up project repositories - @ project leaders
-  - [ ] Peer review of project draft, provide feedback - @ public, all collaborators
-  - [ ] Discuss and implement feedback - @ all collaborators
-  - [ ] Review changes and, if needed, iteratively repeat the previous steps - @ all collaborators
-- [ ] **Milestone 2: Project Team Established and Project Synced With other OWASP Projects**
-  - [ ] Meet and sync with other OWASP security testing guide leaders (WSTG, MASTG) - @ project leaders
-  - [ ] Prepare task tracking (Jira, Git Issues, etc.) to enable tracking, distribution and monitoring of tasks - @ project leaders
-  - [ ] Gather volunteers and establish project team - @ project leaders, project team
+  - [x] Peer review of project draft, provide feedback - @ public, all collaborators
+  - [x] Discuss and implement feedback - @ all collaborators
+  - [x] Review changes and, if needed, iteratively repeat the previous steps - @ all collaborators
+- [x] **Milestone 2: Project Team Established and Project Synced With other OWASP Projects**
+  - [x] Meet and sync with other OWASP security testing guide leaders (WSTG, MASTG) - @ project leaders
+  - [x] Prepare task tracking (Git Issues) to enable tracking, distribution and monitoring of tasks - @ project leaders
+  - [x] Gather volunteers and establish project team - @ project leaders, project team
 - [ ] **Milestone 3: Baseline Version Released**
-  - [ ] Gather feedback from the project team regarding draft version of the guide - @ project team
-  - [ ] Discuss and implement feedback - @ project team
-  - [ ] Review changes and, if needed, iteratively repeat the previous steps - @ project leaders, project team
+  - [x] Gather feedback from the project team regarding draft version of the guide - @ project team
+  - [x] Discuss and implement feedback - @ project team
+  - [x] Review changes and, if needed, iteratively repeat the previous steps - @ project leaders, project team
   - [ ] Approve and release baseline version - @ project leaders
 - [ ] **Milestone 4 - n: Continuous Development and Release of Modular Expansions**
   - [ ] Collect feedback and ideas for expansions; compile a list of technologies that future versions of the guide should cover - @ project leaders, project team
@@ -42,9 +42,8 @@
 | Role                | Description                                                  |
 | ------------------- | ------------------------------------------------------------ |
 | OWASP project board | OWASP project board/committee that reviews and approves new project ideas |
-| Collaborators       | All collaborators, who are working on the project draft before it is approved by the OWASP project board |
-| Project leaders     | OWASP project leaders once the project is approved by the OWASP project board |
-| Project team        | All volunteers, working on the project                       |
+| Collaborators       | All collaborators, who are working on the project            |
+| Project leaders     | OWASP project leaders                                        |
 | Core team           | Part of the team that monitors and updates the prioritized list of planned expansion modules<br />(depending on the project team size and feasibility either the whole project team or only a part of the team will be involved; feedback of all project team members is welcome) |
 | Expansion team      | Part of the team that is working on a particular expansion module |
 | Assigned reviewers  | Assigned team members, who are reviewing an expansion module draft |
