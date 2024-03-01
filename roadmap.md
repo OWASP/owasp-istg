@@ -17,11 +17,11 @@
   - [x] Meet and sync with other OWASP security testing guide leaders (WSTG, MASTG) - @ project leaders
   - [x] Prepare task tracking (Git Issues) to enable tracking, distribution and monitoring of tasks - @ project leaders
   - [x] Gather volunteers and establish project team - @ project leaders, project team
-- [ ] **Milestone 3: Baseline Version Released**
+- [x] **Milestone 3: Baseline Version Released**
   - [x] Gather feedback from the project team regarding draft version of the guide - @ project team
   - [x] Discuss and implement feedback - @ project team
   - [x] Review changes and, if needed, iteratively repeat the previous steps - @ project leaders, project team
-  - [ ] Approve and release baseline version - @ project leaders
+  - [x] Approve and release baseline version - @ project leaders
 - [ ] **Milestone 4 - n: Continuous Development and Release of Modular Expansions**
   - [ ] Collect feedback and ideas for expansions; compile a list of technologies that future versions of the guide should cover - @ project leaders, project team
   - [ ] Prioritize technologies - @ project leaders, core team (feedback of project team welcome)
