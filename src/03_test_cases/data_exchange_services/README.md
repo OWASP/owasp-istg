@@ -30,15 +30,17 @@
 
 ## Overview
 
-This section includes test cases and categories for the component memory. Similar to the processing unit, the memory is a device-internal element that can only be accessed with *PA-4*. Establishing a direct connection to the memory might require specific hardware equipment (e.g., a debugging board or test probes).
+This section includes test cases and categories for the component data exchange service. Based on its implementation and intended use, a data exchange service might be accessible with all physical access levels. 
 
-In regards to test case categories that are relevant for memory, the following were identified:
+In regards to test case categories that are relevant for data exchange service, the following were identified:
 
-- **Information Gathering:** Focuses on information that is stored on the memory chip and that might be disclosed to potential attackers if not being properly protected or removed.
-
-- **Secrets:** Focuses on secrets that are stored on the memory chip in an insecure manner.
-
-- **Cryptography:** Focuses on vulnerabilities in the cryptographic implementation.
+* **Authorization:** Focuses on vulnerabilities that allow to get unauthorized access to the data exchange process or to elevate privileges in order to access restricted functionalities.
+* **Information Gathering:** Focuses on information that is handled by the data exchange service and that might be disclosed to potential attackers if not being properly protected or removed.
+* **Conguration and Patch Management:** Focuses on vulnerabilities and issues in the configuration of a data exchange service and its software components.
+* **Secrets:** Focuses on secrets that are handled by the data exchange service in an insecure manner.
+* **Cryptography:** Focuses on vulnerabilities in the cryptographic implementation.
+* **Business Logic:** Focuses on vulnerabilities in the implementation of the data exchange service.
+* **Input Validation:** Focuses on vulnerabilities regarding the validation and processing of input from untrustworthy sources.
 
 
 
