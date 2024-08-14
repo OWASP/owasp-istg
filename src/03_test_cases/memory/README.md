@@ -195,7 +195,7 @@ This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmw
 
 ## Secrets (ISTG-MEM-SCRT)
 
-IoT devices are often operated outside of the control space their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device can provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
+IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device can provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
 ### Unencrypted Storage of Secrets (ISTG-MEM-SCRT-001)
 **Required Access Levels**
@@ -268,7 +268,7 @@ The usage of weak cryptographic algorithms might allow an attacker to recover th
 
 **Remediation**
 
-Only strong, state of the art cryptographic algorithms should be used. Furthermore, these algorithms must be used in a secure manner by setting proper parameters, such as an appropriate key length or mode ofoperation.
+Only strong, state of the art cryptographic algorithms should be used. Furthermore, these algorithms must be used in a secure manner by setting proper parameters, such as an appropriate key length or mode of operation.
 
 **References**
 
