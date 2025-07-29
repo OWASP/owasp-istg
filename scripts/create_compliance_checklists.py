@@ -13,6 +13,7 @@ TOOL_DIR = join(ROOT_DIR, "scripts")
 COMPLIANCE_MAPPINGS_FILE = join(TOOL_DIR, "compliance_mappings.json")
 CHECKLIST_JSON = join(CHECKLIST_DIR, "compliance_checklist.json")
 CHECKLIST_MARKDOWN = join(CHECKLIST_DIR, "compliance_checklist.md")
+DASHBOARD_HTML = join(CHECKLIST_DIR, "compliance_dashboard.html")
 
 MD_TABLE_HEADER = "|Test ID|Test Name|Status|Notes|IEC 62443|NIST CSF 2.0|EU RED|EU CRA/ETSI|\n|-|-|-|-|-|-|-|-|\n"
 MD_STYLE_CATEGORY = "**"
@@ -30,6 +31,7 @@ def main():
     # step 4: export enhanced test cases
     export_test_cases_json(enhanced_catalog)
     export_test_cases_markdown_with_compliance(enhanced_catalog)
+    export_self_contained_dashboard(enhanced_catalog)
 
 def parse_test_cases(test_case_dir=TEST_CASE_DIR):
     test_case_catalog = {}
@@ -311,6 +313,600 @@ def get_compliance_summary(test_case, framework_key):
         return "TBD"
     
     return "TBD"
+
+def export_self_contained_dashboard(enhanced_catalog, output_file=DASHBOARD_HTML):
+    """Export self-contained HTML dashboard with embedded JSON data"""
+    
+    # Convert the enhanced_catalog to JSON string for embedding
+    json_data = json.dumps(enhanced_catalog, indent=2)
+    
+    html_template = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP ISTG Compliance Dashboard</title>
+    <style>
+        * {{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }}
+
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }}
+
+        .header {{
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }}
+
+        .header h1 {{
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }}
+
+        .header p {{
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }}
+
+        .controls {{
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }}
+
+        .control-group {{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }}
+
+        .control-group label {{
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #555;
+        }}
+
+        select, input {{
+            padding: 0.5rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }}
+
+        select:focus, input:focus {{
+            outline: none;
+            border-color: #667eea;
+        }}
+
+        .framework-buttons {{
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }}
+
+        .framework-btn {{
+            padding: 0.5rem 1rem;
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }}
+
+        .framework-btn.active {{
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }}
+
+        .stats {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem;
+        }}
+
+        .stat-card {{
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }}
+
+        .stat-number {{
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+        }}
+
+        .stat-label {{
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }}
+
+        .content {{
+            margin: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }}
+
+        .test-case {{
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: none;
+        }}
+
+        .test-case.visible {{
+            display: block;
+        }}
+
+        .test-case:last-child {{
+            border-bottom: none;
+        }}
+
+        .test-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }}
+
+        .test-id {{
+            font-weight: bold;
+            color: #667eea;
+            font-size: 0.9rem;
+        }}
+
+        .test-title {{
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }}
+
+        .test-component {{
+            background: #f0f0f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #666;
+        }}
+
+        .compliance-grid {{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }}
+
+        .compliance-card {{
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 1rem;
+            background: #fafafa;
+        }}
+
+        .compliance-title {{
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }}
+
+        .compliance-detail {{
+            font-size: 0.8rem;
+            color: #666;
+            margin: 0.25rem 0;
+        }}
+
+        .status-indicator {{
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }}
+
+        .status-yes {{ background: #28a745; }}
+        .status-no {{ background: #dc3545; }}
+        .status-tbd {{ background: #ffc107; }}
+        .status-na {{ background: #6c757d; }}
+
+        .loading {{
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }}
+
+        .no-results {{
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            display: none;
+        }}
+
+        .success-message {{
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 8px;
+            border: 1px solid #c3e6cb;
+        }}
+
+        @media (max-width: 768px) {{
+            .controls {{
+                flex-direction: column;
+                align-items: stretch;
+            }}
+            
+            .framework-buttons {{
+                justify-content: center;
+            }}
+        }}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>OWASP ISTG Compliance Dashboard</h1>
+        <p>Interactive compliance framework mapping for IoT Security Testing Guide</p>
+    </div>
+
+    <div class="success-message">
+        ✅ Dashboard loaded successfully with embedded compliance data! No external files required.
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label>Component Filter:</label>
+            <select id="componentFilter">
+                <option value="">All Components</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Search Tests:</label>
+            <input type="text" id="searchFilter" placeholder="Search test cases...">
+        </div>
+
+        <div class="control-group">
+            <label>Framework Filter:</label>
+            <div class="framework-buttons">
+                <button class="framework-btn active" data-framework="all">All Frameworks</button>
+                <button class="framework-btn" data-framework="IEC_62443">IEC 62443</button>
+                <button class="framework-btn" data-framework="NIST_CSF">NIST CSF 2.0</button>
+                <button class="framework-btn" data-framework="EU_RED">EU RED</button>
+                <button class="framework-btn" data-framework="EU_CRA_ETSI">EU CRA/ETSI</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number" id="totalTests">0</div>
+            <div class="stat-label">Total Test Cases</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="mappedTests">0</div>
+            <div class="stat-label">Mapped Test Cases</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="frameworks">4</div>
+            <div class="stat-label">Compliance Frameworks</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" id="coverage">0%</div>
+            <div class="stat-label">Coverage</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="loading" id="loading" style="display: none;">Loading compliance data...</div>
+        <div class="no-results" id="noResults">No test cases match the current filters.</div>
+        <div id="testCases"></div>
+    </div>
+
+    <script>
+        // Embedded compliance data - no external file needed!
+        const complianceData = {json_data};
+        
+        let allTestCases = [];
+        let filteredTestCases = [];
+
+        // Initialize dashboard with embedded data
+        function initializeDashboard() {{
+            try {{
+                processData();
+                setupFilters();
+                updateStats();
+                renderTestCases();
+                console.log('Dashboard initialized successfully with embedded data');
+            }} catch (error) {{
+                console.error('Error initializing dashboard:', error);
+                document.getElementById('testCases').innerHTML = 
+                    '<div style="padding: 2rem; text-align: center; color: #dc3545;">Error initializing dashboard. Check console for details.</div>';
+            }}
+        }}
+
+        // Process raw data into flat test case array
+        function processData() {{
+            allTestCases = [];
+            
+            for (const componentId in complianceData) {{
+                if (componentId === 'compliance_frameworks') continue;
+                
+                const component = complianceData[componentId];
+                
+                // Process main categories
+                if (component.categories) {{
+                    for (const categoryId in component.categories) {{
+                        const category = component.categories[categoryId];
+                        if (category.test_cases) {{
+                            for (const testId in category.test_cases) {{
+                                const testCase = category.test_cases[testId];
+                                allTestCases.push({{
+                                    id: testId,
+                                    title: testCase.title,
+                                    component: component.title,
+                                    componentId: componentId,
+                                    category: category.title,
+                                    categoryId: categoryId,
+                                    compliance_mappings: testCase.compliance_mappings || {{}},
+                                    risk_level: testCase.risk_level || 'Medium'
+                                }});
+                            }}
+                        }}
+                    }}
+                }}
+                
+                // Process specializations
+                if (component.specializations) {{
+                    for (const specId in component.specializations) {{
+                        const spec = component.specializations[specId];
+                        if (spec.categories) {{
+                            for (const categoryId in spec.categories) {{
+                                const category = spec.categories[categoryId];
+                                if (category.test_cases) {{
+                                    for (const testId in category.test_cases) {{
+                                        const testCase = category.test_cases[testId];
+                                        allTestCases.push({{
+                                            id: testId,
+                                            title: testCase.title,
+                                            component: spec.title,
+                                            componentId: specId,
+                                            category: category.title,
+                                            categoryId: categoryId,
+                                            compliance_mappings: testCase.compliance_mappings || {{}},
+                                            risk_level: testCase.risk_level || 'Medium'
+                                        }});
+                                    }}
+                                }}
+                            }}
+                        }}
+                    }}
+                }}
+            }}
+            
+            filteredTestCases = [...allTestCases];
+        }}
+
+        // Setup filter controls
+        function setupFilters() {{
+            // Populate component filter
+            const componentFilter = document.getElementById('componentFilter');
+            const components = [...new Set(allTestCases.map(tc => tc.component))].sort();
+            
+            components.forEach(component => {{
+                const option = document.createElement('option');
+                option.value = component;
+                option.textContent = component;
+                componentFilter.appendChild(option);
+            }});
+
+            // Setup event listeners
+            componentFilter.addEventListener('change', applyFilters);
+            document.getElementById('searchFilter').addEventListener('input', applyFilters);
+            
+            document.querySelectorAll('.framework-btn').forEach(btn => {{
+                btn.addEventListener('click', (e) => {{
+                    document.querySelectorAll('.framework-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    applyFilters();
+                }});
+            }});
+        }}
+
+        // Apply all filters
+        function applyFilters() {{
+            const componentFilter = document.getElementById('componentFilter').value;
+            const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+            const frameworkFilter = document.querySelector('.framework-btn.active').dataset.framework;
+
+            filteredTestCases = allTestCases.filter(tc => {{
+                // Component filter
+                if (componentFilter && tc.component !== componentFilter) return false;
+                
+                // Search filter
+                if (searchFilter && !tc.title.toLowerCase().includes(searchFilter) && 
+                    !tc.id.toLowerCase().includes(searchFilter)) return false;
+                
+                // Framework filter
+                if (frameworkFilter !== 'all') {{
+                    const mapping = tc.compliance_mappings[frameworkFilter];
+                    if (!mapping || (mapping.applicable === false)) return false;
+                }}
+                
+                return true;
+            }});
+
+            updateStats();
+            renderTestCases();
+        }}
+
+        // Update statistics
+        function updateStats() {{
+            document.getElementById('totalTests').textContent = allTestCases.length;
+            document.getElementById('mappedTests').textContent = 
+                allTestCases.filter(tc => Object.keys(tc.compliance_mappings).length > 0).length;
+            
+            const coverage = allTestCases.length > 0 ? 
+                Math.round((allTestCases.filter(tc => Object.keys(tc.compliance_mappings).length > 0).length / allTestCases.length) * 100) : 0;
+            document.getElementById('coverage').textContent = coverage + '%';
+        }}
+
+        // Render test cases
+        function renderTestCases() {{
+            const container = document.getElementById('testCases');
+            const noResults = document.getElementById('noResults');
+            
+            if (filteredTestCases.length === 0) {{
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }}
+            
+            noResults.style.display = 'none';
+            
+            container.innerHTML = filteredTestCases.map(tc => `
+                <div class="test-case visible">
+                    <div class="test-header">
+                        <div>
+                            <div class="test-id">${{tc.id}}</div>
+                            <div class="test-title">${{tc.title}}</div>
+                        </div>
+                        <div class="test-component">${{tc.component}}</div>
+                    </div>
+                    <div class="compliance-grid">
+                        ${{renderComplianceCards(tc.compliance_mappings)}}
+                    </div>
+                </div>
+            `).join('');
+        }}
+
+        // Render compliance cards for a test case
+        function renderComplianceCards(mappings) {{
+            const frameworks = [
+                {{ key: 'IEC_62443', name: 'IEC 62443' }},
+                {{ key: 'NIST_CSF', name: 'NIST CSF 2.0' }},
+                {{ key: 'EU_RED', name: 'EU RED' }},
+                {{ key: 'EU_CRA_ETSI', name: 'EU CRA/ETSI' }}
+            ];
+
+            return frameworks.map(fw => {{
+                const mapping = mappings[fw.key] || {{}};
+                return `
+                    <div class="compliance-card">
+                        <div class="compliance-title">
+                            ${{getStatusIndicator(mapping)}} ${{fw.name}}
+                        </div>
+                        ${{renderComplianceDetails(fw.key, mapping)}}
+                    </div>
+                `;
+            }}).join('');
+        }}
+
+        // Get status indicator
+        function getStatusIndicator(mapping) {{
+            if (!mapping || Object.keys(mapping).length === 0) {{
+                return '<span class="status-indicator status-na"></span>';
+            }}
+            if (mapping.applicable === false) {{
+                return '<span class="status-indicator status-na"></span>';
+            }}
+            if (mapping.applicable === true || mapping.applicable === undefined) {{
+                const hasTBD = JSON.stringify(mapping).includes('To be determined') || 
+                              JSON.stringify(mapping).includes('TBD');
+                return hasTBD ? 
+                    '<span class="status-indicator status-tbd"></span>' : 
+                    '<span class="status-indicator status-yes"></span>';
+            }}
+            return '<span class="status-indicator status-tbd"></span>';
+        }}
+
+        // Render compliance details
+        function renderComplianceDetails(frameworkKey, mapping) {{
+            if (!mapping || Object.keys(mapping).length === 0) {{
+                return '<div class="compliance-detail">No mapping available</div>';
+            }}
+
+            if (mapping.applicable === false) {{
+                return `<div class="compliance-detail">Not applicable: ${{mapping.reason || 'N/A'}}</div>`;
+            }}
+
+            let details = [];
+
+            switch (frameworkKey) {{
+                case 'IEC_62443':
+                    if (mapping.security_level) {{
+                        details.push(`Security Level: ${{mapping.security_level}}`);
+                    }}
+                    if (mapping.foundational_requirement) {{
+                        details.push(`FR: ${{mapping.foundational_requirement}}`);
+                    }}
+                    break;
+
+                case 'NIST_CSF':
+                    if (mapping.functions && Array.isArray(mapping.functions)) {{
+                        details.push(`Functions: ${{mapping.functions.join(', ')}}`);
+                    }}
+                    if (mapping.categories && Array.isArray(mapping.categories)) {{
+                        details.push(`Categories: ${{mapping.categories.slice(0, 2).join(', ')}}`);
+                    }}
+                    break;
+
+                case 'EU_RED':
+                    if (mapping.articles && Array.isArray(mapping.articles)) {{
+                        details.push(`Articles: ${{mapping.articles.join(', ')}}`);
+                    }}
+                    if (mapping.requirements && Array.isArray(mapping.requirements)) {{
+                        details.push(`Requirements: ${{mapping.requirements[0]}}`);
+                    }}
+                    break;
+
+                case 'EU_CRA_ETSI':
+                    if (mapping.essential_requirements && Array.isArray(mapping.essential_requirements)) {{
+                        details.push(`Requirements: ${{mapping.essential_requirements.join(', ')}}`);
+                    }}
+                    if (mapping.etsi_provisions && Array.isArray(mapping.etsi_provisions)) {{
+                        details.push(`ETSI: ${{mapping.etsi_provisions.slice(0, 1).join(', ')}}`);
+                    }}
+                    break;
+            }}
+
+            return details.length > 0 ? 
+                details.map(d => `<div class="compliance-detail">${{d}}</div>`).join('') :
+                '<div class="compliance-detail">Mapping available</div>';
+        }}
+
+        // Initialize the dashboard when page loads
+        document.addEventListener('DOMContentLoaded', initializeDashboard);
+    </script>
+</body>
+</html>'''
+
+    # Write the self-contained HTML file
+    with open(output_file, 'w') as f:
+        f.write(html_template)
+    
+    print(f"Self-contained HTML dashboard exported to: {output_file}")
 
 if __name__ == "__main__":
     main()
