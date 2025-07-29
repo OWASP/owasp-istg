@@ -1,0 +1,344 @@
+{
+  "compliance_frameworks": {
+    "IEC_62443": {
+      "name": "IEC 62443 Industrial Automation and Control Systems Security",
+      "version": "2024",
+      "description": "Security requirements for Industrial Automation and Control Systems (IACS)",
+      "security_levels": ["SL-1", "SL-2", "SL-3", "SL-4"],
+      "foundational_requirements": [
+        "Identification and Authentication Control",
+        "Use Control", 
+        "System Integrity",
+        "Data Confidentiality",
+        "Restricted Data Flow",
+        "Timely Response to Events",
+        "Resource Availability"
+      ]
+    },
+    "NIST_CSF": {
+      "name": "NIST Cybersecurity Framework 2.0 + IoT Guidance",
+      "version": "2.0 (2024)",
+      "description": "US Federal cybersecurity framework with IoT-specific guidance (SP 800-213 series)",
+      "functions": ["Identify", "Protect", "Detect", "Respond", "Recover", "Govern"],
+      "iot_guidance": "NIST SP 800-213A IoT Device Cybersecurity Guidance"
+    },
+    "EU_RED": {
+      "name": "EU Radio Equipment Directive",
+      "version": "2024 (effective August 2025)",
+      "description": "EU security requirements for wireless devices",
+      "articles": {
+        "3.3(d)": "Network Protection - prevent disruption to communication networks",
+        "3.3(e)": "Personal Data Protection - secure handling of personal, traffic, and location data",
+        "3.3(f)": "Financial Transaction Protection - secure money/value transfers"
+      },
+      "standards": ["EN 18031-1:2024", "EN 18031-2:2024", "EN 18031-3:2024"]
+    },
+    "EU_CRA_ETSI": {
+      "name": "EU Cyber Resilience Act + ETSI EN 303 645",
+      "version": "2024+",
+      "description": "EU cybersecurity requirements for consumer IoT devices",
+      "essential_requirements": ["Security by design", "Vulnerability handling", "Software updates"],
+      "etsi_provisions": "ETSI EN 303 645 Consumer IoT cybersecurity baseline"
+    }
+  },
+  "test_case_mappings": {
+    "ISTG-PROC-AUTHZ-001": {
+      "title": "Unauthorized Access to the Processing Unit",
+      "category": "Authorization",
+      "component": "Processing Units",
+      "risk_level": "High",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 1 - Identification and Authentication Control", "FR 2 - Use Control"],
+          "security_level": "SL-2",
+          "foundational_requirement": "Identification and Authentication Control",
+          "technical_requirement": "CR 1.1 - Human User Identification and Authentication"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.AC-1 - Identities and credentials", "PR.AC-4 - Access permissions"],
+          "subcategories": ["PR.AC-1.1", "PR.AC-4.1"],
+          "iot_guidance": "Device identity management capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Processing unit access not covered by wireless device requirements"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 1 - No universal default passwords", "Provision 5 - Authentication mechanisms"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-PROC-AUTHZ-002": {
+      "title": "Privilege Escalation",
+      "category": "Authorization", 
+      "component": "Processing Units",
+      "risk_level": "High",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 2 - Use Control"],
+          "security_level": "SL-2",
+          "foundational_requirement": "Use Control",
+          "technical_requirement": "CR 2.1 - Authorization Enforcement"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.AC-4 - Access permissions", "PR.AC-3 - Remote access"],
+          "subcategories": ["PR.AC-4.2", "PR.AC-3.1"],
+          "iot_guidance": "Device authorization and privilege management"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Processing unit privilege escalation not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 5 - Authentication mechanisms", "Provision 6 - Authorization mechanisms"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-PROC-LOGIC-001": {
+      "title": "Insecure Implementation of Instructions",
+      "category": "Business Logic",
+      "component": "Processing Units", 
+      "risk_level": "Medium",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 3 - System Integrity"],
+          "security_level": "SL-2",
+          "foundational_requirement": "System Integrity",
+          "technical_requirement": "CR 3.1 - Communication Integrity"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.IP-1 - Baseline configuration"],
+          "subcategories": ["PR.DS-1.1", "PR.IP-1.1"],
+          "iot_guidance": "Device integrity protection capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Business logic implementation not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design", "Vulnerability handling"],
+          "etsi_provisions": ["Provision 2 - Implement security update mechanism", "Provision 4 - Secure default values"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-PROC-SIDEC-001": {
+      "title": "Insufficient Protection Against Side-Channel Attacks",
+      "category": "Side-Channel Attacks",
+      "component": "Processing Units",
+      "risk_level": "High",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality", "FR 3 - System Integrity"], 
+          "security_level": "SL-3",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.1 - Information Confidentiality"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.DS-2 - Data in transit"],
+          "subcategories": ["PR.DS-1.2", "PR.DS-2.1"], 
+          "iot_guidance": "Cryptographic capabilities and key management"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Side-channel attacks not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 8 - Data protection", "Provision 9 - Cryptographic security"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-MEM-INFO-001": {
+      "title": "Disclosure of Source Code and Binaries",
+      "category": "Information Gathering",
+      "component": "Memory",
+      "risk_level": "Medium",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality"],
+          "security_level": "SL-1",
+          "foundational_requirement": "Data Confidentiality", 
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.IP-2 - Software development lifecycle"],
+          "subcategories": ["PR.DS-1.3", "PR.IP-2.1"],
+          "iot_guidance": "Device configuration management capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Source code disclosure not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 4 - Secure default values", "Provision 8 - Data protection"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-MEM-INFO-002": {
+      "title": "Disclosure of Implementation Details",
+      "category": "Information Gathering",
+      "component": "Memory",
+      "risk_level": "Low",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality"],
+          "security_level": "SL-1",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest"],
+          "subcategories": ["PR.DS-1.3"],
+          "iot_guidance": "Device configuration management capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Implementation details disclosure not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 8 - Data protection"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-MEM-INFO-003": {
+      "title": "Disclosure of Ecosystem Details",
+      "category": "Information Gathering", 
+      "component": "Memory",
+      "risk_level": "Medium",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality", "FR 5 - Restricted Data Flow"],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.AC-5 - Network integrity"],
+          "subcategories": ["PR.DS-1.3", "PR.AC-5.1"],
+          "iot_guidance": "Device configuration management and network connection capabilities"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": ["3.3(d)"],
+          "requirements": ["Network protection - prevent network disruption"],
+          "standards": ["EN 18031-1:2024"]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 8 - Data protection", "Provision 10 - System telemetry data"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-MEM-INFO-004": {
+      "title": "Disclosure of User Data",
+      "category": "Information Gathering",
+      "component": "Memory", 
+      "risk_level": "High",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality"],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.DS-3 - Assets formally managed"],
+          "subcategories": ["PR.DS-1.1", "PR.DS-3.1"],
+          "iot_guidance": "Device data protection capabilities"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": ["3.3(e)"], 
+          "requirements": ["Personal data protection - secure handling of personal, traffic, and location data"],
+          "standards": ["EN 18031-2:2024"]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 8 - Data protection", "Provision 7 - Secure communication"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-MEM-SCRT-001": {
+      "title": "Unencrypted Storage of Secrets",
+      "category": "Secrets",
+      "component": "Memory",
+      "risk_level": "High",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality"],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.AC-1 - Identities and credentials"],
+          "subcategories": ["PR.DS-1.1", "PR.AC-1.2"],
+          "iot_guidance": "Device identity and cryptographic capabilities"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": ["3.3(e)", "3.3(f)"],
+          "requirements": ["Personal data protection", "Financial transaction protection"],
+          "standards": ["EN 18031-2:2024", "EN 18031-3:2024"]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 9 - Cryptographic security", "Provision 1 - No universal default passwords"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    "ISTG-MEM-CRYPT-001": {
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "category": "Cryptography",
+      "component": "Memory",
+      "risk_level": "High",
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": ["FR 4 - Data Confidentiality"],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.1 - Information Confidentiality"
+        },
+        "NIST_CSF": {
+          "functions": ["Protect"],
+          "categories": ["PR.DS-1 - Data at rest", "PR.DS-2 - Data in transit"],
+          "subcategories": ["PR.DS-1.2", "PR.DS-2.1"],
+          "iot_guidance": "Cryptographic capabilities and protocols"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": ["3.3(e)", "3.3(f)"],
+          "requirements": ["Secure data handling", "Secure financial transactions"],
+          "standards": ["EN 18031-2:2024", "EN 18031-3:2024"]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": ["Security by design"],
+          "etsi_provisions": ["Provision 9 - Cryptographic security", "Provision 7 - Secure communication"],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    }
+  }
+}

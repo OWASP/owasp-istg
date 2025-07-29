@@ -1,0 +1,5111 @@
+{
+  "metadata": {
+    "title": "OWASP ISTG Risk Prioritization Report",
+    "description": "Risk-based prioritization of IoT security test cases across compliance frameworks",
+    "frameworks_analyzed": [
+      "IEC 62443",
+      "NIST CSF 2.0",
+      "EU RED",
+      "EU CRA/ETSI"
+    ],
+    "risk_methodology": "Multi-factor analysis based on compliance framework priorities and component criticality"
+  },
+  "risk_summary": {
+    "critical": [
+      {
+        "id": "ISTG-MEM-SCRT-001",
+        "title": "Unencrypted Storage of Secrets",
+        "component": "Memory",
+        "risk_score": 4
+      },
+      {
+        "id": "ISTG-MEM-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Memory",
+        "risk_score": 4
+      },
+      {
+        "id": "ISTG-PROC-AUTHZ-001",
+        "title": "Unauthorized Access to the Processing Unit",
+        "component": "Processing Units",
+        "risk_score": 4
+      },
+      {
+        "id": "ISTG-PROC-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Processing Units",
+        "risk_score": 4
+      },
+      {
+        "id": "ISTG-PROC-SIDEC-001",
+        "title": "Insufficient Protection Against Side-Channel Attacks",
+        "component": "Processing Units",
+        "risk_score": 4
+      },
+      {
+        "id": "ISTG-MEM-INFO-004",
+        "title": "Disclosure of User Data",
+        "component": "Memory",
+        "risk_score": 3.75
+      },
+      {
+        "id": "ISTG-PROC-LOGIC-001",
+        "title": "Insecure Implementation of Instructions",
+        "component": "Processing Units",
+        "risk_score": 3.67
+      },
+      {
+        "id": "ISTG-WRLS-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.67
+      },
+      {
+        "id": "ISTG-WRLS-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.67
+      },
+      {
+        "id": "ISTG-WRLS-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.67
+      },
+      {
+        "id": "ISTG-WRLS-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.67
+      },
+      {
+        "id": "ISTG-FW-SCRT-001",
+        "title": "Secrets Stored in Public Storage",
+        "component": "Firmware",
+        "risk_score": 3.5
+      },
+      {
+        "id": "ISTG-FW-SCRT-002",
+        "title": "Unencrypted Storage of Secrets",
+        "component": "Firmware",
+        "risk_score": 3.5
+      },
+      {
+        "id": "ISTG-FW-SCRT-003",
+        "title": "Usage of Hardcoded Secrets",
+        "component": "Firmware",
+        "risk_score": 3.5
+      },
+      {
+        "id": "ISTG-FW-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Firmware",
+        "risk_score": 3.5
+      },
+      {
+        "id": "ISTG-MEM-INFO-003",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Memory",
+        "risk_score": 3.5
+      }
+    ],
+    "high": [
+      {
+        "id": "ISTG-WRLS-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.33
+      },
+      {
+        "id": "ISTG-WRLS-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.33
+      },
+      {
+        "id": "ISTG-WRLS-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.33
+      },
+      {
+        "id": "ISTG-WRLS-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.33
+      },
+      {
+        "id": "ISTG-WRLS-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.33
+      },
+      {
+        "id": "ISTG-FW-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Firmware",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-FW-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Firmware",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-MEM-INFO-001",
+        "title": "Disclosure of Source Code and Binaries",
+        "component": "Memory",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-MEM-INFO-002",
+        "title": "Disclosure of Implementation Details",
+        "component": "Memory",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-WRLS-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-WRLS-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-WRLS-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Wireless Interfaces",
+        "risk_score": 3.0
+      },
+      {
+        "id": "ISTG-DES-AUTHZ-001",
+        "title": "Unauthorized Access to the Data Exchange Service",
+        "component": "Data Exchange Services",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-DES-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Data Exchange Services",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-DES-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Data Exchange Services",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-DES-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Data Exchange Services",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW-INFO-001",
+        "title": "Disclosure of Source Code and Binaries",
+        "component": "Firmware",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW-INFO-002",
+        "title": "Disclosure of Implementation Details",
+        "component": "Firmware",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW-INFO-003",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Firmware",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[UPDT]-AUTHZ-001",
+        "title": "Unauthorized Firmware Update",
+        "component": "Firmware Update Mechanism",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-001",
+        "title": "Insufficient Firmware Update Signature",
+        "component": "Firmware Update Mechanism",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-002",
+        "title": "Insufficient Firmware Update Encryption",
+        "component": "Firmware Update Mechanism",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-003",
+        "title": "Insecure Transmission of the Firmware Update",
+        "component": "Firmware Update Mechanism",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-004",
+        "title": "Insufficient Verification of the Firmware Update Signature",
+        "component": "Firmware Update Mechanism",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[INST]-AUTHZ-001",
+        "title": "Unauthorized Access to the Firmware",
+        "component": "Installed Firmware",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[INST]-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Installed Firmware",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-FW[INST]-CRYPT-001",
+        "title": "Insufficient Verification of the Bootloader Signature",
+        "component": "Installed Firmware",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-INT-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Internal Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-INT-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Internal Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-INT-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Internal Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-INT-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Internal Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-PHY-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Physical Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-PHY-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Physical Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-PHY-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Physical Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-PHY-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Physical Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-UI-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "User Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-UI-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "User Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-UI-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "User Interfaces",
+        "risk_score": 2.5
+      },
+      {
+        "id": "ISTG-UI-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "User Interfaces",
+        "risk_score": 2.5
+      }
+    ],
+    "medium": [
+      {
+        "id": "ISTG-DES-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Data Exchange Services",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-DES-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Data Exchange Services",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-DES-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Data Exchange Services",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-DES-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Data Exchange Services",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-DES-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Data Exchange Services",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-FW[UPDT]-LOGIC-001",
+        "title": "Insufficient Rollback Protection",
+        "component": "Firmware Update Mechanism",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-INT-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Internal Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-INT-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Internal Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-INT-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Internal Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-INT-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Internal Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-INT-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Internal Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-PHY-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Physical Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-PHY-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Physical Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-PHY-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Physical Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-PHY-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Physical Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-PHY-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Physical Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-UI-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "User Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-UI-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "User Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-UI-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "User Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-UI-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "User Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-UI-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "User Interfaces",
+        "risk_score": 2.0
+      },
+      {
+        "id": "ISTG-DES-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Data Exchange Services",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-DES-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Data Exchange Services",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-DES-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Data Exchange Services",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-FW[INST]-INFO-001",
+        "title": "Disclosure of User Data",
+        "component": "Installed Firmware",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-INT-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Internal Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-INT-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Internal Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-INT-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Internal Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-PHY-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Physical Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-PHY-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Physical Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-PHY-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Physical Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-UI-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "User Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-UI-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "User Interfaces",
+        "risk_score": 1.5
+      },
+      {
+        "id": "ISTG-UI-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "User Interfaces",
+        "risk_score": 1.5
+      }
+    ],
+    "low": []
+  },
+  "framework_analysis": {
+    "IEC_62443": {
+      "test_cases": [
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-SIDEC-001",
+        "ISTG-MEM-INFO-004",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-WRLS-AUTHZ-001",
+        "ISTG-WRLS-AUTHZ-002",
+        "ISTG-WRLS-SCRT-001",
+        "ISTG-WRLS-CRYPT-001",
+        "ISTG-FW-SCRT-001",
+        "ISTG-FW-SCRT-002",
+        "ISTG-FW-SCRT-003",
+        "ISTG-FW-CRYPT-001",
+        "ISTG-MEM-INFO-003",
+        "ISTG-WRLS-CONF-001",
+        "ISTG-WRLS-CONF-002",
+        "ISTG-WRLS-LOGIC-001",
+        "ISTG-WRLS-INPV-001",
+        "ISTG-WRLS-INPV-002",
+        "ISTG-FW-CONF-001",
+        "ISTG-FW-CONF-002",
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-WRLS-INFO-001",
+        "ISTG-WRLS-INFO-002",
+        "ISTG-WRLS-INFO-003",
+        "ISTG-DES-AUTHZ-001",
+        "ISTG-DES-AUTHZ-002",
+        "ISTG-DES-SCRT-001",
+        "ISTG-DES-CRYPT-001",
+        "ISTG-FW-INFO-001",
+        "ISTG-FW-INFO-002",
+        "ISTG-FW-INFO-003",
+        "ISTG-FW[UPDT]-AUTHZ-001",
+        "ISTG-FW[UPDT]-CRYPT-001",
+        "ISTG-FW[UPDT]-CRYPT-002",
+        "ISTG-FW[UPDT]-CRYPT-003",
+        "ISTG-FW[UPDT]-CRYPT-004",
+        "ISTG-FW[INST]-AUTHZ-001",
+        "ISTG-FW[INST]-AUTHZ-002",
+        "ISTG-FW[INST]-CRYPT-001",
+        "ISTG-INT-AUTHZ-001",
+        "ISTG-INT-AUTHZ-002",
+        "ISTG-INT-SCRT-001",
+        "ISTG-INT-CRYPT-001",
+        "ISTG-PHY-AUTHZ-001",
+        "ISTG-PHY-AUTHZ-002",
+        "ISTG-PHY-SCRT-001",
+        "ISTG-PHY-CRYPT-001",
+        "ISTG-UI-AUTHZ-001",
+        "ISTG-UI-AUTHZ-002",
+        "ISTG-UI-SCRT-001",
+        "ISTG-UI-CRYPT-001",
+        "ISTG-DES-CONF-001",
+        "ISTG-DES-CONF-002",
+        "ISTG-DES-LOGIC-001",
+        "ISTG-DES-INPV-001",
+        "ISTG-DES-INPV-002",
+        "ISTG-FW[UPDT]-LOGIC-001",
+        "ISTG-INT-CONF-001",
+        "ISTG-INT-CONF-002",
+        "ISTG-INT-LOGIC-001",
+        "ISTG-INT-INPV-001",
+        "ISTG-INT-INPV-002",
+        "ISTG-PHY-CONF-001",
+        "ISTG-PHY-CONF-002",
+        "ISTG-PHY-LOGIC-001",
+        "ISTG-PHY-INPV-001",
+        "ISTG-PHY-INPV-002",
+        "ISTG-UI-CONF-001",
+        "ISTG-UI-CONF-002",
+        "ISTG-UI-LOGIC-001",
+        "ISTG-UI-INPV-001",
+        "ISTG-UI-INPV-002",
+        "ISTG-DES-INFO-001",
+        "ISTG-DES-INFO-002",
+        "ISTG-DES-INFO-003",
+        "ISTG-FW[INST]-INFO-001",
+        "ISTG-INT-INFO-001",
+        "ISTG-INT-INFO-002",
+        "ISTG-INT-INFO-003",
+        "ISTG-PHY-INFO-001",
+        "ISTG-PHY-INFO-002",
+        "ISTG-PHY-INFO-003",
+        "ISTG-UI-INFO-001",
+        "ISTG-UI-INFO-002",
+        "ISTG-UI-INFO-003"
+      ],
+      "avg_security_level": 0
+    },
+    "NIST_CSF": {
+      "test_cases": [
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-SIDEC-001",
+        "ISTG-MEM-INFO-004",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002"
+      ],
+      "function_distribution": {
+        "Protect": 10
+      }
+    },
+    "EU_RED": {
+      "test_cases": [
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-MEM-INFO-004",
+        "ISTG-WRLS-AUTHZ-001",
+        "ISTG-WRLS-AUTHZ-002",
+        "ISTG-WRLS-SCRT-001",
+        "ISTG-WRLS-CRYPT-001",
+        "ISTG-MEM-INFO-003",
+        "ISTG-WRLS-CONF-001",
+        "ISTG-WRLS-CONF-002",
+        "ISTG-WRLS-LOGIC-001",
+        "ISTG-WRLS-INPV-001",
+        "ISTG-WRLS-INPV-002",
+        "ISTG-WRLS-INFO-001",
+        "ISTG-WRLS-INFO-002",
+        "ISTG-WRLS-INFO-003"
+      ],
+      "applicable_count": 16
+    },
+    "EU_CRA_ETSI": {
+      "test_cases": [
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-SIDEC-001",
+        "ISTG-MEM-INFO-004",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002"
+      ],
+      "requirement_coverage": {}
+    }
+  },
+  "component_analysis": {
+    "Data Exchange Services": {
+      "total_tests": 12,
+      "risk_distribution": {
+        "Critical": 0,
+        "High": 4,
+        "Medium": 8,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Firmware": {
+      "total_tests": 9,
+      "risk_distribution": {
+        "Critical": 4,
+        "High": 5,
+        "Medium": 0,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Firmware Update Mechanism": {
+      "total_tests": 6,
+      "risk_distribution": {
+        "Critical": 0,
+        "High": 5,
+        "Medium": 1,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Installed Firmware": {
+      "total_tests": 4,
+      "risk_distribution": {
+        "Critical": 0,
+        "High": 3,
+        "Medium": 1,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Internal Interfaces": {
+      "total_tests": 12,
+      "risk_distribution": {
+        "Critical": 0,
+        "High": 4,
+        "Medium": 8,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Memory": {
+      "total_tests": 6,
+      "risk_distribution": {
+        "Critical": 4,
+        "High": 2,
+        "Medium": 0,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Physical Interfaces": {
+      "total_tests": 12,
+      "risk_distribution": {
+        "Critical": 0,
+        "High": 4,
+        "Medium": 8,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Processing Units": {
+      "total_tests": 4,
+      "risk_distribution": {
+        "Critical": 4,
+        "High": 0,
+        "Medium": 0,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "User Interfaces": {
+      "total_tests": 12,
+      "risk_distribution": {
+        "Critical": 0,
+        "High": 4,
+        "Medium": 8,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    },
+    "Wireless Interfaces": {
+      "total_tests": 12,
+      "risk_distribution": {
+        "Critical": 4,
+        "High": 8,
+        "Medium": 0,
+        "Low": 0
+      },
+      "compliance_coverage": {}
+    }
+  },
+  "prioritized_test_cases": [
+    {
+      "id": "ISTG-MEM-SCRT-001",
+      "title": "Unencrypted Storage of Secrets",
+      "component": "Memory",
+      "category": "Secrets",
+      "risk_score": 4,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.AC-1 - Identities and credentials"
+          ],
+          "subcategories": [
+            "PR.DS-1.1",
+            "PR.AC-1.2"
+          ],
+          "iot_guidance": "Device identity and cryptographic capabilities"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": [
+            "3.3(e)",
+            "3.3(f)"
+          ],
+          "requirements": [
+            "Personal data protection",
+            "Financial transaction protection"
+          ],
+          "standards": [
+            "EN 18031-2:2024",
+            "EN 18031-3:2024"
+          ]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 9 - Cryptographic security",
+            "Provision 1 - No universal default passwords"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-MEM-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "Memory",
+      "category": "Cryptography",
+      "risk_score": 4,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.1 - Information Confidentiality"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.DS-2 - Data in transit"
+          ],
+          "subcategories": [
+            "PR.DS-1.2",
+            "PR.DS-2.1"
+          ],
+          "iot_guidance": "Cryptographic capabilities and protocols"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": [
+            "3.3(e)",
+            "3.3(f)"
+          ],
+          "requirements": [
+            "Secure data handling",
+            "Secure financial transactions"
+          ],
+          "standards": [
+            "EN 18031-2:2024",
+            "EN 18031-3:2024"
+          ]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 9 - Cryptographic security",
+            "Provision 7 - Secure communication"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-PROC-AUTHZ-001",
+      "title": "Unauthorized Access to the Processing Unit",
+      "component": "Processing Units",
+      "category": "Authorization",
+      "risk_score": 4,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 1 - Identification and Authentication Control",
+            "FR 2 - Use Control"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "Identification and Authentication Control",
+          "technical_requirement": "CR 1.1 - Human User Identification and Authentication"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.AC-1 - Identities and credentials",
+            "PR.AC-4 - Access permissions"
+          ],
+          "subcategories": [
+            "PR.AC-1.1",
+            "PR.AC-4.1"
+          ],
+          "iot_guidance": "Device identity management capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Processing unit access not covered by wireless device requirements"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 1 - No universal default passwords",
+            "Provision 5 - Authentication mechanisms"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-PROC-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "Processing Units",
+      "category": "Authorization",
+      "risk_score": 4,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 2 - Use Control"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "Use Control",
+          "technical_requirement": "CR 2.1 - Authorization Enforcement"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.AC-4 - Access permissions",
+            "PR.AC-3 - Remote access"
+          ],
+          "subcategories": [
+            "PR.AC-4.2",
+            "PR.AC-3.1"
+          ],
+          "iot_guidance": "Device authorization and privilege management"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Processing unit privilege escalation not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 5 - Authentication mechanisms",
+            "Provision 6 - Authorization mechanisms"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-PROC-SIDEC-001",
+      "title": "Insufficient Protection Against Side-Channel Attacks",
+      "component": "Processing Units",
+      "category": "Side-Channel Attacks",
+      "risk_score": 4,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-3",
+          "nist_csf": "Protect",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality",
+            "FR 3 - System Integrity"
+          ],
+          "security_level": "SL-3",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.1 - Information Confidentiality"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.DS-2 - Data in transit"
+          ],
+          "subcategories": [
+            "PR.DS-1.2",
+            "PR.DS-2.1"
+          ],
+          "iot_guidance": "Cryptographic capabilities and key management"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Side-channel attacks not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 8 - Data protection",
+            "Provision 9 - Cryptographic security"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-MEM-INFO-004",
+      "title": "Disclosure of User Data",
+      "component": "Memory",
+      "category": "Information Gathering",
+      "risk_score": 3.75,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.DS-3 - Assets formally managed"
+          ],
+          "subcategories": [
+            "PR.DS-1.1",
+            "PR.DS-3.1"
+          ],
+          "iot_guidance": "Device data protection capabilities"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": [
+            "3.3(e)"
+          ],
+          "requirements": [
+            "Personal data protection - secure handling of personal, traffic, and location data"
+          ],
+          "standards": [
+            "EN 18031-2:2024"
+          ]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 8 - Data protection",
+            "Provision 7 - Secure communication"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-PROC-LOGIC-001",
+      "title": "Insecure Implementation of Instructions",
+      "component": "Processing Units",
+      "category": "Business Logic",
+      "risk_score": 3.67,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 3 - System Integrity"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "System Integrity",
+          "technical_requirement": "CR 3.1 - Communication Integrity"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.IP-1 - Baseline configuration"
+          ],
+          "subcategories": [
+            "PR.DS-1.1",
+            "PR.IP-1.1"
+          ],
+          "iot_guidance": "Device integrity protection capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Business logic implementation not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design",
+            "Vulnerability handling"
+          ],
+          "etsi_provisions": [
+            "Provision 2 - Implement security update mechanism",
+            "Provision 4 - Secure default values"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-AUTHZ-001",
+      "title": "Unauthorized Access to the Interface",
+      "component": "Wireless Interfaces",
+      "category": "Authorization",
+      "risk_score": 3.67,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "Wireless Interfaces",
+      "category": "Authorization",
+      "risk_score": 3.67,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-SCRT-001",
+      "title": "Access to Confidential Data",
+      "component": "Wireless Interfaces",
+      "category": "Secrets",
+      "risk_score": 3.67,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "Wireless Interfaces",
+      "category": "Cryptography",
+      "risk_score": 3.67,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-SCRT-001",
+      "title": "Secrets Stored in Public Storage",
+      "component": "Firmware",
+      "category": "Secrets",
+      "risk_score": 3.5,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-SCRT-002",
+      "title": "Unencrypted Storage of Secrets",
+      "component": "Firmware",
+      "category": "Secrets",
+      "risk_score": 3.5,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-SCRT-003",
+      "title": "Usage of Hardcoded Secrets",
+      "component": "Firmware",
+      "category": "Secrets",
+      "risk_score": 3.5,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "Firmware",
+      "category": "Cryptography",
+      "risk_score": 3.5,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-MEM-INFO-003",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "Memory",
+      "category": "Information Gathering",
+      "risk_score": 3.5,
+      "risk_level": "Critical",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-2",
+          "nist_csf": "Protect",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality",
+            "FR 5 - Restricted Data Flow"
+          ],
+          "security_level": "SL-2",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.AC-5 - Network integrity"
+          ],
+          "subcategories": [
+            "PR.DS-1.3",
+            "PR.AC-5.1"
+          ],
+          "iot_guidance": "Device configuration management and network connection capabilities"
+        },
+        "EU_RED": {
+          "applicable": true,
+          "articles": [
+            "3.3(d)"
+          ],
+          "requirements": [
+            "Network protection - prevent network disruption"
+          ],
+          "standards": [
+            "EN 18031-1:2024"
+          ]
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 8 - Data protection",
+            "Provision 10 - System telemetry data"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-CONF-001",
+      "title": "Usage of Outdated Software",
+      "component": "Wireless Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 3.33,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-CONF-002",
+      "title": "Presence of Unnecessary Software and Functionalities",
+      "component": "Wireless Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 3.33,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-LOGIC-001",
+      "title": "Circumvention of the Intended Business Logic",
+      "component": "Wireless Interfaces",
+      "category": "Business Logic",
+      "risk_score": 3.33,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-INPV-001",
+      "title": "Insufficient Input Validation",
+      "component": "Wireless Interfaces",
+      "category": "Input Validation",
+      "risk_score": 3.33,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-INPV-002",
+      "title": "Code or Command Injection",
+      "component": "Wireless Interfaces",
+      "category": "Input Validation",
+      "risk_score": 3.33,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-CONF-001",
+      "title": "Usage of Outdated Software",
+      "component": "Firmware",
+      "category": "Configuration and Patch Management",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-CONF-002",
+      "title": "Presence of Unnecessary Software and Functionalities",
+      "component": "Firmware",
+      "category": "Configuration and Patch Management",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-MEM-INFO-001",
+      "title": "Disclosure of Source Code and Binaries",
+      "component": "Memory",
+      "category": "Information Gathering",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "Protect",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality"
+          ],
+          "security_level": "SL-1",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest",
+            "PR.IP-2 - Software development lifecycle"
+          ],
+          "subcategories": [
+            "PR.DS-1.3",
+            "PR.IP-2.1"
+          ],
+          "iot_guidance": "Device configuration management capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Source code disclosure not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 4 - Secure default values",
+            "Provision 8 - Data protection"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-MEM-INFO-002",
+      "title": "Disclosure of Implementation Details",
+      "component": "Memory",
+      "category": "Information Gathering",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "Protect",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "requirements": [
+            "FR 4 - Data Confidentiality"
+          ],
+          "security_level": "SL-1",
+          "foundational_requirement": "Data Confidentiality",
+          "technical_requirement": "CR 4.2 - Information Persistence"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "Protect"
+          ],
+          "categories": [
+            "PR.DS-1 - Data at rest"
+          ],
+          "subcategories": [
+            "PR.DS-1.3"
+          ],
+          "iot_guidance": "Device configuration management capabilities"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Implementation details disclosure not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "Security by design"
+          ],
+          "etsi_provisions": [
+            "Provision 8 - Data protection"
+          ],
+          "article": "Article 11 - Essential cybersecurity requirements"
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-INFO-001",
+      "title": "Disclosure of Implementation Details",
+      "component": "Wireless Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-INFO-002",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "Wireless Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-WRLS-INFO-003",
+      "title": "Disclosure of User Data",
+      "component": "Wireless Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 3.0,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "Applicable"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": "TBD",
+          "reason": "Wireless applicability to be determined"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-AUTHZ-001",
+      "title": "Unauthorized Access to the Data Exchange Service",
+      "component": "Data Exchange Services",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "Data Exchange Services",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-SCRT-001",
+      "title": "Access to Confidential Data",
+      "component": "Data Exchange Services",
+      "category": "Secrets",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "Data Exchange Services",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-INFO-001",
+      "title": "Disclosure of Source Code and Binaries",
+      "component": "Firmware",
+      "category": "Information Gathering",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-INFO-002",
+      "title": "Disclosure of Implementation Details",
+      "component": "Firmware",
+      "category": "Information Gathering",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW-INFO-003",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "Firmware",
+      "category": "Information Gathering",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 1,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[UPDT]-AUTHZ-001",
+      "title": "Unauthorized Firmware Update",
+      "component": "Firmware Update Mechanism",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[UPDT]-CRYPT-001",
+      "title": "Insufficient Firmware Update Signature",
+      "component": "Firmware Update Mechanism",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[UPDT]-CRYPT-002",
+      "title": "Insufficient Firmware Update Encryption",
+      "component": "Firmware Update Mechanism",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[UPDT]-CRYPT-003",
+      "title": "Insecure Transmission of the Firmware Update",
+      "component": "Firmware Update Mechanism",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[UPDT]-CRYPT-004",
+      "title": "Insufficient Verification of the Firmware Update Signature",
+      "component": "Firmware Update Mechanism",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[INST]-AUTHZ-001",
+      "title": "Unauthorized Access to the Firmware",
+      "component": "Installed Firmware",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[INST]-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "Installed Firmware",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[INST]-CRYPT-001",
+      "title": "Insufficient Verification of the Bootloader Signature",
+      "component": "Installed Firmware",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-AUTHZ-001",
+      "title": "Unauthorized Access to the Interface",
+      "component": "Internal Interfaces",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "Internal Interfaces",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-SCRT-001",
+      "title": "Access to Confidential Data",
+      "component": "Internal Interfaces",
+      "category": "Secrets",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "Internal Interfaces",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-AUTHZ-001",
+      "title": "Unauthorized Access to the Interface",
+      "component": "Physical Interfaces",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "Physical Interfaces",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-SCRT-001",
+      "title": "Access to Confidential Data",
+      "component": "Physical Interfaces",
+      "category": "Secrets",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "Physical Interfaces",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-AUTHZ-001",
+      "title": "Unauthorized Access to the Interface",
+      "component": "User Interfaces",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-AUTHZ-002",
+      "title": "Privilege Escalation",
+      "component": "User Interfaces",
+      "category": "Authorization",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-SCRT-001",
+      "title": "Access to Confidential Data",
+      "component": "User Interfaces",
+      "category": "Secrets",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-CRYPT-001",
+      "title": "Usage of Weak Cryptographic Algorithms",
+      "component": "User Interfaces",
+      "category": "Cryptography",
+      "risk_score": 2.5,
+      "risk_level": "High",
+      "contributing_factors": {
+        "category_priority": 4,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-CONF-001",
+      "title": "Usage of Outdated Software",
+      "component": "Data Exchange Services",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-CONF-002",
+      "title": "Presence of Unnecessary Software and Functionalities",
+      "component": "Data Exchange Services",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-LOGIC-001",
+      "title": "Circumvention of the Intended Business Logic",
+      "component": "Data Exchange Services",
+      "category": "Business Logic",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-INPV-001",
+      "title": "Insufficient Input Validation",
+      "component": "Data Exchange Services",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-INPV-002",
+      "title": "Code or Command Injection",
+      "component": "Data Exchange Services",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[UPDT]-LOGIC-001",
+      "title": "Insufficient Rollback Protection",
+      "component": "Firmware Update Mechanism",
+      "category": "Business Logic",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-CONF-001",
+      "title": "Usage of Outdated Software",
+      "component": "Internal Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-CONF-002",
+      "title": "Presence of Unnecessary Software and Functionalities",
+      "component": "Internal Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-LOGIC-001",
+      "title": "Circumvention of the Intended Business Logic",
+      "component": "Internal Interfaces",
+      "category": "Business Logic",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-INPV-001",
+      "title": "Insufficient Input Validation",
+      "component": "Internal Interfaces",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-INPV-002",
+      "title": "Code or Command Injection",
+      "component": "Internal Interfaces",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-CONF-001",
+      "title": "Usage of Outdated Software",
+      "component": "Physical Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-CONF-002",
+      "title": "Presence of Unnecessary Software and Functionalities",
+      "component": "Physical Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-LOGIC-001",
+      "title": "Circumvention of the Intended Business Logic",
+      "component": "Physical Interfaces",
+      "category": "Business Logic",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-INPV-001",
+      "title": "Insufficient Input Validation",
+      "component": "Physical Interfaces",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-INPV-002",
+      "title": "Code or Command Injection",
+      "component": "Physical Interfaces",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-CONF-001",
+      "title": "Usage of Outdated Software",
+      "component": "User Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-CONF-002",
+      "title": "Presence of Unnecessary Software and Functionalities",
+      "component": "User Interfaces",
+      "category": "Configuration and Patch Management",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-LOGIC-001",
+      "title": "Circumvention of the Intended Business Logic",
+      "component": "User Interfaces",
+      "category": "Business Logic",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-INPV-001",
+      "title": "Insufficient Input Validation",
+      "component": "User Interfaces",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-INPV-002",
+      "title": "Code or Command Injection",
+      "component": "User Interfaces",
+      "category": "Input Validation",
+      "risk_score": 2.0,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 3,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-INFO-001",
+      "title": "Disclosure of Implementation Details",
+      "component": "Data Exchange Services",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-INFO-002",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "Data Exchange Services",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-DES-INFO-003",
+      "title": "Disclosure of User Data",
+      "component": "Data Exchange Services",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-FW[INST]-INFO-001",
+      "title": "Disclosure of User Data",
+      "component": "Installed Firmware",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-INFO-001",
+      "title": "Disclosure of Implementation Details",
+      "component": "Internal Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-INFO-002",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "Internal Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-INT-INFO-003",
+      "title": "Disclosure of User Data",
+      "component": "Internal Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-INFO-001",
+      "title": "Disclosure of Implementation Details",
+      "component": "Physical Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-INFO-002",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "Physical Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-PHY-INFO-003",
+      "title": "Disclosure of User Data",
+      "component": "Physical Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-INFO-001",
+      "title": "Disclosure of Implementation Details",
+      "component": "User Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-INFO-002",
+      "title": "Disclosure of Ecosystem Details",
+      "component": "User Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ISTG-UI-INFO-003",
+      "title": "Disclosure of User Data",
+      "component": "User Interfaces",
+      "category": "Information Gathering",
+      "risk_score": 1.5,
+      "risk_level": "Medium",
+      "contributing_factors": {
+        "category_priority": 2,
+        "component_adjustment": 0,
+        "framework_scores": {
+          "iec_62443": "SL-1",
+          "nist_csf": "N/A",
+          "eu_red": "N/A"
+        }
+      },
+      "compliance_mappings": {
+        "IEC_62443": {
+          "applicable": true,
+          "requirements": [
+            "To be determined"
+          ],
+          "security_level": "SL-1"
+        },
+        "NIST_CSF": {
+          "functions": [
+            "To be determined"
+          ],
+          "categories": [
+            "To be determined"
+          ],
+          "iot_guidance": "To be determined"
+        },
+        "EU_RED": {
+          "applicable": false,
+          "reason": "Not wireless-specific"
+        },
+        "EU_CRA_ETSI": {
+          "essential_requirements": [
+            "To be determined"
+          ],
+          "etsi_provisions": [
+            "To be determined"
+          ]
+        }
+      }
+    }
+  ]
+}

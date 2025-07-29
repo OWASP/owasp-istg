@@ -1,0 +1,3038 @@
+{
+  "metadata": {
+    "title": "OWASP ISTG Cross-Framework Gap Analysis Report",
+    "description": "Analysis of compliance coverage gaps across IEC 62443, NIST CSF 2.0, EU RED, and EU CRA/ETSI",
+    "total_test_cases": 89,
+    "frameworks_analyzed": [
+      "IEC 62443",
+      "NIST CSF 2.0",
+      "EU RED",
+      "EU CRA/ETSI"
+    ]
+  },
+  "framework_coverage": {
+    "IEC_62443": {
+      "total_test_cases": 89,
+      "applicable_test_cases": 168,
+      "covered_test_cases": 10,
+      "not_applicable_test_cases": 0,
+      "tbd_test_cases": 79,
+      "coverage_percentage": 5.95,
+      "covered_tests": [
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001"
+      ],
+      "tbd_tests": [
+        "ISTG-DES-AUTHZ-001",
+        "ISTG-DES-AUTHZ-002",
+        "ISTG-DES-INFO-001",
+        "ISTG-DES-INFO-002",
+        "ISTG-DES-INFO-003",
+        "ISTG-DES-CONF-001",
+        "ISTG-DES-CONF-002",
+        "ISTG-DES-SCRT-001",
+        "ISTG-DES-CRYPT-001",
+        "ISTG-DES-LOGIC-001",
+        "ISTG-DES-INPV-001",
+        "ISTG-DES-INPV-002",
+        "ISTG-FW-INFO-001",
+        "ISTG-FW-INFO-002",
+        "ISTG-FW-INFO-003",
+        "ISTG-FW-CONF-001",
+        "ISTG-FW-CONF-002",
+        "ISTG-FW-SCRT-001",
+        "ISTG-FW-SCRT-002",
+        "ISTG-FW-SCRT-003",
+        "ISTG-FW-CRYPT-001",
+        "ISTG-FW[UPDT]-AUTHZ-001",
+        "ISTG-FW[UPDT]-CRYPT-001",
+        "ISTG-FW[UPDT]-CRYPT-002",
+        "ISTG-FW[UPDT]-CRYPT-003",
+        "ISTG-FW[UPDT]-CRYPT-004",
+        "ISTG-FW[UPDT]-LOGIC-001",
+        "ISTG-FW[INST]-AUTHZ-001",
+        "ISTG-FW[INST]-AUTHZ-002",
+        "ISTG-FW[INST]-INFO-001",
+        "ISTG-FW[INST]-CRYPT-001",
+        "ISTG-INT-AUTHZ-001",
+        "ISTG-INT-AUTHZ-002",
+        "ISTG-INT-INFO-001",
+        "ISTG-INT-INFO-002",
+        "ISTG-INT-INFO-003",
+        "ISTG-INT-CONF-001",
+        "ISTG-INT-CONF-002",
+        "ISTG-INT-SCRT-001",
+        "ISTG-INT-CRYPT-001",
+        "ISTG-INT-LOGIC-001",
+        "ISTG-INT-INPV-001",
+        "ISTG-INT-INPV-002",
+        "ISTG-PHY-AUTHZ-001",
+        "ISTG-PHY-AUTHZ-002",
+        "ISTG-PHY-INFO-001",
+        "ISTG-PHY-INFO-002",
+        "ISTG-PHY-INFO-003",
+        "ISTG-PHY-CONF-001",
+        "ISTG-PHY-CONF-002",
+        "ISTG-PHY-SCRT-001",
+        "ISTG-PHY-CRYPT-001",
+        "ISTG-PHY-LOGIC-001",
+        "ISTG-PHY-INPV-001",
+        "ISTG-PHY-INPV-002",
+        "ISTG-UI-AUTHZ-001",
+        "ISTG-UI-AUTHZ-002",
+        "ISTG-UI-INFO-001",
+        "ISTG-UI-INFO-002",
+        "ISTG-UI-INFO-003",
+        "ISTG-UI-CONF-001",
+        "ISTG-UI-CONF-002",
+        "ISTG-UI-SCRT-001",
+        "ISTG-UI-CRYPT-001",
+        "ISTG-UI-LOGIC-001",
+        "ISTG-UI-INPV-001",
+        "ISTG-UI-INPV-002",
+        "ISTG-WRLS-AUTHZ-001",
+        "ISTG-WRLS-AUTHZ-002",
+        "ISTG-WRLS-INFO-001",
+        "ISTG-WRLS-INFO-002",
+        "ISTG-WRLS-INFO-003",
+        "ISTG-WRLS-CONF-001",
+        "ISTG-WRLS-CONF-002",
+        "ISTG-WRLS-SCRT-001",
+        "ISTG-WRLS-CRYPT-001",
+        "ISTG-WRLS-LOGIC-001",
+        "ISTG-WRLS-INPV-001",
+        "ISTG-WRLS-INPV-002"
+      ],
+      "not_applicable_tests": []
+    },
+    "NIST_CSF": {
+      "total_test_cases": 89,
+      "applicable_test_cases": 168,
+      "covered_test_cases": 10,
+      "not_applicable_test_cases": 0,
+      "tbd_test_cases": 79,
+      "coverage_percentage": 5.95,
+      "covered_tests": [
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001"
+      ],
+      "tbd_tests": [
+        "ISTG-DES-AUTHZ-001",
+        "ISTG-DES-AUTHZ-002",
+        "ISTG-DES-INFO-001",
+        "ISTG-DES-INFO-002",
+        "ISTG-DES-INFO-003",
+        "ISTG-DES-CONF-001",
+        "ISTG-DES-CONF-002",
+        "ISTG-DES-SCRT-001",
+        "ISTG-DES-CRYPT-001",
+        "ISTG-DES-LOGIC-001",
+        "ISTG-DES-INPV-001",
+        "ISTG-DES-INPV-002",
+        "ISTG-FW-INFO-001",
+        "ISTG-FW-INFO-002",
+        "ISTG-FW-INFO-003",
+        "ISTG-FW-CONF-001",
+        "ISTG-FW-CONF-002",
+        "ISTG-FW-SCRT-001",
+        "ISTG-FW-SCRT-002",
+        "ISTG-FW-SCRT-003",
+        "ISTG-FW-CRYPT-001",
+        "ISTG-FW[UPDT]-AUTHZ-001",
+        "ISTG-FW[UPDT]-CRYPT-001",
+        "ISTG-FW[UPDT]-CRYPT-002",
+        "ISTG-FW[UPDT]-CRYPT-003",
+        "ISTG-FW[UPDT]-CRYPT-004",
+        "ISTG-FW[UPDT]-LOGIC-001",
+        "ISTG-FW[INST]-AUTHZ-001",
+        "ISTG-FW[INST]-AUTHZ-002",
+        "ISTG-FW[INST]-INFO-001",
+        "ISTG-FW[INST]-CRYPT-001",
+        "ISTG-INT-AUTHZ-001",
+        "ISTG-INT-AUTHZ-002",
+        "ISTG-INT-INFO-001",
+        "ISTG-INT-INFO-002",
+        "ISTG-INT-INFO-003",
+        "ISTG-INT-CONF-001",
+        "ISTG-INT-CONF-002",
+        "ISTG-INT-SCRT-001",
+        "ISTG-INT-CRYPT-001",
+        "ISTG-INT-LOGIC-001",
+        "ISTG-INT-INPV-001",
+        "ISTG-INT-INPV-002",
+        "ISTG-PHY-AUTHZ-001",
+        "ISTG-PHY-AUTHZ-002",
+        "ISTG-PHY-INFO-001",
+        "ISTG-PHY-INFO-002",
+        "ISTG-PHY-INFO-003",
+        "ISTG-PHY-CONF-001",
+        "ISTG-PHY-CONF-002",
+        "ISTG-PHY-SCRT-001",
+        "ISTG-PHY-CRYPT-001",
+        "ISTG-PHY-LOGIC-001",
+        "ISTG-PHY-INPV-001",
+        "ISTG-PHY-INPV-002",
+        "ISTG-UI-AUTHZ-001",
+        "ISTG-UI-AUTHZ-002",
+        "ISTG-UI-INFO-001",
+        "ISTG-UI-INFO-002",
+        "ISTG-UI-INFO-003",
+        "ISTG-UI-CONF-001",
+        "ISTG-UI-CONF-002",
+        "ISTG-UI-SCRT-001",
+        "ISTG-UI-CRYPT-001",
+        "ISTG-UI-LOGIC-001",
+        "ISTG-UI-INPV-001",
+        "ISTG-UI-INPV-002",
+        "ISTG-WRLS-AUTHZ-001",
+        "ISTG-WRLS-AUTHZ-002",
+        "ISTG-WRLS-INFO-001",
+        "ISTG-WRLS-INFO-002",
+        "ISTG-WRLS-INFO-003",
+        "ISTG-WRLS-CONF-001",
+        "ISTG-WRLS-CONF-002",
+        "ISTG-WRLS-SCRT-001",
+        "ISTG-WRLS-CRYPT-001",
+        "ISTG-WRLS-LOGIC-001",
+        "ISTG-WRLS-INPV-001",
+        "ISTG-WRLS-INPV-002"
+      ],
+      "not_applicable_tests": []
+    },
+    "EU_RED": {
+      "total_test_cases": 89,
+      "applicable_test_cases": 28,
+      "covered_test_cases": 4,
+      "not_applicable_test_cases": 73,
+      "tbd_test_cases": 12,
+      "coverage_percentage": 14.29,
+      "covered_tests": [
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001"
+      ],
+      "tbd_tests": [
+        "ISTG-WRLS-AUTHZ-001",
+        "ISTG-WRLS-AUTHZ-002",
+        "ISTG-WRLS-INFO-001",
+        "ISTG-WRLS-INFO-002",
+        "ISTG-WRLS-INFO-003",
+        "ISTG-WRLS-CONF-001",
+        "ISTG-WRLS-CONF-002",
+        "ISTG-WRLS-SCRT-001",
+        "ISTG-WRLS-CRYPT-001",
+        "ISTG-WRLS-LOGIC-001",
+        "ISTG-WRLS-INPV-001",
+        "ISTG-WRLS-INPV-002"
+      ],
+      "not_applicable_tests": [
+        "ISTG-DES-AUTHZ-001",
+        "ISTG-DES-AUTHZ-002",
+        "ISTG-DES-INFO-001",
+        "ISTG-DES-INFO-002",
+        "ISTG-DES-INFO-003",
+        "ISTG-DES-CONF-001",
+        "ISTG-DES-CONF-002",
+        "ISTG-DES-SCRT-001",
+        "ISTG-DES-CRYPT-001",
+        "ISTG-DES-LOGIC-001",
+        "ISTG-DES-INPV-001",
+        "ISTG-DES-INPV-002",
+        "ISTG-FW-INFO-001",
+        "ISTG-FW-INFO-002",
+        "ISTG-FW-INFO-003",
+        "ISTG-FW-CONF-001",
+        "ISTG-FW-CONF-002",
+        "ISTG-FW-SCRT-001",
+        "ISTG-FW-SCRT-002",
+        "ISTG-FW-SCRT-003",
+        "ISTG-FW-CRYPT-001",
+        "ISTG-FW[UPDT]-AUTHZ-001",
+        "ISTG-FW[UPDT]-CRYPT-001",
+        "ISTG-FW[UPDT]-CRYPT-002",
+        "ISTG-FW[UPDT]-CRYPT-003",
+        "ISTG-FW[UPDT]-CRYPT-004",
+        "ISTG-FW[UPDT]-LOGIC-001",
+        "ISTG-FW[INST]-AUTHZ-001",
+        "ISTG-FW[INST]-AUTHZ-002",
+        "ISTG-FW[INST]-INFO-001",
+        "ISTG-FW[INST]-CRYPT-001",
+        "ISTG-INT-AUTHZ-001",
+        "ISTG-INT-AUTHZ-002",
+        "ISTG-INT-INFO-001",
+        "ISTG-INT-INFO-002",
+        "ISTG-INT-INFO-003",
+        "ISTG-INT-CONF-001",
+        "ISTG-INT-CONF-002",
+        "ISTG-INT-SCRT-001",
+        "ISTG-INT-CRYPT-001",
+        "ISTG-INT-LOGIC-001",
+        "ISTG-INT-INPV-001",
+        "ISTG-INT-INPV-002",
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-PHY-AUTHZ-001",
+        "ISTG-PHY-AUTHZ-002",
+        "ISTG-PHY-INFO-001",
+        "ISTG-PHY-INFO-002",
+        "ISTG-PHY-INFO-003",
+        "ISTG-PHY-CONF-001",
+        "ISTG-PHY-CONF-002",
+        "ISTG-PHY-SCRT-001",
+        "ISTG-PHY-CRYPT-001",
+        "ISTG-PHY-LOGIC-001",
+        "ISTG-PHY-INPV-001",
+        "ISTG-PHY-INPV-002",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001",
+        "ISTG-UI-AUTHZ-001",
+        "ISTG-UI-AUTHZ-002",
+        "ISTG-UI-INFO-001",
+        "ISTG-UI-INFO-002",
+        "ISTG-UI-INFO-003",
+        "ISTG-UI-CONF-001",
+        "ISTG-UI-CONF-002",
+        "ISTG-UI-SCRT-001",
+        "ISTG-UI-CRYPT-001",
+        "ISTG-UI-LOGIC-001",
+        "ISTG-UI-INPV-001",
+        "ISTG-UI-INPV-002"
+      ]
+    },
+    "EU_CRA_ETSI": {
+      "total_test_cases": 89,
+      "applicable_test_cases": 168,
+      "covered_test_cases": 10,
+      "not_applicable_test_cases": 0,
+      "tbd_test_cases": 79,
+      "coverage_percentage": 5.95,
+      "covered_tests": [
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001"
+      ],
+      "tbd_tests": [
+        "ISTG-DES-AUTHZ-001",
+        "ISTG-DES-AUTHZ-002",
+        "ISTG-DES-INFO-001",
+        "ISTG-DES-INFO-002",
+        "ISTG-DES-INFO-003",
+        "ISTG-DES-CONF-001",
+        "ISTG-DES-CONF-002",
+        "ISTG-DES-SCRT-001",
+        "ISTG-DES-CRYPT-001",
+        "ISTG-DES-LOGIC-001",
+        "ISTG-DES-INPV-001",
+        "ISTG-DES-INPV-002",
+        "ISTG-FW-INFO-001",
+        "ISTG-FW-INFO-002",
+        "ISTG-FW-INFO-003",
+        "ISTG-FW-CONF-001",
+        "ISTG-FW-CONF-002",
+        "ISTG-FW-SCRT-001",
+        "ISTG-FW-SCRT-002",
+        "ISTG-FW-SCRT-003",
+        "ISTG-FW-CRYPT-001",
+        "ISTG-FW[UPDT]-AUTHZ-001",
+        "ISTG-FW[UPDT]-CRYPT-001",
+        "ISTG-FW[UPDT]-CRYPT-002",
+        "ISTG-FW[UPDT]-CRYPT-003",
+        "ISTG-FW[UPDT]-CRYPT-004",
+        "ISTG-FW[UPDT]-LOGIC-001",
+        "ISTG-FW[INST]-AUTHZ-001",
+        "ISTG-FW[INST]-AUTHZ-002",
+        "ISTG-FW[INST]-INFO-001",
+        "ISTG-FW[INST]-CRYPT-001",
+        "ISTG-INT-AUTHZ-001",
+        "ISTG-INT-AUTHZ-002",
+        "ISTG-INT-INFO-001",
+        "ISTG-INT-INFO-002",
+        "ISTG-INT-INFO-003",
+        "ISTG-INT-CONF-001",
+        "ISTG-INT-CONF-002",
+        "ISTG-INT-SCRT-001",
+        "ISTG-INT-CRYPT-001",
+        "ISTG-INT-LOGIC-001",
+        "ISTG-INT-INPV-001",
+        "ISTG-INT-INPV-002",
+        "ISTG-PHY-AUTHZ-001",
+        "ISTG-PHY-AUTHZ-002",
+        "ISTG-PHY-INFO-001",
+        "ISTG-PHY-INFO-002",
+        "ISTG-PHY-INFO-003",
+        "ISTG-PHY-CONF-001",
+        "ISTG-PHY-CONF-002",
+        "ISTG-PHY-SCRT-001",
+        "ISTG-PHY-CRYPT-001",
+        "ISTG-PHY-LOGIC-001",
+        "ISTG-PHY-INPV-001",
+        "ISTG-PHY-INPV-002",
+        "ISTG-UI-AUTHZ-001",
+        "ISTG-UI-AUTHZ-002",
+        "ISTG-UI-INFO-001",
+        "ISTG-UI-INFO-002",
+        "ISTG-UI-INFO-003",
+        "ISTG-UI-CONF-001",
+        "ISTG-UI-CONF-002",
+        "ISTG-UI-SCRT-001",
+        "ISTG-UI-CRYPT-001",
+        "ISTG-UI-LOGIC-001",
+        "ISTG-UI-INPV-001",
+        "ISTG-UI-INPV-002",
+        "ISTG-WRLS-AUTHZ-001",
+        "ISTG-WRLS-AUTHZ-002",
+        "ISTG-WRLS-INFO-001",
+        "ISTG-WRLS-INFO-002",
+        "ISTG-WRLS-INFO-003",
+        "ISTG-WRLS-CONF-001",
+        "ISTG-WRLS-CONF-002",
+        "ISTG-WRLS-SCRT-001",
+        "ISTG-WRLS-CRYPT-001",
+        "ISTG-WRLS-LOGIC-001",
+        "ISTG-WRLS-INPV-001",
+        "ISTG-WRLS-INPV-002"
+      ],
+      "not_applicable_tests": []
+    }
+  },
+  "cross_framework_mapping": {},
+  "coverage_gaps": {
+    "unmapped_tests": [
+      {
+        "id": "ISTG-DES-AUTHZ-001",
+        "title": "Unauthorized Access to the Data Exchange Service",
+        "component": "Data Exchange Services",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-DES-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Data Exchange Services",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-DES-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Data Exchange Services",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-DES-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Data Exchange Services",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-DES-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Data Exchange Services",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-DES-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Data Exchange Services",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-DES-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Data Exchange Services",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-DES-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Data Exchange Services",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-DES-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Data Exchange Services",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-DES-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Data Exchange Services",
+        "category": "Business Logic"
+      },
+      {
+        "id": "ISTG-DES-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Data Exchange Services",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-DES-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Data Exchange Services",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-FW-INFO-001",
+        "title": "Disclosure of Source Code and Binaries",
+        "component": "Firmware",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-FW-INFO-002",
+        "title": "Disclosure of Implementation Details",
+        "component": "Firmware",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-FW-INFO-003",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Firmware",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-FW-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Firmware",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-FW-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Firmware",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-FW-SCRT-001",
+        "title": "Secrets Stored in Public Storage",
+        "component": "Firmware",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-FW-SCRT-002",
+        "title": "Unencrypted Storage of Secrets",
+        "component": "Firmware",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-FW-SCRT-003",
+        "title": "Usage of Hardcoded Secrets",
+        "component": "Firmware",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-FW-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Firmware",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-FW[UPDT]-AUTHZ-001",
+        "title": "Unauthorized Firmware Update",
+        "component": "Firmware Update Mechanism",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-001",
+        "title": "Insufficient Firmware Update Signature",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-002",
+        "title": "Insufficient Firmware Update Encryption",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-003",
+        "title": "Insecure Transmission of the Firmware Update",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-004",
+        "title": "Insufficient Verification of the Firmware Update Signature",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-FW[UPDT]-LOGIC-001",
+        "title": "Insufficient Rollback Protection",
+        "component": "Firmware Update Mechanism",
+        "category": "Business Logic"
+      },
+      {
+        "id": "ISTG-FW[INST]-AUTHZ-001",
+        "title": "Unauthorized Access to the Firmware",
+        "component": "Installed Firmware",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-FW[INST]-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Installed Firmware",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-FW[INST]-INFO-001",
+        "title": "Disclosure of User Data",
+        "component": "Installed Firmware",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-FW[INST]-CRYPT-001",
+        "title": "Insufficient Verification of the Bootloader Signature",
+        "component": "Installed Firmware",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-INT-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Internal Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-INT-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Internal Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-INT-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Internal Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-INT-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Internal Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-INT-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Internal Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-INT-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Internal Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-INT-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Internal Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-INT-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Internal Interfaces",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-INT-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Internal Interfaces",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-INT-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Internal Interfaces",
+        "category": "Business Logic"
+      },
+      {
+        "id": "ISTG-INT-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Internal Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-INT-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Internal Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-PHY-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Physical Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-PHY-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Physical Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-PHY-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Physical Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-PHY-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Physical Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-PHY-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Physical Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-PHY-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Physical Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-PHY-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Physical Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-PHY-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Physical Interfaces",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-PHY-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Physical Interfaces",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-PHY-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Physical Interfaces",
+        "category": "Business Logic"
+      },
+      {
+        "id": "ISTG-PHY-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Physical Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-PHY-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Physical Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-UI-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "User Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-UI-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "User Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-UI-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "User Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-UI-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "User Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-UI-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "User Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-UI-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "User Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-UI-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "User Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-UI-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "User Interfaces",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-UI-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "User Interfaces",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-UI-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "User Interfaces",
+        "category": "Business Logic"
+      },
+      {
+        "id": "ISTG-UI-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "User Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-UI-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "User Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-WRLS-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Wireless Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-WRLS-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Wireless Interfaces",
+        "category": "Authorization"
+      },
+      {
+        "id": "ISTG-WRLS-INFO-001",
+        "title": "Disclosure of Implementation Details",
+        "component": "Wireless Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-WRLS-INFO-002",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Wireless Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-WRLS-INFO-003",
+        "title": "Disclosure of User Data",
+        "component": "Wireless Interfaces",
+        "category": "Information Gathering"
+      },
+      {
+        "id": "ISTG-WRLS-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Wireless Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-WRLS-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Wireless Interfaces",
+        "category": "Configuration and Patch Management"
+      },
+      {
+        "id": "ISTG-WRLS-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Wireless Interfaces",
+        "category": "Secrets"
+      },
+      {
+        "id": "ISTG-WRLS-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Wireless Interfaces",
+        "category": "Cryptography"
+      },
+      {
+        "id": "ISTG-WRLS-LOGIC-001",
+        "title": "Circumvention of the Intended Business Logic",
+        "component": "Wireless Interfaces",
+        "category": "Business Logic"
+      },
+      {
+        "id": "ISTG-WRLS-INPV-001",
+        "title": "Insufficient Input Validation",
+        "component": "Wireless Interfaces",
+        "category": "Input Validation"
+      },
+      {
+        "id": "ISTG-WRLS-INPV-002",
+        "title": "Code or Command Injection",
+        "component": "Wireless Interfaces",
+        "category": "Input Validation"
+      }
+    ],
+    "framework_specific_gaps": {
+      "IEC_62443": [
+        {
+          "id": "ISTG-DES-AUTHZ-001",
+          "title": "Unauthorized Access to the Data Exchange Service",
+          "component": "Data Exchange Services",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-DES-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Data Exchange Services",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-DES-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Data Exchange Services",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-DES-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Data Exchange Services",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-DES-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Data Exchange Services",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-DES-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Data Exchange Services",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-DES-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Data Exchange Services",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-DES-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Data Exchange Services",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-DES-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Data Exchange Services",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-FW-INFO-001",
+          "title": "Disclosure of Source Code and Binaries",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-INFO-002",
+          "title": "Disclosure of Implementation Details",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-INFO-003",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Firmware",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-FW-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Firmware",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-FW-SCRT-001",
+          "title": "Secrets Stored in Public Storage",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-SCRT-002",
+          "title": "Unencrypted Storage of Secrets",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-SCRT-003",
+          "title": "Usage of Hardcoded Secrets",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Firmware",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-AUTHZ-001",
+          "title": "Unauthorized Firmware Update",
+          "component": "Firmware Update Mechanism",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-001",
+          "title": "Insufficient Firmware Update Signature",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-002",
+          "title": "Insufficient Firmware Update Encryption",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-003",
+          "title": "Insecure Transmission of the Firmware Update",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-004",
+          "title": "Insufficient Verification of the Firmware Update Signature",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-LOGIC-001",
+          "title": "Insufficient Rollback Protection",
+          "component": "Firmware Update Mechanism",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-FW[INST]-AUTHZ-001",
+          "title": "Unauthorized Access to the Firmware",
+          "component": "Installed Firmware",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[INST]-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Installed Firmware",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[INST]-INFO-001",
+          "title": "Disclosure of User Data",
+          "component": "Installed Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW[INST]-CRYPT-001",
+          "title": "Insufficient Verification of the Bootloader Signature",
+          "component": "Installed Firmware",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-INT-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Internal Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-INT-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Internal Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-INT-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Internal Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-INT-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Internal Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-INT-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Internal Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-INT-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Internal Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-INT-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Internal Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-INT-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Internal Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-INT-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Internal Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-PHY-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Physical Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-PHY-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Physical Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-PHY-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Physical Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-PHY-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Physical Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-PHY-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Physical Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-PHY-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Physical Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-PHY-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Physical Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-PHY-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Physical Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-PHY-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Physical Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-UI-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "User Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-UI-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "User Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-UI-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "User Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-UI-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "User Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-UI-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "User Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-UI-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "User Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-UI-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "User Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-UI-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "User Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-UI-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "User Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Wireless Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-WRLS-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Wireless Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-WRLS-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Wireless Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        }
+      ],
+      "NIST_CSF": [
+        {
+          "id": "ISTG-DES-AUTHZ-001",
+          "title": "Unauthorized Access to the Data Exchange Service",
+          "component": "Data Exchange Services",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-DES-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Data Exchange Services",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-DES-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Data Exchange Services",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-DES-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Data Exchange Services",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-DES-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Data Exchange Services",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-DES-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Data Exchange Services",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-DES-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Data Exchange Services",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-DES-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Data Exchange Services",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-DES-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Data Exchange Services",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-FW-INFO-001",
+          "title": "Disclosure of Source Code and Binaries",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-INFO-002",
+          "title": "Disclosure of Implementation Details",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-INFO-003",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Firmware",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-FW-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Firmware",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-FW-SCRT-001",
+          "title": "Secrets Stored in Public Storage",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-SCRT-002",
+          "title": "Unencrypted Storage of Secrets",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-SCRT-003",
+          "title": "Usage of Hardcoded Secrets",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Firmware",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-AUTHZ-001",
+          "title": "Unauthorized Firmware Update",
+          "component": "Firmware Update Mechanism",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-001",
+          "title": "Insufficient Firmware Update Signature",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-002",
+          "title": "Insufficient Firmware Update Encryption",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-003",
+          "title": "Insecure Transmission of the Firmware Update",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-004",
+          "title": "Insufficient Verification of the Firmware Update Signature",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-LOGIC-001",
+          "title": "Insufficient Rollback Protection",
+          "component": "Firmware Update Mechanism",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-FW[INST]-AUTHZ-001",
+          "title": "Unauthorized Access to the Firmware",
+          "component": "Installed Firmware",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[INST]-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Installed Firmware",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[INST]-INFO-001",
+          "title": "Disclosure of User Data",
+          "component": "Installed Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW[INST]-CRYPT-001",
+          "title": "Insufficient Verification of the Bootloader Signature",
+          "component": "Installed Firmware",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-INT-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Internal Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-INT-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Internal Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-INT-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Internal Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-INT-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Internal Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-INT-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Internal Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-INT-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Internal Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-INT-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Internal Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-INT-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Internal Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-INT-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Internal Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-PHY-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Physical Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-PHY-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Physical Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-PHY-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Physical Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-PHY-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Physical Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-PHY-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Physical Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-PHY-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Physical Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-PHY-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Physical Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-PHY-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Physical Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-PHY-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Physical Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-UI-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "User Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-UI-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "User Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-UI-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "User Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-UI-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "User Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-UI-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "User Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-UI-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "User Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-UI-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "User Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-UI-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "User Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-UI-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "User Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Wireless Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-WRLS-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Wireless Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-WRLS-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Wireless Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        }
+      ],
+      "EU_RED": [
+        {
+          "id": "ISTG-WRLS-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Wireless Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-WRLS-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Wireless Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-WRLS-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Wireless Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        }
+      ],
+      "EU_CRA_ETSI": [
+        {
+          "id": "ISTG-DES-AUTHZ-001",
+          "title": "Unauthorized Access to the Data Exchange Service",
+          "component": "Data Exchange Services",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-DES-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Data Exchange Services",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-DES-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Data Exchange Services",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-DES-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Data Exchange Services",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-DES-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Data Exchange Services",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-DES-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Data Exchange Services",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-DES-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Data Exchange Services",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-DES-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Data Exchange Services",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-DES-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Data Exchange Services",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-DES-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Data Exchange Services",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-FW-INFO-001",
+          "title": "Disclosure of Source Code and Binaries",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-INFO-002",
+          "title": "Disclosure of Implementation Details",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-INFO-003",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Firmware",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-FW-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Firmware",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-FW-SCRT-001",
+          "title": "Secrets Stored in Public Storage",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-SCRT-002",
+          "title": "Unencrypted Storage of Secrets",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-SCRT-003",
+          "title": "Usage of Hardcoded Secrets",
+          "component": "Firmware",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-FW-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Firmware",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-AUTHZ-001",
+          "title": "Unauthorized Firmware Update",
+          "component": "Firmware Update Mechanism",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-001",
+          "title": "Insufficient Firmware Update Signature",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-002",
+          "title": "Insufficient Firmware Update Encryption",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-003",
+          "title": "Insecure Transmission of the Firmware Update",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-CRYPT-004",
+          "title": "Insufficient Verification of the Firmware Update Signature",
+          "component": "Firmware Update Mechanism",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-FW[UPDT]-LOGIC-001",
+          "title": "Insufficient Rollback Protection",
+          "component": "Firmware Update Mechanism",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-FW[INST]-AUTHZ-001",
+          "title": "Unauthorized Access to the Firmware",
+          "component": "Installed Firmware",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[INST]-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Installed Firmware",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-FW[INST]-INFO-001",
+          "title": "Disclosure of User Data",
+          "component": "Installed Firmware",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-FW[INST]-CRYPT-001",
+          "title": "Insufficient Verification of the Bootloader Signature",
+          "component": "Installed Firmware",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-INT-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Internal Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-INT-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Internal Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-INT-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Internal Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-INT-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Internal Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-INT-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Internal Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-INT-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Internal Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-INT-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Internal Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-INT-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Internal Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-INT-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Internal Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-INT-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Internal Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-PHY-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Physical Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-PHY-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Physical Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-PHY-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Physical Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-PHY-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Physical Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-PHY-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Physical Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-PHY-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Physical Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-PHY-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Physical Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-PHY-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Physical Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-PHY-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Physical Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-PHY-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Physical Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-UI-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "User Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-UI-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "User Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-UI-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "User Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-UI-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "User Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-UI-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "User Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-UI-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "User Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-UI-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "User Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-UI-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "User Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-UI-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "User Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-UI-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "User Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-001",
+          "title": "Unauthorized Access to the Interface",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-AUTHZ-002",
+          "title": "Privilege Escalation",
+          "component": "Wireless Interfaces",
+          "category": "Authorization"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-001",
+          "title": "Disclosure of Implementation Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-002",
+          "title": "Disclosure of Ecosystem Details",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-INFO-003",
+          "title": "Disclosure of User Data",
+          "component": "Wireless Interfaces",
+          "category": "Information Gathering"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-001",
+          "title": "Usage of Outdated Software",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-CONF-002",
+          "title": "Presence of Unnecessary Software and Functionalities",
+          "component": "Wireless Interfaces",
+          "category": "Configuration and Patch Management"
+        },
+        {
+          "id": "ISTG-WRLS-SCRT-001",
+          "title": "Access to Confidential Data",
+          "component": "Wireless Interfaces",
+          "category": "Secrets"
+        },
+        {
+          "id": "ISTG-WRLS-CRYPT-001",
+          "title": "Usage of Weak Cryptographic Algorithms",
+          "component": "Wireless Interfaces",
+          "category": "Cryptography"
+        },
+        {
+          "id": "ISTG-WRLS-LOGIC-001",
+          "title": "Circumvention of the Intended Business Logic",
+          "component": "Wireless Interfaces",
+          "category": "Business Logic"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-001",
+          "title": "Insufficient Input Validation",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        },
+        {
+          "id": "ISTG-WRLS-INPV-002",
+          "title": "Code or Command Injection",
+          "component": "Wireless Interfaces",
+          "category": "Input Validation"
+        }
+      ]
+    },
+    "critical_gaps": [
+      {
+        "id": "ISTG-DES-AUTHZ-001",
+        "title": "Unauthorized Access to the Data Exchange Service",
+        "component": "Data Exchange Services",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-DES-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Data Exchange Services",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-DES-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Data Exchange Services",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-DES-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Data Exchange Services",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-INFO-001",
+        "title": "Disclosure of Source Code and Binaries",
+        "component": "Firmware",
+        "category": "Information Gathering",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-INFO-002",
+        "title": "Disclosure of Implementation Details",
+        "component": "Firmware",
+        "category": "Information Gathering",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-INFO-003",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Firmware",
+        "category": "Information Gathering",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-CONF-001",
+        "title": "Usage of Outdated Software",
+        "component": "Firmware",
+        "category": "Configuration and Patch Management",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-CONF-002",
+        "title": "Presence of Unnecessary Software and Functionalities",
+        "component": "Firmware",
+        "category": "Configuration and Patch Management",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-SCRT-001",
+        "title": "Secrets Stored in Public Storage",
+        "component": "Firmware",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-SCRT-002",
+        "title": "Unencrypted Storage of Secrets",
+        "component": "Firmware",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-SCRT-003",
+        "title": "Usage of Hardcoded Secrets",
+        "component": "Firmware",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Firmware",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[UPDT]-AUTHZ-001",
+        "title": "Unauthorized Firmware Update",
+        "component": "Firmware Update Mechanism",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-001",
+        "title": "Insufficient Firmware Update Signature",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-002",
+        "title": "Insufficient Firmware Update Encryption",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-003",
+        "title": "Insecure Transmission of the Firmware Update",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[UPDT]-CRYPT-004",
+        "title": "Insufficient Verification of the Firmware Update Signature",
+        "component": "Firmware Update Mechanism",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[INST]-AUTHZ-001",
+        "title": "Unauthorized Access to the Firmware",
+        "component": "Installed Firmware",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[INST]-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Installed Firmware",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-FW[INST]-CRYPT-001",
+        "title": "Insufficient Verification of the Bootloader Signature",
+        "component": "Installed Firmware",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-INT-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Internal Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-INT-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Internal Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-INT-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Internal Interfaces",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-INT-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Internal Interfaces",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-PHY-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Physical Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-PHY-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Physical Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-PHY-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Physical Interfaces",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-PHY-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Physical Interfaces",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-UI-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "User Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-UI-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "User Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-UI-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "User Interfaces",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-UI-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "User Interfaces",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-WRLS-AUTHZ-001",
+        "title": "Unauthorized Access to the Interface",
+        "component": "Wireless Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-WRLS-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Wireless Interfaces",
+        "category": "Authorization",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-WRLS-SCRT-001",
+        "title": "Access to Confidential Data",
+        "component": "Wireless Interfaces",
+        "category": "Secrets",
+        "mapped_frameworks": 0
+      },
+      {
+        "id": "ISTG-WRLS-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Wireless Interfaces",
+        "category": "Cryptography",
+        "mapped_frameworks": 0
+      }
+    ],
+    "recommendations": []
+  },
+  "overlapping_requirements": {},
+  "cross_framework_overlaps": {
+    "multi_framework_tests": [
+      {
+        "id": "ISTG-MEM-INFO-001",
+        "title": "Disclosure of Source Code and Binaries",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-INFO-002",
+        "title": "Disclosure of Implementation Details",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-INFO-003",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-INFO-004",
+        "title": "Disclosure of User Data",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-SCRT-001",
+        "title": "Unencrypted Storage of Secrets",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-PROC-AUTHZ-001",
+        "title": "Unauthorized Access to the Processing Unit",
+        "component": "Processing Units",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-PROC-AUTHZ-002",
+        "title": "Privilege Escalation",
+        "component": "Processing Units",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-PROC-LOGIC-001",
+        "title": "Insecure Implementation of Instructions",
+        "component": "Processing Units",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-PROC-SIDEC-001",
+        "title": "Insufficient Protection Against Side-Channel Attacks",
+        "component": "Processing Units",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_CRA_ETSI"
+        ]
+      }
+    ],
+    "framework_pairs": {
+      "IEC_62443_NIST_CSF": [
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001"
+      ],
+      "IEC_62443_EU_RED": [
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001"
+      ],
+      "IEC_62443_EU_CRA_ETSI": [
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001"
+      ],
+      "NIST_CSF_EU_RED": [
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001"
+      ],
+      "NIST_CSF_EU_CRA_ETSI": [
+        "ISTG-MEM-INFO-001",
+        "ISTG-MEM-INFO-002",
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001",
+        "ISTG-PROC-AUTHZ-001",
+        "ISTG-PROC-AUTHZ-002",
+        "ISTG-PROC-LOGIC-001",
+        "ISTG-PROC-SIDEC-001"
+      ],
+      "EU_RED_EU_CRA_ETSI": [
+        "ISTG-MEM-INFO-003",
+        "ISTG-MEM-INFO-004",
+        "ISTG-MEM-SCRT-001",
+        "ISTG-MEM-CRYPT-001"
+      ]
+    },
+    "all_frameworks": [
+      {
+        "id": "ISTG-MEM-INFO-003",
+        "title": "Disclosure of Ecosystem Details",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-INFO-004",
+        "title": "Disclosure of User Data",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-SCRT-001",
+        "title": "Unencrypted Storage of Secrets",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      },
+      {
+        "id": "ISTG-MEM-CRYPT-001",
+        "title": "Usage of Weak Cryptographic Algorithms",
+        "component": "Memory",
+        "frameworks": [
+          "IEC_62443",
+          "NIST_CSF",
+          "EU_RED",
+          "EU_CRA_ETSI"
+        ]
+      }
+    ]
+  },
+  "recommendations": {
+    "priority_actions": [
+      {
+        "action": "Map critical security test cases",
+        "description": "Complete compliance mappings for 37 critical test cases",
+        "test_cases": [
+          "ISTG-DES-AUTHZ-001",
+          "ISTG-DES-AUTHZ-002",
+          "ISTG-DES-SCRT-001",
+          "ISTG-DES-CRYPT-001",
+          "ISTG-FW-INFO-001",
+          "ISTG-FW-INFO-002",
+          "ISTG-FW-INFO-003",
+          "ISTG-FW-CONF-001",
+          "ISTG-FW-CONF-002",
+          "ISTG-FW-SCRT-001",
+          "ISTG-FW-SCRT-002",
+          "ISTG-FW-SCRT-003",
+          "ISTG-FW-CRYPT-001",
+          "ISTG-FW[UPDT]-AUTHZ-001",
+          "ISTG-FW[UPDT]-CRYPT-001",
+          "ISTG-FW[UPDT]-CRYPT-002",
+          "ISTG-FW[UPDT]-CRYPT-003",
+          "ISTG-FW[UPDT]-CRYPT-004",
+          "ISTG-FW[INST]-AUTHZ-001",
+          "ISTG-FW[INST]-AUTHZ-002",
+          "ISTG-FW[INST]-CRYPT-001",
+          "ISTG-INT-AUTHZ-001",
+          "ISTG-INT-AUTHZ-002",
+          "ISTG-INT-SCRT-001",
+          "ISTG-INT-CRYPT-001",
+          "ISTG-PHY-AUTHZ-001",
+          "ISTG-PHY-AUTHZ-002",
+          "ISTG-PHY-SCRT-001",
+          "ISTG-PHY-CRYPT-001",
+          "ISTG-UI-AUTHZ-001",
+          "ISTG-UI-AUTHZ-002",
+          "ISTG-UI-SCRT-001",
+          "ISTG-UI-CRYPT-001",
+          "ISTG-WRLS-AUTHZ-001",
+          "ISTG-WRLS-AUTHZ-002",
+          "ISTG-WRLS-SCRT-001",
+          "ISTG-WRLS-CRYPT-001"
+        ],
+        "urgency": "High"
+      }
+    ],
+    "framework_specific": {
+      "IEC_62443": [
+        {
+          "action": "Improve framework coverage",
+          "description": "Coverage is only 6.0%. Map 79 pending test cases.",
+          "priority": "High"
+        },
+        {
+          "action": "Complete TBD mappings",
+          "description": "Complete 79 To-be-determined mappings",
+          "test_cases": [
+            "ISTG-DES-AUTHZ-001",
+            "ISTG-DES-AUTHZ-002",
+            "ISTG-DES-INFO-001",
+            "ISTG-DES-INFO-002",
+            "ISTG-DES-INFO-003",
+            "ISTG-DES-CONF-001",
+            "ISTG-DES-CONF-002",
+            "ISTG-DES-SCRT-001",
+            "ISTG-DES-CRYPT-001",
+            "ISTG-DES-LOGIC-001"
+          ],
+          "priority": "Medium"
+        }
+      ],
+      "NIST_CSF": [
+        {
+          "action": "Improve framework coverage",
+          "description": "Coverage is only 6.0%. Map 79 pending test cases.",
+          "priority": "High"
+        },
+        {
+          "action": "Complete TBD mappings",
+          "description": "Complete 79 To-be-determined mappings",
+          "test_cases": [
+            "ISTG-DES-AUTHZ-001",
+            "ISTG-DES-AUTHZ-002",
+            "ISTG-DES-INFO-001",
+            "ISTG-DES-INFO-002",
+            "ISTG-DES-INFO-003",
+            "ISTG-DES-CONF-001",
+            "ISTG-DES-CONF-002",
+            "ISTG-DES-SCRT-001",
+            "ISTG-DES-CRYPT-001",
+            "ISTG-DES-LOGIC-001"
+          ],
+          "priority": "Medium"
+        }
+      ],
+      "EU_RED": [
+        {
+          "action": "Improve framework coverage",
+          "description": "Coverage is only 14.3%. Map 12 pending test cases.",
+          "priority": "High"
+        },
+        {
+          "action": "Complete TBD mappings",
+          "description": "Complete 12 To-be-determined mappings",
+          "test_cases": [
+            "ISTG-WRLS-AUTHZ-001",
+            "ISTG-WRLS-AUTHZ-002",
+            "ISTG-WRLS-INFO-001",
+            "ISTG-WRLS-INFO-002",
+            "ISTG-WRLS-INFO-003",
+            "ISTG-WRLS-CONF-001",
+            "ISTG-WRLS-CONF-002",
+            "ISTG-WRLS-SCRT-001",
+            "ISTG-WRLS-CRYPT-001",
+            "ISTG-WRLS-LOGIC-001"
+          ],
+          "priority": "Medium"
+        }
+      ],
+      "EU_CRA_ETSI": [
+        {
+          "action": "Improve framework coverage",
+          "description": "Coverage is only 6.0%. Map 79 pending test cases.",
+          "priority": "High"
+        },
+        {
+          "action": "Complete TBD mappings",
+          "description": "Complete 79 To-be-determined mappings",
+          "test_cases": [
+            "ISTG-DES-AUTHZ-001",
+            "ISTG-DES-AUTHZ-002",
+            "ISTG-DES-INFO-001",
+            "ISTG-DES-INFO-002",
+            "ISTG-DES-INFO-003",
+            "ISTG-DES-CONF-001",
+            "ISTG-DES-CONF-002",
+            "ISTG-DES-SCRT-001",
+            "ISTG-DES-CRYPT-001",
+            "ISTG-DES-LOGIC-001"
+          ],
+          "priority": "Medium"
+        }
+      ]
+    },
+    "general_improvements": [
+      {
+        "action": "Leverage cross-framework synergies",
+        "description": "10 test cases map to multiple frameworks. Use these for efficient multi-compliance testing.",
+        "benefit": "Cost-effective compliance across multiple regulations"
+      },
+      {
+        "action": "Increase universal test coverage",
+        "description": "Only 4 test cases cover all frameworks. Identify more universal security requirements.",
+        "benefit": "Comprehensive security baseline across all regulations"
+      }
+    ]
+  }
+}
