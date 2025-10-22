@@ -23,7 +23,7 @@
 
 This section includes test cases and categories for the component firmware and the component specializations installed firmware ([ISTG-FW[INST]](./installed_firmware.md)) and firmware update mechanism ([ISTG-FW[UPDT]](./firmware_update_mechanism.md)) respectively. The firmware might be accessible with all physical access levels, depending on how this access is implemented in detail.
 
-In regards to test case categories that are relevant for processing units, the following were identified:
+In regards to test case categories that are relevant for firmware, the following were identified:
 
 - **Information Gathering:** Focuses on information that is stored within the firmware and that might be disclosed to potential attackers if not being properly protected or removed.
 
