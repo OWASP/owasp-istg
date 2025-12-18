@@ -49,6 +49,8 @@ Security assurance and test coverage can be demonstrated with the overview of Io
 
    3.5. [Internal Interfaces (ISTG-INT)](./src/03_test_cases/internal_interfaces/README.md)
 
+      3.5.1. [Inter-Integrated Circuit (ISTG-INT[I2C])](./src/03_test_cases/internal_interfaces/inter_integrated_circuit.md)
+
    3.6. [Physical Interfaces (ISTG-PHY)](./src/03_test_cases/physical_interfaces/README.md)
 
    3.7. [Wireless Interfaces (ISTG-WRLS)](./src/03_test_cases/wireless_interfaces/README.md)
