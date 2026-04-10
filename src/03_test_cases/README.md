@@ -14,6 +14,8 @@
 
 3.5. [**Internal Interfaces (ISTG-INT)**](./internal_interfaces/README.md)
 
+   3.5.2. [Serial Peripheral Interface (ISTG-INT[SPI])](./internal_interfaces/serial_peripheral_interface.md)
+
 3.6. [**Physical Interfaces (ISTG-PHY)**](./physical_interfaces/README.md)
 
 3.7. [**Wireless Interfaces (ISTG-WRLS)**](./wireless_interfaces/README.md)
