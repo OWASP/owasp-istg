@@ -7,6 +7,7 @@
   * [Disclosure of Implementation Details (ISTG-MEM-INFO-002)](#disclosure-of-implementation-details-istg-mem-info-002)
   * [Disclosure of Ecosystem Details (ISTG-MEM-INFO-003)](#disclosure-of-ecosystem-details-istg-mem-info-003)
   * [Disclosure of User Data (ISTG-MEM-INFO-004)](#disclosure-of-user-data-istg-mem-info-004)
+  * [Insecure Binary Compilation Options (ISTG-MEM-INFO-005)](#insecure-binary-compilation-options-istg-mem-info-005)
 * [Secrets (ISTG-MEM-SCRT)](#secrets-istg-mem-scrt)
   * [Unencrypted Storage of Secrets (ISTG-MEM-SCRT-001)](#unencrypted-storage-of-secrets-istg-mem-scrt-001)
 * [Cryptography (ISTG-MEM-CRYPT)](#cryptography-istg-mem-crypt)
@@ -193,6 +194,62 @@ This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmw
 
 
 
+### Insecure Binary Compilation Options (ISTG-MEM-INFO-005)
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-4</i></td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></tr>
+</table>
+
+**Summary**
+
+Binaries recovered from device memory may lack standard exploit mitigation features enabled through compiler and linker security flags. When binaries are extracted directly from memory chips, their compilation security properties can be assessed to understand the device's exploitability posture. The absence of protections such as PIE, stack canaries, NX, RELRO, and FORTIFY_SOURCE reduces the complexity of developing exploits for identified vulnerabilities in the extracted binaries, enabling techniques such as Return-Oriented Programming (ROP) or direct shellcode injection. Real-world impact is demonstrated by vulnerabilities such as CVE-2022-48174, a stack buffer overflow in BusyBox affecting millions of embedded and IoT devices, where missing stack canaries and ASLR significantly lowered the exploitation barrier.
+
+**Test Objectives**
+
+- Binaries identified within the device memory must be analyzed for the presence or absence of common exploit mitigation features, including:
+  - **PIE (Position Independent Executable):** enables ASLR at the binary level, randomizing load addresses and complicating return-oriented programming (ROP) attacks
+
+  - **NX/W^X (No-Execute):** prevents execution of code injected into writable memory regions such as the stack or heap
+
+  - **Stack canaries (Stack Smashing Protector, SSP):** detect stack-based buffer overflows prior to function return
+
+  - **RELRO (Relocation Read-Only):** hardens the Global Offset Table (GOT) against overwrite attacks by marking it read-only after dynamic linking
+
+  - **FORTIFY_SOURCE:** replaces unsafe C standard library functions with bounds-checked variants at compile time
+
+- Tools such as `checksec`, `readelf`, `objdump`, and `rabin2` should be used to assess binary hardening properties.
+
+- Identified missing mitigations must be documented and assessed in the context of the binary's role and potential exploitability.
+
+**Remediation**
+
+Firmware build processes should enable security hardening features at the compiler and linker level. See [ISTG-FW-INFO-004](../firmware/README.md#insecure-binary-compilation-options-istg-fw-info-004) for detailed remediation guidance.
+
+**References**
+
+For this test case, data from the following sources was consolidated:
+
+* ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
+* ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
+* ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
+* [ETSI EN 303 645][etsi_en_303_645] - Cybersecurity for Consumer Internet of Things: Baseline Requirements
+* [NIST SP 800-213][nist_sp_800_213] - IoT Device Cybersecurity Guidance for the Federal Government
+* [OpenSSF Compiler Options Hardening Guide for C and C++][openssf_compiler_hardening]
+* [CWE-119][cwe_119]: Improper Restriction of Operations within the Bounds of a Memory Buffer
+* [CWE-121][cwe_121]: Stack-based Buffer Overflow
+* [CWE-693][cwe_693]: Protection Mechanism Failure
+
+This test case is based on: [ISTG-FW-INFO-004](../firmware/README.md#insecure-binary-compilation-options-istg-fw-info-004).
+
+
+
 ## Secrets (ISTG-MEM-SCRT)
 
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device can provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
@@ -284,3 +341,9 @@ This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-w
 [iot_pentesting_guide]: https://www.iotpentestingguide.com	"IoT Pentesting Guide"
 [iot_penetration_testing_cookbook]: https://www.packtpub.com/product/iot-penetration-testing-cookbook/9781787280571	"IoT Penetration Testing Cookbook"
 [iot_hackers_handbook]: https://link.springer.com/book/10.1007/978-1-4842-4300-8	"The IoT Hacker's Handbook"
+[etsi_en_303_645]: https://www.etsi.org/deliver/etsi_en/303600_303699/303645/02.01.00_30/en_303645v020100v.pdf	"ETSI EN 303 645 - Cybersecurity for Consumer IoT"
+[nist_sp_800_213]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-213.pdf	"NIST SP 800-213 - IoT Device Cybersecurity Guidance"
+[openssf_compiler_hardening]: https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html	"OpenSSF Compiler Options Hardening Guide for C and C++"
+[cwe_119]: https://cwe.mitre.org/data/definitions/119.html	"CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer"
+[cwe_121]: https://cwe.mitre.org/data/definitions/121.html	"CWE-121: Stack-based Buffer Overflow"
+[cwe_693]: https://cwe.mitre.org/data/definitions/693.html	"CWE-693: Protection Mechanism Failure"
