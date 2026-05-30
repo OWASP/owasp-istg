@@ -6,6 +6,7 @@
   * [Disclosure of Source Code and Binaries (ISTG-FW-INFO-001)](#disclosure-of-source-code-and-binaries-istg-fw-info-001)
   * [Disclosure of Implementation Details (ISTG-FW-INFO-002)](#disclosure-of-implementation-details-istg-fw-info-002)
   * [Disclosure of Ecosystem Details (ISTG-FW-INFO-003)](#disclosure-of-ecosystem-details-istg-fw-info-003)
+  * [Insecure Binary Compilation Options (ISTG-FW-INFO-004)](#insecure-binary-compilation-options-istg-fw-info-004)
 * [Configuration and Patch Management (ISTG-FW-CONF)](#configuration-and-patch-management-istg-fw-conf)
   * [Usage of Outdated Software (ISTG-FW-CONF-001)](#usage-of-outdated-software-istg-fw-conf-001)
   * [Presence of Unnecessary Software and Functionalities (ISTG-FW-CONF-002)](#presence-of-unnecessary-software-and-functionalities-istg-fw-conf-002)
@@ -176,6 +177,70 @@ For this test case, data from the following available sources was consolidated:
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+
+
+
+### Insecure Binary Compilation Options (ISTG-FW-INFO-004)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the firmware can be accessed, e.g., via an internal/physical debugging interface or remotely via SSH)</td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
+	</tr>
+</table>
+
+**Summary**
+
+Compiled binaries within IoT firmware may lack standard exploit mitigation features that are enabled through compiler and linker security flags. Security hardening features such as Position Independent Executables (PIE), stack canaries, No-Execute (NX), Relocation Read-Only (RELRO), and FORTIFY_SOURCE provide critical defense-in-depth against memory corruption vulnerabilities. The absence of these protections reduces the complexity of exploiting vulnerabilities in the firmware and may reveal details about the binary's security posture, enabling attackers to tailor exploitation strategies more effectively.
+
+**Test Objectives**
+
+- Compiled binaries within the firmware must be identified and analyzed for the presence or absence of common exploit mitigation features, including:
+  - **PIE (Position Independent Executable):** enables ASLR at the binary level, randomizing load addresses and complicating return-oriented programming (ROP) attacks
+
+  - **NX/W^X (No-Execute):** prevents execution of code injected into writable memory regions such as the stack or heap
+
+  - **Stack canaries (Stack Smashing Protector, SSP):** detect stack-based buffer overflows prior to function return
+
+  - **RELRO (Relocation Read-Only):** hardens the Global Offset Table (GOT) against overwrite attacks by marking it read-only after dynamic linking
+
+  - **FORTIFY_SOURCE:** replaces unsafe C standard library functions with bounds-checked variants at compile time
+
+- Tools such as `checksec`, `readelf`, `objdump`, and `rabin2` should be used to assess binary hardening properties.
+
+- Identified missing mitigations must be documented and assessed in the context of the binary's role and potential exploitability.
+
+- Results should be used to inform further binary analysis and exploitation testing (also see [ISTG-FW-INFO-001](#disclosure-of-source-code-and-binaries-istg-fw-info-001)).
+
+**Remediation**
+
+Firmware build processes should enable security hardening features at the compiler and linker level:
+
+- Enable PIE by compiling with `-fPIE` and linking with `-pie`
+
+- Enable stack canaries by compiling with `-fstack-protector-strong`
+
+- Enable full RELRO by linking with `-z relro -z now`
+
+- Enable FORTIFY_SOURCE by compiling with `-D_FORTIFY_SOURCE=2 -O1`
+
+- NX is enabled by default in most modern toolchains; verify it is not explicitly disabled
+
+Build system configurations should be audited to ensure hardening flags are applied consistently across all compiled components, including third-party libraries included in the firmware.
+
+**References**
+
+For this test case, data from the following sources was consolidated:
+
+* OWASP ["Firmware Security Testing Methodology"][owasp_fstm]
+* ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
+* ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 
 
 
