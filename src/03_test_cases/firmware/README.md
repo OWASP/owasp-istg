@@ -197,7 +197,7 @@ For this test case, data from the following available sources was consolidated:
 
 **Summary**
 
-Compiled binaries within IoT firmware may lack standard exploit mitigation features that are enabled through compiler and linker security flags. Security hardening features such as Position Independent Executables (PIE), stack canaries, No-Execute (NX), Relocation Read-Only (RELRO), and FORTIFY_SOURCE provide critical defense-in-depth against memory corruption vulnerabilities. The absence of these protections reduces the complexity of exploiting vulnerabilities in the firmware and may reveal details about the binary's security posture, enabling attackers to tailor exploitation strategies more effectively.
+Compiled binaries within IoT firmware may lack standard exploit mitigation features that are enabled through compiler and linker security flags. Security hardening features such as Position Independent Executables (PIE), stack canaries, No-Execute (NX), Relocation Read-Only (RELRO), and FORTIFY_SOURCE provide critical defense-in-depth against memory corruption vulnerabilities. Research into IoT router firmware has found that a significant proportion of embedded binaries lack key mitigations such as stack canaries and full RELRO, leaving devices vulnerable to memory corruption exploitation. The absence of these protections reduces the complexity of exploiting vulnerabilities in the firmware — for example, an attacker can use Return-Oriented Programming (ROP) techniques against binaries that lack PIE/ASLR, and may inject shellcode into binaries that lack NX protection — and reveals details about the binary's security posture that enable more targeted exploitation strategies. Real-world impact is demonstrated by vulnerabilities such as CVE-2022-48174, a stack buffer overflow in BusyBox affecting millions of embedded and IoT devices, where missing stack canaries and ASLR significantly lowered the exploitation barrier.
 
 **Test Objectives**
 
@@ -228,11 +228,11 @@ Firmware build processes should enable security hardening features at the compil
 
 - Enable full RELRO by linking with `-z relro -z now`
 
-- Enable FORTIFY_SOURCE by compiling with `-D_FORTIFY_SOURCE=2 -O1`
+- Enable FORTIFY_SOURCE by compiling with `-D_FORTIFY_SOURCE=2 -O1` (minimum optimization level required; `-D_FORTIFY_SOURCE=3` is available in newer toolchains such as GCC 12+ for broader coverage)
 
-- NX is enabled by default in most modern toolchains; verify it is not explicitly disabled
+- NX is enabled by default in most modern toolchains; verify it is not explicitly disabled with `-z execstack`
 
-Build system configurations should be audited to ensure hardening flags are applied consistently across all compiled components, including third-party libraries included in the firmware.
+Build system configurations should be audited to ensure hardening flags are applied consistently across all compiled components, including third-party libraries included in the firmware. On cross-compiled firmware for ARM, MIPS, or ARM64 targets, all five mitigations are supported; however, toolchain defaults may differ from those of desktop platforms and should be explicitly verified.
 
 **References**
 
@@ -241,6 +241,13 @@ For this test case, data from the following sources was consolidated:
 * OWASP ["Firmware Security Testing Methodology"][owasp_fstm]
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
+* [ETSI EN 303 645][etsi_en_303_645] - Cybersecurity for Consumer Internet of Things: Baseline Requirements
+* [NIST SP 800-213][nist_sp_800_213] - IoT Device Cybersecurity Guidance for the Federal Government
+* IEC 62443-4-2 - Security for Industrial Automation and Control Systems: Technical Security Requirements for IACS Components
+* [OpenSSF Compiler Options Hardening Guide for C and C++][openssf_compiler_hardening]
+* [CWE-119][cwe_119]: Improper Restriction of Operations within the Bounds of a Memory Buffer
+* [CWE-121][cwe_121]: Stack-based Buffer Overflow
+* [CWE-693][cwe_693]: Protection Mechanism Failure
 
 
 
@@ -514,3 +521,9 @@ For this test case, data from the following sources was consolidated:
 [iot_penetration_testing_cookbook]: https://www.packtpub.com/product/iot-penetration-testing-cookbook/9781787280571	"IoT Penetration Testing Cookbook"
 [iot_hackers_handbook]: https://link.springer.com/book/10.1007/978-1-4842-4300-8	"The IoT Hacker's Handbook"
 [practical_iot_hacking]: https://nostarch.com/practical-iot-hacking	"Practical IoT Hacking"
+[etsi_en_303_645]: https://www.etsi.org/deliver/etsi_en/303600_303699/303645/02.01.00_30/en_303645v020100v.pdf	"ETSI EN 303 645 - Cybersecurity for Consumer IoT"
+[nist_sp_800_213]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-213.pdf	"NIST SP 800-213 - IoT Device Cybersecurity Guidance"
+[openssf_compiler_hardening]: https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html	"OpenSSF Compiler Options Hardening Guide for C and C++"
+[cwe_119]: https://cwe.mitre.org/data/definitions/119.html	"CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer"
+[cwe_121]: https://cwe.mitre.org/data/definitions/121.html	"CWE-121: Stack-based Buffer Overflow"
+[cwe_693]: https://cwe.mitre.org/data/definitions/693.html	"CWE-693: Protection Mechanism Failure"
