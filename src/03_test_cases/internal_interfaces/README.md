@@ -28,7 +28,7 @@
 
 ## Overview
 
-This section includes test cases and categories for the component internal interface. Similar to the processing unit and the memory, the internal interface is a device-internal element that can only be accessed with *PA-4*. Establishing a direct connection to an internal interface might require specific hardware equipment (e.g., a debugging board, an oscilloscope or test probes).
+This section includes test cases and categories for the component internal interface and its specializations, including Universal Asynchronous Receiver-Transmitter ([ISTG-INT[UART]](./universal_asynchronous_receiver_transmitter.md)), Inter-Integrated Circuit ([ISTG-INT[I2C]](./inter_integrated_circuit.md)), and Serial Peripheral Interface ([ISTG-INT[SPI]](./serial_peripheral_interface.md)). Similar to the processing unit and the memory, the internal interface is a device-internal element that can only be accessed with *PA-4*. Establishing a direct connection to an internal interface might require specific hardware equipment (e.g., a debugging board, an oscilloscope or test probes). Note that some specializations may be accessible at *PA-3* where debug headers or test points are externally exposed on the device enclosure.
 
 In regards to test case categories that are relevant for an internal interface, the following were identified:
 
