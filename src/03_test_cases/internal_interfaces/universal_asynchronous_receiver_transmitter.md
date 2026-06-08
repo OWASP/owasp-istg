@@ -73,6 +73,7 @@ Serial console access must require authentication in production firmware. If a c
 - [CP2102 USB-UART Bridge - Silicon Labs](https://www.silabs.com/interface/usb-bridges/classic/device.cp2102)
 - [CVE-2025-53914 - Calix GigaCenter ONT Unauthenticated UART Root Access](https://www.cve.org/CVERecord?id=CVE-2025-53914)
 - [CVE-2024-28326 - ASUS RT-N12 D1 Unauthenticated UART Root Access](https://www.cvedetails.com/cve/CVE-2024-28326/)
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V2.2.4: "Verify that device debug capabilities can only be accessed by approved staff (e.g. support and engineering teams) and verify that access is monitored or logged"
 
 ### Bootloader Interrupt via Serial Console (ISTG-INT[UART]-AUTHZ-002)
 
@@ -116,6 +117,7 @@ The bootloader autoboot delay should be set to zero (`CONFIG_BOOTDELAY=0` in U-B
 - [CVE-2023-48426 - U-Boot Shell Accessible via UART Interrupt (CVSS 10.0)](https://www.tenable.com/cve/CVE-2023-48426)
 - [CVE-2024-22013 - U-Boot Environment Read from Unauthenticated Partition](https://github.com/advisories/GHSA-7j8v-7qw4-w29q)
 - [CVE-2023-39902 - U-Boot SPL Unauthenticated Code Execution via FIT Image](https://community.nxp.com/t5/i-MX-Security/U-Boot-Secondary-Program-Loader-Authentication-Vulnerability-CVE/ta-p/1736196)
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V2.2.4: "Verify that device debug capabilities can only be accessed by approved staff and verify that access is monitored or logged"; V3.1.3: "Verify that communication interfaces such as USB, UART, and other variants are disabled or adequately protected during every stage of the device's boot process"; V5.1.1: "Verify that the platform supports disabling or protecting access to debugging interfaces (e.g. JTAG, SWD, UART etc.)"
 
 ## Information Gathering (ISTG-INT[UART]-INFO)
 
@@ -163,6 +165,7 @@ While the identification of UART interface parameters is not a vulnerability in 
 - [sigrok/PulseView Logic Analyzer Software](https://sigrok.org/wiki/PulseView)
 - [HydraBus UART Mode](https://github.com/hydrabus/hydrafw/wiki/HydraFW-UART-guide)
 - [Bus Pirate UART Documentation](https://buspirate.com/bus-pirate-uart/)
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V5.1.1: "Verify that the platform supports disabling or protecting access to debugging interfaces (e.g. JTAG, SWD, UART etc.)"
 
 ### Disclosure of Sensitive Data in Serial Output (ISTG-INT[UART]-INFO-002)
 
@@ -204,6 +207,7 @@ Serial output in production firmware must be reduced to the minimum required for
 
 - [minicom Serial Terminal](https://salsa.debian.org/minicom-team/minicom)
 - [picocom Minimal Serial Terminal](https://github.com/npat-efault/picocom)
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V2.1.9: "Verify that authentication credentials for users, devices, or services are not hardcoded in firmware or ecosystem applications"; V3.1.6: "Verify that bootloader stages do not contain sensitive information (e.g. private keys or passwords logged to the console) as part of device start-up"
 
 ## Input Validation (ISTG-INT[UART]-INPV)
 
@@ -244,3 +248,4 @@ Serial console command interfaces must validate and sanitize all input before pr
 
 - [U-Boot Environment Variable Security](https://docs.u-boot.org/en/latest/usage/environment.html)
 - [GNU Screen Terminal Multiplexer](https://www.gnu.org/software/screen/)
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.1.3: "Verify that communication interfaces such as USB, UART, and other variants are disabled or adequately protected during every stage of the device's boot process"
