@@ -14,6 +14,8 @@
 * [Configuration and Patch Management (ISTG-INT[JTAG]-CONF)](#configuration-and-patch-management-istg-intjtag-conf)
 
   * [Lifecycle and Security-Configuration Review (ISTG-INT[JTAG]-CONF-001)](#lifecycle-and-security-configuration-review-istg-intjtag-conf-001)
+* [Reporting Guidance](#reporting-guidance)
+* [Security and Remediation Considerations](#security-and-remediation-considerations)
 * [Out-of-Scope Activities](#out-of-scope-activities)
 * [References](#references)
 
@@ -24,6 +26,8 @@ Joint Test Action Group (JTAG), Serial Wire Debug (SWD), and related device-inte
 The security impact of such interfaces depends on the specific implementation and production configuration. Relevant factors include whether the interface is present, whether it is physically reachable, which transport is exposed, whether access is disabled or restricted in the intended production state, whether authenticated debug is implemented, and which asset classes are reachable through the interface.
 
 This specialization focuses on authorized, laboratory-based testing of JTAG, SWD, and related debug-access paths on IoT devices. The baseline methodology is intended to be read-only and non-destructive by default.
+
+Documented hardware-interface threat models and vulnerability disclosures show that insufficiently restricted debug interfaces can support firmware or data extraction, runtime asset exposure, and deeper platform analysis when physical access is available. This specialization focuses on testable device properties rather than threat-actor attribution.
 
 JTAG, SWD, Boundary Scan, internal scan chains, debug locking, debug authentication, readout protection, lifecycle states, eFuse-based controls, and option-byte style configuration are related but distinct concepts. The presence of a physical interface does not automatically imply unrestricted processor debug access or full memory access. Actual capabilities depend on the device architecture, vendor implementation, lifecycle state, and configured protections.
 
@@ -206,6 +210,36 @@ Debug-access policy is often affected by lifecycle state, readout protection, de
 
 Production devices should use the vendor-supported debug-security configuration appropriate for the intended lifecycle state. Configuration should be applied consistently across documented debug paths. Persistent or irreversible security controls should be managed through a controlled manufacturing and quality-assurance process.
 
+## Reporting Guidance
+
+A finding related to JTAG, SWD, or a related debug-access path should record the relevant device and testing context. At minimum, the report should include:
+
+- Device model and hardware revision where available
+- Firmware version where available
+- Intended lifecycle state, such as development, manufacturing, production, service, RMA, or decommissioned
+- Identified transport, such as JTAG, SWD, Boundary Scan, USB-JTAG, another documented debug path, or unknown
+- Physical accessibility of the interface in the tested configuration
+- Observed debug-access state, such as unrestricted, disabled, restricted, authenticated, or conditionally available
+- Asset classes observed through the interface, if any
+- Whether testing remained read-only and non-destructive
+- Any assumptions, limitations, or uncertainties
+- Remediation principle appropriate to the assessed device and lifecycle state
+
+## Security and Remediation Considerations
+
+The following controls may reduce the risk of unintentionally exposed JTAG, SWD, or related debug-access paths:
+
+- Define the intended debug-access policy for each lifecycle state.
+- Disable or restrict debug access that is not required in production.
+- Use vendor-supported hardware-backed controls where available.
+- Require documented authentication for retained service or RMA debug access.
+- Apply least privilege to authenticated debug capabilities.
+- Ensure that all documented debug paths are covered by the same production security policy.
+- Verify debug-security configuration during manufacturing quality assurance.
+- Treat irreversible controls, such as OTP, eFuse, option-byte, readout-protection, or lifecycle-state changes, as controlled production operations.
+- Use physical protections such as locked enclosures, tamper-evident seals, and access control as supporting controls, not as a replacement for enforced debug-access policy.
+- Document service procedures so that debug access is not left enabled unintentionally after repair or diagnostics.
+
 ## Out-of-Scope Activities
 
 The following activities are outside the baseline scope of this specialization unless they are separately authorized and covered by a dedicated methodology:
@@ -238,6 +272,12 @@ For this specialization, data from the following sources was consolidated:
 * NVD, [CVE-2024-7726 — Kioxia CM6 / PM6 / PM7 JTAG Debug Port][nvd_cve_2024_7726]
 * NVD, [CVE-2017-18347 — STM32F0 RDP Level 1 SWD Race Condition][nvd_cve_2017_18347]
 * AMD, [AMD Graphics Vulnerabilities — May 2026, CVE-2025-0040][amd_cve_2025_0040]
+* MITRE EMB3D, [TID-115: Firmware/Data Extraction via Hardware Interface][mitre_emb3d_tid_115]
+* MITRE EMB3D, [TID-119: Latent Hardware Debug Port Allows Memory/Code Manipulation][mitre_emb3d_tid_119]
+* MITRE CWE, [CWE-1191: On-Chip Debug and Test Interface With Improper Access Control][mitre_cwe_1191]
+* MITRE CWE, [CWE-1244: Internal Asset Exposed to Unsafe Debug Access Level or State][mitre_cwe_1244]
+* NVD, [CVE-2025-26408 — Wattsense Bridge JTAG Interface][nvd_cve_2025_26408]
+* SEC Consult, [Multiple Vulnerabilities in Wattsense Bridge][sec_consult_wattsense]
 
 [arm_coresight_swjdp]: https://developer.arm.com/documentation/ddi0480/e/Debug-Access-Port/SWJ-DP/JTAG-and-SWD-interface
 [espressif_esp32c3_jtag]: https://docs.espressif.com/projects/esp-idf/en/stable/esp32c3/api-guides/jtag-debugging/index.html
@@ -248,3 +288,9 @@ For this specialization, data from the following sources was consolidated:
 [nvd_cve_2024_7726]: https://nvd.nist.gov/vuln/detail/CVE-2024-7726
 [nvd_cve_2017_18347]: https://nvd.nist.gov/vuln/detail/CVE-2017-18347
 [amd_cve_2025_0040]: https://www.amd.com/en/resources/product-security/bulletin/amd-sb-6027.html
+[mitre_emb3d_tid_115]: https://emb3d.mitre.org/threats/TID-115.html
+[mitre_emb3d_tid_119]: https://emb3d.mitre.org/threats/TID-119.html
+[mitre_cwe_1191]: https://cwe.mitre.org/data/definitions/1191.html
+[mitre_cwe_1244]: https://cwe.mitre.org/data/definitions/1244.html
+[nvd_cve_2025_26408]: https://nvd.nist.gov/vuln/detail/CVE-2025-26408
+[sec_consult_wattsense]: https://sec-consult.com/vulnerability-lab/advisory/multiple-vulnerabilities-in-wattsense-bridge/
