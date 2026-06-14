@@ -21,6 +21,7 @@
     - [Firmware Update Mechnanism (ISTG-FW[UPDT])](./03_test_cases/firmware/firmware_update_mechanism.md)
   - [Data Exchange Services (ISTG-DES)](./03_test_cases/data_exchange_services/README.md)
   - [Internal Interfaces (ISTG-INT)](./03_test_cases/internal_interfaces/README.md)
+    - [Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])](./03_test_cases/internal_interfaces/joint_test_action_group.md)
   - [Physical Interfaces (ISTG-PHY)](./03_test_cases/physical_interfaces/README.md)
   - [Wireless Interfaces (ISTG-WRLS)](./03_test_cases/wireless_interfaces/README.md)
   - [User Interfaces (ISTG-UI)](./03_test_cases/user_interfaces/README.md)

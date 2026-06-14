@@ -3,6 +3,7 @@
 ## Table of Contents
 - [3.5. Internal Interfaces (ISTG-INT)](#35-internal-interfaces-istg-int)
 	- [Table of Contents](#table-of-contents)
+	- [Specializations](#specializations)
 	- [Overview](#overview)
 	- [Authorization (ISTG-INT-AUTHZ)](#authorization-istg-int-authz)
 	  - [Unauthorized Access to the Interface (ISTG-INT-AUTHZ-001)](#unauthorized-access-to-the-interface-istg-int-authz-001)
@@ -23,6 +24,12 @@
 	- [Input Validation (ISTG-INT-INPV)](#input-validation-istg-int-inpv)
 	  - [Insufficient Input Validation (ISTG-INT-INPV-001)](#insufficient-input-validation-istg-int-inpv-001)
 	  - [Code or Command Injection (ISTG-INT-INPV-002)](#code-or-command-injection-istg-int-inpv-002)
+
+
+
+## Specializations
+
+3.5.1. [Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])](./joint_test_action_group.md)
 
 
 
