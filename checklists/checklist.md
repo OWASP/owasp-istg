@@ -116,6 +116,18 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-INT-INPV-001|Insufficient Input Validation|||
 |ISTG-INT-INPV-002|Code or Command Injection|||
 
+### Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])
+|Test ID|Test Name|Status|Notes|
+|-|-|-|-|
+|**ISTG-INT[JTAG]-AUTHZ**|**Authorization**|||
+|ISTG-INT[JTAG]-AUTHZ-001|Unauthorized Debug Access in Production State|||
+|ISTG-INT[JTAG]-AUTHZ-002|Early-Boot Debug-State Exposure|||
+|**ISTG-INT[JTAG]-INFO**|**Information Gathering**|||
+|ISTG-INT[JTAG]-INFO-001|Interface Presence, Physical Accessibility, and Transport Identification|||
+|ISTG-INT[JTAG]-INFO-002|Accessible Asset Boundary Review|||
+|**ISTG-INT[JTAG]-CONF**|**Configuration and Patch Management**|||
+|ISTG-INT[JTAG]-CONF-001|Lifecycle and Security-Configuration Review|||
+
 ## Physical Interfaces (ISTG-PHY)
 |Test ID|Test Name|Status|Notes|
 |-|-|-|-|

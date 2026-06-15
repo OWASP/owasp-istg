@@ -14,6 +14,8 @@
 
 3.5. [**Internal Interfaces (ISTG-INT)**](./internal_interfaces/README.md)
 
+   3.5.1. [Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])](./internal_interfaces/joint_test_action_group.md)
+
 3.6. [**Physical Interfaces (ISTG-PHY)**](./physical_interfaces/README.md)
 
 3.7. [**Wireless Interfaces (ISTG-WRLS)**](./wireless_interfaces/README.md)
