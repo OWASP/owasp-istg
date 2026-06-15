@@ -58,6 +58,7 @@ Many IoT devices expose a UART serial console that drops directly to a privilege
 - A USB-UART adapter (e.g., based on FT232RL, CP2102, or CH340G) must be connected to the device at the identified baud rate. The adapter voltage must match the device's logic level (typically 3.3V for modern IoT devices).
 - A serial terminal (e.g., minicom, screen, picocom) must be opened at the correct baud rate and settings (typically 8N1: 8 data bits, no parity, 1 stop bit).
 - It must be determined whether the serial console provides a shell or login prompt upon device boot and during normal operation.
+- Where relevant to the device boot flow, repeated interrupt inputs such as Ctrl+C or Ctrl+D during kernel initialization or early userspace startup must be assessed to determine whether they expose an unintended fallback shell, recovery console, debug prompt, or other unauthenticated state.
 - If a login prompt is present, it must be assessed whether it can be bypassed (e.g., via bootloader access, single-user mode, or kernel parameter modification).
 - The privilege level of any accessible shell must be documented.
 
@@ -236,6 +237,7 @@ If a UART serial console accepts commands without proper input validation, an at
 
 - Based on [ISTG-INT\[UART\]-AUTHZ-001](#unauthenticated-access-to-serial-console-istg-intuart-authz-001), access to the serial console must be established.
 - If a full shell is accessible, standard OS command injection techniques must be tested including shell metacharacters (`;`, `|`, `&&`, `` ` ``, `$()`), path traversal, and environment variable manipulation.
+- If a restricted shell or custom command interface is accessible, alternate line-termination and delimiter handling must be assessed, including CR/LF variants (`\r`, `\n`) and raw byte values (`0x0D`, `0x0A`) where the serial parser handles raw input.
 - If a restricted shell or custom command interface is accessible, it must be assessed whether the command set can be escaped or bypassed to execute arbitrary commands.
 - In bootloader environments (see [ISTG-INT\[UART\]-AUTHZ-002](#bootloader-interrupt-via-serial-console-istg-intuart-authz-002)), environment variable injection must be tested by setting variables such as `bootcmd` or `bootargs` to include malicious commands that execute during the boot process.
 - The stability and recovery behavior of the device following malformed or unexpected input must be documented.
