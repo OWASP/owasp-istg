@@ -14,7 +14,9 @@
 
 3.5. [**Internal Interfaces (ISTG-INT)**](./internal_interfaces/README.md)
 
-   3.5.3. [Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])](./internal_interfaces/universal_asynchronous_receiver_transmitter.md)
+   3.5.1. [Inter-Integrated Circuit (ISTG-INT[I2C])](./internal_interfaces/inter_integrated_circuit.md)
+
+   3.5.2. [Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])](./internal_interfaces/universal_asynchronous_receiver_transmitter.md)
 
 3.6. [**Physical Interfaces (ISTG-PHY)**](./physical_interfaces/README.md)
 

@@ -1,4 +1,4 @@
-# 3.5.3. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
+# 3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
 
 ## Table of Contents
 

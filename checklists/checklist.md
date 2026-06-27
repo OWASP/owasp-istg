@@ -116,6 +116,18 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-INT-INPV-001|Insufficient Input Validation|||
 |ISTG-INT-INPV-002|Code or Command Injection|||
 
+### Inter-Integrated Circuit (ISTG-INT[I2C])
+|Test ID|Test Name|Status|Notes|
+|-|-|-|-|
+|**ISTG-INT[I2C]-AUTHZ**|**Authorization**|||
+|ISTG-INT[I2C]-AUTHZ-001|Bus Interaction with Unauthorized Devices|||
+|**ISTG-INT[I2C]-INFO**|**Information Gathering**|||
+|ISTG-INT[I2C]-INFO-001|Slave Enumeration|||
+|ISTG-INT[I2C]-INFO-002|Communication Sniffing|||
+|ISTG-INT[I2C]-INFO-003|EEPROM/Memory Extraction|||
+|**ISTG-INT[I2C]-INPV**|**Input Validation**|||
+|ISTG-INT[I2C]-INPV-001|Insufficient Handling of Invalid Data|||
+
 ### Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
 |Test ID|Test Name|Status|Notes|
 |-|-|-|-|
