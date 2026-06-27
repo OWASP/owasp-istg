@@ -22,6 +22,7 @@
   - [Data Exchange Services (ISTG-DES)](./03_test_cases/data_exchange_services/README.md)
   - [Internal Interfaces (ISTG-INT)](./03_test_cases/internal_interfaces/README.md)
     - [Inter-Integrated Circuit (ISTG-INT[I2C])](./03_test_cases/internal_interfaces/inter_integrated_circuit.md)
+    - [Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])](./03_test_cases/internal_interfaces/universal_asynchronous_receiver_transmitter.md)
   - [Physical Interfaces (ISTG-PHY)](./03_test_cases/physical_interfaces/README.md)
   - [Wireless Interfaces (ISTG-WRLS)](./03_test_cases/wireless_interfaces/README.md)
   - [User Interfaces (ISTG-UI)](./03_test_cases/user_interfaces/README.md)

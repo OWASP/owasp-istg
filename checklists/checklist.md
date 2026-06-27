@@ -128,6 +128,18 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |**ISTG-INT[I2C]-INPV**|**Input Validation**|||
 |ISTG-INT[I2C]-INPV-001|Insufficient Handling of Invalid Data|||
 
+### Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
+|Test ID|Test Name|Status|Notes|
+|-|-|-|-|
+|**ISTG-INT[UART]-AUTHZ**|**Authorization**|||
+|ISTG-INT[UART]-AUTHZ-001|Unauthenticated Access to Serial Console|||
+|ISTG-INT[UART]-AUTHZ-002|Bootloader Interrupt via Serial Console|||
+|**ISTG-INT[UART]-INFO**|**Information Gathering**|||
+|ISTG-INT[UART]-INFO-001|UART Interface and Baud Rate Identification|||
+|ISTG-INT[UART]-INFO-002|Disclosure of Sensitive Data in Serial Output|||
+|**ISTG-INT[UART]-INPV**|**Input Validation**|||
+|ISTG-INT[UART]-INPV-001|Command Injection via Serial Interface|||
+
 ## Physical Interfaces (ISTG-PHY)
 |Test ID|Test Name|Status|Notes|
 |-|-|-|-|
