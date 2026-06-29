@@ -95,6 +95,8 @@ Proper authorization checks need to be implemented, which ensure that access to 
 
 This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/README.md#privilege-escalation-istg-des-authz-002).
 
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V2.2.2: "Verify that devices enforce the concept of least privilege by limiting applications and services that run as root or administrator"; V3.3.3: "Verify that Linux kernel capabilities are configured with a minimal set for processes that require elevated access"
+
 
 
 ## Information Gathering (ISTG-FW[INST]-INFO)
@@ -171,7 +173,9 @@ Verifying the digital signature of the bootloader is an important measure to det
 
 The device must properly verify the digital signature of a bootloader before it is executed. A bootloader without a valid signature should not be executed.
 
+**References**
 
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.1.4: "Verify that the authenticity of the first stage bootloader is verified by a trusted component of which the configuration in read-only memory (ROM) cannot be altered (e.g. CPU Based Secure Boot/Trusted Boot with a hardware root of trust)"; V3.1.5: "Verify that the authenticity of bootloader stages or application code gets cryptographically verified before executing subsequent steps in the boot process"
 
 [owasp_fstm]: https://github.com/scriptingxss/owasp-fstm	"OWASP Firmware Security Testing Methodology"
 [iot_penetration_testing_cookbook]: https://www.packtpub.com/product/iot-penetration-testing-cookbook/9781787280571	"IoT Penetration Testing Cookbook"

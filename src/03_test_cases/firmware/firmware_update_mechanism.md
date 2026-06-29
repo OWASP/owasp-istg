@@ -65,6 +65,7 @@ For this test case, data from the following sources was consolidated:
 
 * OWASP ["Firmware Security Testing Methodology"][owasp_fstm]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.10: "Verify that the device authenticates to the update server component prior to downloading the update"
 
 
 
@@ -111,6 +112,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V2.4.2: "Verify the proper use of cryptography. Only standard and strong algorithms should be used, with adequate key size and secure implementations"; V3.4.13: "Verify that firmware update signing and verification mechanisms support post-quantum digital signatures (ML-DSA, SLH-DSA) or hybrid cryptographic schemes to ensure long-term authenticity for devices expected to operate beyond 2030"
 
 ### Insufficient Firmware Update Encryption (ISTG-FW[UPDT]-CRYPT-002)
 
@@ -193,6 +195,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.12: "Verify that software and firmware updates are transmitted using an encrypted communication channel"; V4.1.2: "Verify that only cipher suites which are recommended by standard bodies such as BSI, NIST or ECRYPT and which do not have critical flaws are used"; V4.1.3: "Verify that in case TLS is used, the device cryptographically verifies the X.509 certificate"
 
 ### Insufficient Verification of the Firmware Update Signature (ISTG-FW[UPDT]-CRYPT-004)
 
@@ -229,6 +232,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.3: "Verify that updates are cryptographically signed by a trusted source and their authenticity is verified before execution"
 
 
 
@@ -269,6 +273,7 @@ For this test case, data from the following sources was consolidated:
 
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.6: "Verify that the device cannot be downgraded to known vulnerable versions (anti-rollback)"
 
 
 
