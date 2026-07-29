@@ -56,8 +56,12 @@ def parse_test_cases(test_case_dir=TEST_CASE_DIR):
             if component_id is not None:
 
                 # parse other files in the component directory
-                # every file besides "README.md" resembles a component specialization
+                # every markdown file besides "README.md" resembles a component specialization
+                # hidden files are skipped (e.g., macOS "._*" AppleDouble files, which are binary)
                 for filename in filenames:
+
+                    if filename.startswith(".") or not filename.endswith(".md"):
+                        continue
 
                     test_cases_component_specialization = parse_file(join(dirpath, filename))
 
