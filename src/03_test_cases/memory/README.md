@@ -239,8 +239,6 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Pentesting Guide"][iot_pentesting_guide] by Aditya Gupta
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
-* [ETSI EN 303 645][etsi_en_303_645] - Cybersecurity for Consumer Internet of Things: Baseline Requirements
-* [NIST SP 800-213][nist_sp_800_213] - IoT Device Cybersecurity Guidance for the Federal Government
 * [OpenSSF Compiler Options Hardening Guide for C and C++][openssf_compiler_hardening]
 * [CWE-119][cwe_119]: Improper Restriction of Operations within the Bounds of a Memory Buffer
 * [CWE-121][cwe_121]: Stack-based Buffer Overflow
@@ -341,8 +339,6 @@ This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-w
 [iot_pentesting_guide]: https://www.iotpentestingguide.com	"IoT Pentesting Guide"
 [iot_penetration_testing_cookbook]: https://www.packtpub.com/product/iot-penetration-testing-cookbook/9781787280571	"IoT Penetration Testing Cookbook"
 [iot_hackers_handbook]: https://link.springer.com/book/10.1007/978-1-4842-4300-8	"The IoT Hacker's Handbook"
-[etsi_en_303_645]: https://www.etsi.org/deliver/etsi_en/303600_303699/303645/02.01.00_30/en_303645v020100v.pdf	"ETSI EN 303 645 - Cybersecurity for Consumer IoT"
-[nist_sp_800_213]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-213.pdf	"NIST SP 800-213 - IoT Device Cybersecurity Guidance"
 [openssf_compiler_hardening]: https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html	"OpenSSF Compiler Options Hardening Guide for C and C++"
 [cwe_119]: https://cwe.mitre.org/data/definitions/119.html	"CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer"
 [cwe_121]: https://cwe.mitre.org/data/definitions/121.html	"CWE-121: Stack-based Buffer Overflow"
