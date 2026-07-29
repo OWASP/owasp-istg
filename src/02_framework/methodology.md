@@ -215,6 +215,10 @@ Each individual test case, which is represented by a leaf node, is divided into 
 
 -   **Remediation:** The remediation section comprises recommendations regarding potential measures that can be applied to solve the security issue. However, these recommendations are only rough suggestions. It is the responsibility of the manufacturer/operator to derive detailed measures in regards of the device implementation.
 
+In addition to these sections, a test case may include a **References** section citing the sources that are specific to it, such as the tools it names, related vulnerability or weakness records, and the [OWASP IoT Security Verification Standard](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) requirements it provides evidence for.
+
+Contributors adding or updating test cases should also consult the [contribution guidelines](https://github.com/OWASP/owasp-istg/blob/main/CONTRIBUTING.md), which document the editorial conventions applied throughout the catalog.
+
 
 
 
