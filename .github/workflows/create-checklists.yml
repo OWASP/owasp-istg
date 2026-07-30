@@ -12,10 +12,16 @@ on:
 permissions:
   contents: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Serialise runs of THIS workflow only, so two runs cannot race on the push
+# below. This must not share a group with the Pages deployment: a concurrency
+# group holds at most one running plus one pending run, and a newly queued run
+# evicts the pending one regardless of cancel-in-progress, so sharing a group
+# meant a burst of merges could cancel the site deployment entirely.
+#
+# Losing an intermediate run here is harmless, because the generator rebuilds
+# the checklists from the current source rather than amending previous output.
 concurrency:
-  group: "pages"
+  group: "create-checklists"
   cancel-in-progress: false
 
 jobs:

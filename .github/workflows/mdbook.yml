@@ -1,7 +1,10 @@
 name: Deploy mdBook to GH Pages
 
 on:
-  # Runs on pushes targeting the main branch, only if files in the src directory were changed
+  # Runs on every push targeting the main branch. Deliberately not filtered by
+  # path: the book is built from src/ plus the root README, LICENSE and
+  # acknowledgements files, book.toml and the mdbook scripts, so a filter narrow
+  # enough to be useful would risk silently skipping a needed deployment.
   push:
     branches: ["main"]
 
