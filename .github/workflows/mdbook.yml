@@ -30,7 +30,7 @@ jobs:
     env:
       MDBOOK_VERSION: 0.4.40
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Install mdBook
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
@@ -44,9 +44,9 @@ jobs:
         run: bash ./scripts/mdbook_cleanup.sh
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./book
 
@@ -60,4 +60,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
