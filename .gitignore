@@ -1,0 +1,15 @@
+# mdBook build output
+book/
+
+# Files copied into src/ by scripts/mdbook_prepare.sh and removed again by
+# scripts/mdbook_cleanup.sh; they should never be committed from src/
+src/README.md
+src/LICENSE.md
+src/acknowledgements.md
+
+# sed backup files
+*.bak
+
+# macOS
+.DS_Store
+._*
