@@ -1,7 +1,10 @@
 name: Deploy mdBook to GH Pages
 
 on:
-  # Runs on pushes targeting the main branch, only if files in the src directory were changed
+  # Runs on every push targeting the main branch. Deliberately not filtered by
+  # path: the book is built from src/ plus the root README, LICENSE and
+  # acknowledgements files, book.toml and the mdbook scripts, so a filter narrow
+  # enough to be useful would risk silently skipping a needed deployment.
   push:
     branches: ["main"]
 
@@ -27,7 +30,7 @@ jobs:
     env:
       MDBOOK_VERSION: 0.4.40
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Install mdBook
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
@@ -41,9 +44,9 @@ jobs:
         run: bash ./scripts/mdbook_cleanup.sh
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./book
 
@@ -57,4 +60,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
