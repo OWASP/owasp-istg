@@ -24,6 +24,7 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-MEM-INFO-002|Disclosure of Implementation Details|||
 |ISTG-MEM-INFO-003|Disclosure of Ecosystem Details|||
 |ISTG-MEM-INFO-004|Disclosure of User Data|||
+|ISTG-MEM-INFO-005|Insecure Binary Compilation Options|||
 |**ISTG-MEM-SCRT**|**Secrets**|||
 |ISTG-MEM-SCRT-001|Unencrypted Storage of Secrets|||
 |**ISTG-MEM-CRYPT**|**Cryptography**|||
@@ -36,6 +37,7 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-FW-INFO-001|Disclosure of Source Code and Binaries|||
 |ISTG-FW-INFO-002|Disclosure of Implementation Details|||
 |ISTG-FW-INFO-003|Disclosure of Ecosystem Details|||
+|ISTG-FW-INFO-004|Insecure Binary Compilation Options|||
 |**ISTG-FW-CONF**|**Configuration and Patch Management**|||
 |ISTG-FW-CONF-001|Usage of Outdated Software|||
 |ISTG-FW-CONF-002|Presence of Unnecessary Software and Functionalities|||
