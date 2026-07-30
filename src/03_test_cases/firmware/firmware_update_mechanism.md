@@ -65,6 +65,7 @@ For this test case, data from the following sources was consolidated:
 
 * OWASP ["Firmware Security Testing Methodology"][owasp_fstm]
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.10 (device authenticates to the update server before downloading an update)
 
 
 
@@ -111,6 +112,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V2.4.2 (proper use of strong, standard cryptographic algorithms with adequate key sizes); V3.4.13 (post-quantum or hybrid update signatures for devices operating beyond 2030)
 
 ### Insufficient Firmware Update Encryption (ISTG-FW[UPDT]-CRYPT-002)
 
@@ -193,6 +195,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.12 (updates transmitted over an encrypted channel); V4.1.2 (only strong TLS cipher suites enabled); V4.1.3 (device cryptographically verifies the X.509 certificate)
 
 ### Insufficient Verification of the Firmware Update Signature (ISTG-FW[UPDT]-CRYPT-004)
 
@@ -229,6 +232,7 @@ For this test case, data from the following sources was consolidated:
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.3 (updates signed by a trusted source and verified before execution)
 
 
 
@@ -269,6 +273,7 @@ For this test case, data from the following sources was consolidated:
 
 * ["IoT Penetration Testing Cookbook"][iot_penetration_testing_cookbook] by Aaron Guzman and Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V3.4.6 (device cannot be downgraded to known vulnerable versions — anti-rollback)
 
 
 
