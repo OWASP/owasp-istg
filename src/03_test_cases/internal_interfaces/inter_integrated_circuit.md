@@ -169,7 +169,7 @@ For this test case, data from the following sources was consolidated:
 * ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
-- [Saleae Logic Analyzer](https://www.saleae.com)
+- [Saleae Logic Analyzer Documentation](https://support.saleae.com/)
 - [sigrok Signal Analysis Software](https://sigrok.org/wiki/Main_Page)
 - [Bus Pirate I2C Documentation](http://dangerousprototypes.com/docs/Bus_Pirate_I2C)
 
