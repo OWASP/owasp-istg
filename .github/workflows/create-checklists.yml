@@ -1,9 +1,16 @@
 name: Create checklists
 
 on:
-  # Runs on pushes targeting the main branch, only if md-files in the test case directory were changed
+  # Regenerates and commits the checklists when test cases change on main
   push:
     branches: [ "main" ]
+    paths: [ "src/03_test_cases/**.md" ]
+
+  # On pull requests the generator runs as a validation step only, without
+  # committing. This catches errors that would otherwise not surface until after
+  # merge — most importantly two test case files declaring the same chapter
+  # number, which the generator now rejects.
+  pull_request:
     paths: [ "src/03_test_cases/**.md" ]
 
   # Allows to run this workflow manually from the actions tab
@@ -12,16 +19,17 @@ on:
 permissions:
   contents: write
 
-# Serialise runs of THIS workflow only, so two runs cannot race on the push
-# below. This must not share a group with the Pages deployment: a concurrency
-# group holds at most one running plus one pending run, and a newly queued run
-# evicts the pending one regardless of cancel-in-progress, so sharing a group
-# meant a burst of merges could cancel the site deployment entirely.
+# Serialise runs of THIS workflow per ref, so two runs on the same branch cannot
+# race on the push below, while runs for different pull requests stay
+# independent. This must not share a group with the Pages deployment: a
+# concurrency group holds at most one running plus one pending run, and a newly
+# queued run evicts the pending one regardless of cancel-in-progress, so sharing
+# a group meant a burst of merges could cancel the site deployment entirely.
 #
 # Losing an intermediate run here is harmless, because the generator rebuilds
 # the checklists from the current source rather than amending previous output.
 concurrency:
-  group: "create-checklists"
+  group: "create-checklists-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -40,7 +48,11 @@ jobs:
     - name: Run script
       run: |
         python3 scripts/create_checklists.py
+    # Only commit on main. On a pull request the step above is the whole point:
+    # it either succeeds or fails the check. Committing would also fail anyway,
+    # since GITHUB_TOKEN is read-only for pull requests raised from forks.
     - name: Commit and push
+      if: github.event_name != 'pull_request'
       uses: EndBug/add-and-commit@v10
       with:
         message: Update checklists

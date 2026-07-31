@@ -124,9 +124,26 @@ def parse_file(filepath):
 
 
 def sort_ids_by_chapter(content):
-    sorted_content = {}
-    for id in content: sorted_content[content[id]["chapter"]] = id
-    return dict(sorted(sorted_content.items())).values()
+    # sort on the chapter number as integers, so that "3.5.10." follows "3.5.9."
+    # rather than preceding "3.5.2." as it would under a string comparison
+    def chapter_key(id):
+        return tuple(int(part) for part in content[id]["chapter"].strip(".").split("."))
+
+    # fail loudly on duplicate chapter numbers. this function previously built a
+    # dict keyed by chapter, so two entries sharing a number silently overwrote
+    # each other and one disappeared from the checklist with no warning
+    seen = {}
+    for id in content:
+        chapter = content[id]["chapter"]
+        if chapter in seen:
+            raise ValueError(
+                f"duplicate chapter number {chapter} used by both {seen[chapter]} and {id}. "
+                "specialization numbers are assigned append-on-merge, so take the next "
+                "free number: CONTRIBUTING.md#section-numbering-for-specializations"
+            )
+        seen[chapter] = id
+
+    return sorted(content, key=chapter_key)
 
 
 def export_test_cases_markdown(test_case_catalog, checklist=CHECKLIST_MARKDOWN, checklist_template=CHECKLIST_TEMPLATE_MARKDOWN):
