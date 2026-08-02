@@ -54,6 +54,7 @@ In regards of test case categories that are relevant for a wireless interface, t
 Depending on the access model for a given device, only certain individuals might be allowed to access a wireless interface. Thus, proper authentication and authorization procedures need to be in place, which ensure that only authorized users can get access.
 
 ### Unauthorized Access to the Interface (ISTG-WRLS-AUTHZ-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -63,7 +64,8 @@ Depending on the access model for a given device, only certain individuals might
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -93,6 +95,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/README.md#unauthorized-access-to-the-data-exchange-service-istg-des-authz-001).
 
 ### Privilege Escalation (ISTG-WRLS-AUTHZ-002)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -136,6 +139,7 @@ This test case is based on: [ISTG-DES-AUTHZ-002](../data_exchange_services/READM
 Wireless interface might disclose various information, which could reveal details regarding the inner workings of the device or the surrounding IoT ecosystem to potential attackers. This could enable and facilitate further, more advanced attacks.
 
 ### Disclosure of Implementation Details (ISTG-WRLS-INFO-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -181,6 +185,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-istg-fw-info-002).
 
 ### Disclosure of Ecosystem Details (ISTG-WRLS-INFO-002)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -220,6 +225,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
 ### Disclosure of User Data (ISTG-WRLS-INFO-003)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -263,6 +269,7 @@ This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmw
 Since IoT devices can have a long lifespan, it is important to make sure that the software, running on the device, is regularly updated in order to apply the latest security patches. The update process of the firmware itself will be covered by [ISTG-FW[UPDT]](../firmware/firmware_update_mechanism.md). However, it must also be verified that software packages, which are running on the device and listening on interfaces, are up-to-date as well.
 
 ### Usage of Outdated Software (ISTG-WRLS-CONF-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -306,6 +313,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-FW-CONF-001](../firmware/README.md#usage-of-outdated-software-istg-fw-conf-001).
 
 ### Presence of Unnecessary Software and Functionalities (ISTG-WRLS-CONF-002)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -353,6 +361,7 @@ This test case is based on: [ISTG-FW-CONF-002](../firmware/README.md#presence-of
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device has to provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
 ### Access to Confidential Data (ISTG-WRLS-SCRT-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -396,6 +405,7 @@ This test case is based on: [ISTG-DES-SCRT-001](../data_exchange_services/README
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
 ### Usage of Weak Cryptographic Algorithms (ISTG-WRLS-CRYPT-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -445,6 +455,7 @@ This test case is based on: [ISTG-FW-CRYPT-001](../firmware/README.md#usage-of-w
 Even if all other aspects of the wireless interface are securely implemented and configured, issues in the underlying logic itself might render the device vulnerable to attacks. Thus, it must be verified if the wireless interface and its functionalities are working as intended and if exceptions are detected and properly handled.
 
 ### Circumvention of the Intended Business Logic (ISTG-WRLS-LOGIC-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -488,6 +499,7 @@ This test case is based on: [ISTG-DES-LOGIC-001](../data_exchange_services/READM
 In order to ensure that only valid and well-formed data enters the processing flows of a device, the input from a all untrustworthy sources, e.g., users or external systems, has to be verified and validated.
 
 ### Insufficient Input Validation (ISTG-WRLS-INPV-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -527,6 +539,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-DES-INPV-001](../data_exchange_services/README.md#insufficient-input-validation-istg-des-inpv-001).
 
 ### Code or Command Injection (ISTG-WRLS-INPV-002)
+
 **Required Access Levels**
 
 <table width="100%">

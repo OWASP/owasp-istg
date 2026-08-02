@@ -37,6 +37,7 @@ The memory of an IoT device can include various data, which, if disclosed, coul
 Tests on the device memory are performed by directly accessing the memory chips. Thus, invasive physical access (*PA-4*) is required while no user accounts are used (*AA-1*).
 
 ### Disclosure of Source Code and Binaries (ISTG-MEM-INFO-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -46,7 +47,8 @@ Tests on the device memory are performed by directly accessing the memory chips.
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -80,6 +82,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-FW-INFO-001](../firmware/README.md#disclosure-of-source-code-and-binaries-istg-fw-info-001).
 
 ### Disclosure of Implementation Details (ISTG-MEM-INFO-002)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -89,7 +92,8 @@ This test case is based on: [ISTG-FW-INFO-001](../firmware/README.md#disclosure-
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -121,6 +125,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-of-implementation-details-istg-fw-info-002).
 
 ### Disclosure of Ecosystem Details (ISTG-MEM-INFO-003)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -130,7 +135,8 @@ This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -158,6 +164,7 @@ For this test case, data from the following sources was consolidated:
 This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-of-ecosystem-details-istg-fw-info-003).
 
 ### Disclosure of User Data (ISTG-MEM-INFO-004)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -167,7 +174,8 @@ This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -195,6 +203,7 @@ This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmw
 
 
 ### Insecure Binary Compilation Options (ISTG-MEM-INFO-005)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -204,7 +213,8 @@ This test case is based on: [ISTG-FW[INST]-INFO-001](../firmware/installed_firmw
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -253,6 +263,7 @@ This test case is based on: [ISTG-FW-INFO-004](../firmware/README.md#insecure-bi
 IoT devices are often operated outside of the control space of their manufacturer. Still, they need to establish connections to other network nodes within the IoT ecosystem, e.g., to request and receive firmware updates or to send data to a cloud API. Hence, it might be required that the device can provide some kind of authentication credential or secret. These secrets need to be stored on the device in a secure manner to prevent them from being stolen and used to impersonate the device.
 
 ### Unencrypted Storage of Secrets (ISTG-MEM-SCRT-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -262,7 +273,8 @@ IoT devices are often operated outside of the control space of their manufactur
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
@@ -295,6 +307,7 @@ This test case is based on: [ISTG-FW-SCRT-002](../firmware/README.md#unencrypted
 Many IoT devices need to implement cryptographic algorithms, e.g., to securely store sensitive data, for authentication purposes or to receive and verify encrypted data from other network nodes. Failing to implement secure, state of the art cryptography might lead to the exposure of sensitive data, device malfunctions or loss of control over the device.
 
 ### Usage of Weak Cryptographic Algorithms (ISTG-MEM-CRYPT-001)
+
 **Required Access Levels**
 
 <table width="100%">
@@ -304,7 +317,8 @@ Many IoT devices need to implement cryptographic algorithms, e.g., to securely 
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i></tr>
+		<td><i>AA-1</i></td>
+	</tr>
 </table>
 
 **Summary**
