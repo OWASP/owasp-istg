@@ -1,4 +1,4 @@
-# 3.5.1. Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])
+# 3.5.3. Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])
 
 ## Table of Contents
 
@@ -29,7 +29,7 @@ Documented hardware-interface threat models and vulnerability disclosures show t
 
 JTAG, SWD, Boundary Scan, internal scan chains, debug locking, debug authentication, readout protection, lifecycle states, eFuse-based controls, and option-byte style configuration are related but distinct concepts. The presence of a physical interface does not automatically imply unrestricted processor debug access or full memory access. Actual capabilities depend on the device architecture, vendor implementation, lifecycle state, and configured protections.
 
-Input Validation, Secrets, Cryptography, and Business Logic are not inherited as separate categories in this specialization: unsafe write, breakpoint, or execution-control operations are outside the baseline unless separately authorized; secret, firmware, memory, or cryptographic-material exposure is covered as an observable asset-boundary concern; and business-logic testing is not applicable to a low-level debug-access transport.
+Input Validation, Secrets, and Business Logic are not inherited as separate categories in this specialization: unsafe write, breakpoint, or execution-control operations are outside the baseline unless separately authorized; secret, firmware, memory, or user-data exposure is covered as an observable asset-boundary concern; and business-logic testing is not applicable to a low-level debug-access transport. Cryptography remains applicable through the parent ISTG-INT-CRYPT guidance where authenticated debug or challenge-response unlock mechanisms implement cryptographic controls.
 
 ## Authorization (ISTG-INT[JTAG]-AUTHZ)
 

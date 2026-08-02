@@ -24,6 +24,7 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-MEM-INFO-002|Disclosure of Implementation Details|||
 |ISTG-MEM-INFO-003|Disclosure of Ecosystem Details|||
 |ISTG-MEM-INFO-004|Disclosure of User Data|||
+|ISTG-MEM-INFO-005|Insecure Binary Compilation Options|||
 |**ISTG-MEM-SCRT**|**Secrets**|||
 |ISTG-MEM-SCRT-001|Unencrypted Storage of Secrets|||
 |**ISTG-MEM-CRYPT**|**Cryptography**|||
@@ -36,6 +37,7 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-FW-INFO-001|Disclosure of Source Code and Binaries|||
 |ISTG-FW-INFO-002|Disclosure of Implementation Details|||
 |ISTG-FW-INFO-003|Disclosure of Ecosystem Details|||
+|ISTG-FW-INFO-004|Insecure Binary Compilation Options|||
 |**ISTG-FW-CONF**|**Configuration and Patch Management**|||
 |ISTG-FW-CONF-001|Usage of Outdated Software|||
 |ISTG-FW-CONF-002|Presence of Unnecessary Software and Functionalities|||
@@ -116,17 +118,29 @@ Note: The `Status` column can be set for values similar to "Pass", "Fail", "N/A"
 |ISTG-INT-INPV-001|Insufficient Input Validation|||
 |ISTG-INT-INPV-002|Code or Command Injection|||
 
-### Joint Test Action Group and Serial Wire Debug Interfaces (ISTG-INT[JTAG])
+### Inter-Integrated Circuit (ISTG-INT[I2C])
 |Test ID|Test Name|Status|Notes|
 |-|-|-|-|
-|**ISTG-INT[JTAG]-AUTHZ**|**Authorization**|||
-|ISTG-INT[JTAG]-AUTHZ-001|Unauthorized Debug Access in Production State|||
-|ISTG-INT[JTAG]-AUTHZ-002|Early-Boot Debug-State Exposure|||
-|**ISTG-INT[JTAG]-INFO**|**Information Gathering**|||
-|ISTG-INT[JTAG]-INFO-001|Interface Presence, Physical Accessibility, and Transport Identification|||
-|ISTG-INT[JTAG]-INFO-002|Accessible Asset Boundary Review|||
-|**ISTG-INT[JTAG]-CONF**|**Configuration and Patch Management**|||
-|ISTG-INT[JTAG]-CONF-001|Lifecycle and Security-Configuration Review|||
+|**ISTG-INT[I2C]-AUTHZ**|**Authorization**|||
+|ISTG-INT[I2C]-AUTHZ-001|Bus Interaction with Unauthorized Devices|||
+|**ISTG-INT[I2C]-INFO**|**Information Gathering**|||
+|ISTG-INT[I2C]-INFO-001|Slave Enumeration|||
+|ISTG-INT[I2C]-INFO-002|Communication Sniffing|||
+|ISTG-INT[I2C]-INFO-003|EEPROM/Memory Extraction|||
+|**ISTG-INT[I2C]-INPV**|**Input Validation**|||
+|ISTG-INT[I2C]-INPV-001|Insufficient Handling of Invalid Data|||
+
+### Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
+|Test ID|Test Name|Status|Notes|
+|-|-|-|-|
+|**ISTG-INT[UART]-AUTHZ**|**Authorization**|||
+|ISTG-INT[UART]-AUTHZ-001|Unauthenticated Access to Serial Console|||
+|ISTG-INT[UART]-AUTHZ-002|Bootloader Interrupt via Serial Console|||
+|**ISTG-INT[UART]-INFO**|**Information Gathering**|||
+|ISTG-INT[UART]-INFO-001|UART Interface and Baud Rate Identification|||
+|ISTG-INT[UART]-INFO-002|Disclosure of Sensitive Data in Serial Output|||
+|**ISTG-INT[UART]-INPV**|**Input Validation**|||
+|ISTG-INT[UART]-INPV-001|Command Injection via Serial Interface|||
 
 ## Physical Interfaces (ISTG-PHY)
 |Test ID|Test Name|Status|Notes|
