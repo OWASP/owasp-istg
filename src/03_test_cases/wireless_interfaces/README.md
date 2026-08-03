@@ -105,7 +105,8 @@ This test case is based on: [ISTG-DES-AUTHZ-001](../data_exchange_services/READM
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-2</i> - <i>AA-3</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-2</i> - <i>AA-3</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -149,7 +150,8 @@ Wireless interface might disclose various information, which could reveal detail
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -195,7 +197,8 @@ This test case is based on: [ISTG-FW-INFO-002](../firmware/README.md#disclosure-
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -235,7 +238,8 @@ This test case is based on: [ISTG-FW-INFO-003](../firmware/README.md#disclosure-
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -279,7 +283,8 @@ Since IoT devices can have a long lifespan, it is important to make sure that th
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -323,7 +328,8 @@ This test case is based on: [ISTG-FW-CONF-001](../firmware/README.md#usage-of-ou
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -371,7 +377,8 @@ IoT devices are often operated outside of the control space of their manufacture
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -415,7 +422,8 @@ Many IoT devices need to implement cryptographic algorithms, e.g., to securely s
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -465,7 +473,8 @@ Even if all other aspects of the wireless interface are securely implemented and
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -509,7 +518,8 @@ In order to ensure that only valid and well-formed data enters the processing fl
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
@@ -549,7 +559,8 @@ This test case is based on: [ISTG-DES-INPV-001](../data_exchange_services/README
 	</tr>
 	<tr valign="top">
 		<th align="left">Authorization</th>
-		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</tr>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device)</td>
+	</tr>
 </table>
 
 **Summary**
