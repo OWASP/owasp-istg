@@ -23,6 +23,11 @@
 	- [Input Validation (ISTG-WRLS-INPV)](#input-validation-istg-wrls-inpv)
 	  - [Insufficient Input Validation (ISTG-WRLS-INPV-001)](#insufficient-input-validation-istg-wrls-inpv-001)
 	  - [Code or Command Injection (ISTG-WRLS-INPV-002)](#code-or-command-injection-istg-wrls-inpv-002)
+	- [Signal Attacks (ISTG-WRLS-SGNL)](#signal-attacks-istg-wrls-sgnl)
+	  - [Insufficient Protection Against Relay Attacks (ISTG-WRLS-SGNL-001)](#insufficient-protection-against-relay-attacks-istg-wrls-sgnl-001)
+	  - [Insufficient Protection Against Replay Attacks (ISTG-WRLS-SGNL-002)](#insufficient-protection-against-replay-attacks-istg-wrls-sgnl-002)
+	  - [Insufficient Invalidation of Unused Rolling Codes (ISTG-WRLS-SGNL-003)](#insufficient-invalidation-of-unused-rolling-codes-istg-wrls-sgnl-003)
+	  - [Insufficient Protection Against Signal Jamming (ISTG-WRLS-SGNL-004)](#insufficient-protection-against-signal-jamming-istg-wrls-sgnl-004)
 
 
 
@@ -46,6 +51,8 @@ In regards of test case categories that are relevant for a wireless interface, t
 - **Business Logic:** Focuses on vulnerabilities in the implementation of the wireless interface.
 
 - **Input Validation:** Focuses on vulnerabilities regarding the validation and processing of input from untrustworthy sources.
+
+- **Signal Attacks:** Focuses on attacks against the radio layer itself, in which legitimate transmissions are relayed, replayed, withheld or suppressed rather than forged.
 
 
 
@@ -578,7 +585,179 @@ This test case is based on: [ISTG-DES-INPV-002](../data_exchange_services/README
 
 
 
+## Signal Attacks (ISTG-WRLS-SGNL)
+
+Wireless interfaces can be attacked at the radio layer without breaking the cryptography that protects the payload. Relaying, replaying or suppressing otherwise legitimate transmissions targets the assumptions a protocol makes about proximity, message freshness and channel availability. These attacks remain applicable to encrypted links and therefore have to be assessed separately from the confidentiality and integrity of the transmitted data.
+
+### Insufficient Protection Against Relay Attacks (ISTG-WRLS-SGNL-001)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-2</i> - <i>PA-4</i></td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></td>
+	</tr>
+</table>
+
+**Summary**
+
+Functions that are granted on the basis of proximity, such as passive keyless entry and start systems or proximity-based unlocking over Bluetooth Low Energy, assume that a responding credential is physically close to the device. In a relay attack, two attackers forward the exchange between the credential and the device over an arbitrary distance, so the function is granted while the credential is out of range. The relayed messages are genuine, which means that neither encryption nor message authentication prevents the attack.
+
+**Test Objectives**
+
+- It must be determined which functions are granted on the basis of proximity alone, e.g., unlocking, starting, disarming or resuming a session.
+
+- Using two relaying stations, one within range of the credential and one within range of the device, it must be determined whether the exchange completes and the function is granted while the credential is out of its intended range.
+
+- It must be checked whether the device constrains the exchange by other means, e.g., a round-trip time bound, a distance-bounding or ranging mechanism, or a required user interaction.
+
+**Remediation**
+
+The presence of a valid signal must not be treated as proof of proximity. Security-relevant functions should be bound to a round-trip time or ranging measurement, or require an explicit user action.
+
+**References**
+
+- ["Relay Attacks on Passive Keyless Entry and Start Systems in Modern Cars"][pkes_relay] by Aurélien Francillon, Boris Danev, and Srdjan Čapkun
+- [CWE-300][cwe_300]: Channel Accessible by Non-Endpoint
+
+### Insufficient Protection Against Replay Attacks (ISTG-WRLS-SGNL-002)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-2</i> - <i>PA-4</i></td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></td>
+	</tr>
+</table>
+
+**Summary**
+
+If a transmission carries no element that makes it unique, a recorded signal can be retransmitted later and is accepted again by the receiver. This affects fixed-code remotes as well as implementations that nominally use rolling codes but emit the same value repeatedly. Examples include CVE-2019-20626 and CVE-2022-27254, where the remote keyless system of the affected vehicles sends the same signal for every door-open request, and CVE-2025-70994, where a keyless entry system relies on the fixed-code EV1527 protocol.
+
+**Test Objectives**
+
+- The operating frequency and modulation must be identified and a transmission must be recorded using a software-defined radio (e.g., an RTL-SDR receiver or a HackRF One transceiver) together with signal analysis software such as Universal Radio Hacker or GNU Radio.
+
+- The recorded transmission must be retransmitted and the reaction of the receiver must be documented.
+
+- It must be determined whether the receiver still accepts the recording after further legitimate transmissions have taken place, which indicates that no counter, timestamp or challenge is bound to the message.
+
+**Remediation**
+
+Every transmission must be authenticated together with an element that makes it unique, such as a counter, a timestamp or a challenge issued by the receiver. Values that have already been used or that fall outside the accepted window must be rejected.
+
+**References**
+
+- [CVE-2019-20626][cve_2019_20626]: Remote keyless system of Honda HR-V 2017 vehicles sends the same RF signal for each door-open request
+- [CVE-2022-27254][cve_2022_27254]: Remote keyless system of Honda Civic 2018 vehicles sends the same RF signal for each door-open request
+- [CVE-2025-70994][cve_2025_70994]: Keyless entry system of Yadea T5 electric bicycles uses the fixed-code EV1527 protocol without rolling codes
+- [CWE-294][cwe_294]: Authentication Bypass by Capture-replay
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V4.1.1 (protection against replay attacks built into the communication protocol); V4.6.5 (off-sequence frame counters do not allow old messages to be replayed)
+
+### Insufficient Invalidation of Unused Rolling Codes (ISTG-WRLS-SGNL-003)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-2</i> - <i>PA-4</i></td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></td>
+	</tr>
+</table>
+
+**Summary**
+
+A rolling code prevents replay only as long as an attacker cannot withhold a value that the receiver has not yet consumed. Where the receiver accepts any value within a large forward window, or any value from a fixed set of codes, a recorded but never delivered transmission stays valid and can be used at a time chosen by the attacker. This is what the RollJam technique demonstrates: the attacker jams the receiver while recording a transmission, repeats the procedure for the following one, and forwards only the earlier value, retaining the later one. CVE-2022-38766 shows the equivalent weakness without jamming, where signals are sent from the same set of rolling codes for every request.
+
+**Test Objectives**
+
+- It must be determined how many subsequent values the receiver accepts, i.e., the size of the forward window.
+
+- Based on [ISTG-WRLS-SGNL-002](#insufficient-protection-against-replay-attacks-istg-wrls-sgnl-002) and [ISTG-WRLS-SGNL-004](#insufficient-protection-against-signal-jamming-istg-wrls-sgnl-004), it must be determined whether a transmission can be recorded while the receiver is prevented from receiving it, and whether the recorded value remains valid afterwards.
+
+- It must be checked whether the acceptance of a later value invalidates earlier unused ones, and whether unused values expire.
+
+**Remediation**
+
+Unlocking should be bound to a bidirectional challenge-response exchange. Where a forward window is unavoidable, unused values must be invalidated once a later value is accepted or a time window has elapsed, so that a withheld value cannot be used at a later point in time.
+
+**References**
+
+- ["Drive It Like You Hacked It: New Attacks and Tools to Wirelessly Steal Cars"][rolljam] by Samy Kamkar *(DEF CON 23, 2015)*
+- [CVE-2022-38766][cve_2022_38766]: Remote keyless system of Renault ZOE 2021 vehicles sends signals from the same set of rolling codes for each door-open request
+- [CWE-294][cwe_294]: Authentication Bypass by Capture-replay
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V4.1.1 (protection against replay attacks built into the communication protocol)
+
+### Insufficient Protection Against Signal Jamming (ISTG-WRLS-SGNL-004)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-2</i> - <i>PA-4</i></td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i></td>
+	</tr>
+</table>
+
+**Summary**
+
+Interference in the operating band prevents a receiver from decoding legitimate transmissions. Where a security function depends on wireless reporting, such as an alarm sensor, a remote control or a link to a gateway, suppressing the transmission disables the function without triggering it. Devices that neither detect the interference nor notify the user fail silently, as shown by CVE-2019-14261, CVE-2021-40171 and CVE-2025-65553.
+
+**Test Objectives**
+
+- Interference must be transmitted in the operating band of the device while security-relevant functions are exercised, and it must be determined whether these functions still take effect.
+
+- It must be determined whether the device detects the loss of the link, e.g., by supervision or heartbeat messages, and whether it notifies the user or falls back to another reporting path.
+
+- The time between the start of the interference and its detection, if any, must be documented.
+
+Note that transmitting interference is subject to national radio regulations and should only be performed in a shielded environment or under an appropriate authorisation.
+
+**Remediation**
+
+Availability-critical wireless links should be supervised so that suppressed transmissions are detected and reported to the user, and a fallback reporting path should be available.
+
+**References**
+
+- [CVE-2019-14261][cve_2019_14261]: ABUS Secvest FUAA50000 devices implement insufficient jamming detection, allowing RF messages from wireless peripherals to be suppressed
+- [CVE-2021-40171][cve_2021_40171]: SecuritasHome alarm system does not notify the owner of an ongoing RF jamming attack
+- [CVE-2025-65553][cve_2025_65553]: D3D ZX-G12 home security system lacks jamming detection on its 433 MHz sensor channel
+- [CWE-1384][cwe_1384]: Improper Handling of Physical or Environmental Conditions
+- OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V4.1.4 (protection or detection of jamming for availability-critical applications); V4.3.10 (adaptive frequency hopping and channel classification to mitigate interference-based attacks)
+
+
+
 [iot_pentesting_guide]: https://www.iotpentestingguide.com	"IoT Pentesting Guide"
 [iot_penetration_testing_cookbook]: https://www.packtpub.com/product/iot-penetration-testing-cookbook/9781787280571	"IoT Penetration Testing Cookbook"
 [iot_hackers_handbook]: https://link.springer.com/book/10.1007/978-1-4842-4300-8	"The IoT Hacker's Handbook"
 [practical_iot_hacking]: https://nostarch.com/practical-iot-hacking	"Practical IoT Hacking"
+[pkes_relay]: https://eprint.iacr.org/2010/332	"Relay Attacks on Passive Keyless Entry and Start Systems in Modern Cars"
+[rolljam]: https://samy.pl/defcon2015/	"Drive It Like You Hacked It: New Attacks and Tools to Wirelessly Steal Cars"
+[cve_2019_20626]: https://nvd.nist.gov/vuln/detail/CVE-2019-20626	"CVE-2019-20626"
+[cve_2022_27254]: https://nvd.nist.gov/vuln/detail/CVE-2022-27254	"CVE-2022-27254"
+[cve_2025_70994]: https://nvd.nist.gov/vuln/detail/CVE-2025-70994	"CVE-2025-70994"
+[cve_2022_38766]: https://nvd.nist.gov/vuln/detail/CVE-2022-38766	"CVE-2022-38766"
+[cve_2019_14261]: https://nvd.nist.gov/vuln/detail/CVE-2019-14261	"CVE-2019-14261"
+[cve_2021_40171]: https://nvd.nist.gov/vuln/detail/CVE-2021-40171	"CVE-2021-40171"
+[cve_2025_65553]: https://nvd.nist.gov/vuln/detail/CVE-2025-65553	"CVE-2025-65553"
+[cwe_294]: https://cwe.mitre.org/data/definitions/294.html	"CWE-294: Authentication Bypass by Capture-replay"
+[cwe_300]: https://cwe.mitre.org/data/definitions/300.html	"CWE-300: Channel Accessible by Non-Endpoint"
+[cwe_1384]: https://cwe.mitre.org/data/definitions/1384.html	"CWE-1384: Improper Handling of Physical or Environmental Conditions"
