@@ -16,6 +16,9 @@
   * [Usage of Hardcoded Secrets (ISTG-FW-SCRT-003)](#usage-of-hardcoded-secrets-istg-fw-scrt-003)
 * [Cryptography (ISTG-FW-CRYPT)](#cryptography-istg-fw-crypt)
   * [Usage of Weak Cryptographic Algorithms (ISTG-FW-CRYPT-001)](#usage-of-weak-cryptographic-algorithms-istg-fw-crypt-001)
+* [Input Validation (ISTG-FW-INPV)](#input-validation-istg-fw-inpv)
+  * [Insufficient Input Validation (ISTG-FW-INPV-001)](#insufficient-input-validation-istg-fw-inpv-001)
+  * [Code or Command Injection (ISTG-FW-INPV-002)](#code-or-command-injection-istg-fw-inpv-002)
 
 
 
@@ -499,6 +502,90 @@ For this test case, data from the following sources was consolidated:
 * ["The IoT Hacker's Handbook"][iot_hackers_handbook] by Aditya Gupta
 * Key aspects of testing of the T-Systems Multimedia Solutions GmbH
 
+## Input Validation (ISTG-FW-INPV)
+
+Firmware processes data from many sources that an attacker may control, e.g., network services, configuration files, update packages, and data received via physical or wireless interfaces. In order to ensure that only valid and well-formed data enters the processing flows of the device, the firmware has to verify and validate all input from untrustworthy sources.
+
+### Insufficient Input Validation (ISTG-FW-INPV-001)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the input processed by the firmware can be supplied, e.g., remotely via a network service or via an internal interface)</td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
+	</tr>
+</table>
+
+**Summary**
+
+If the firmware performs no or only insufficient input validation, an attacker might be able to submit arbitrary and malformed data to the processes running on the device. Since firmware is often written in memory-unsafe languages like C and C++, malformed input can not only cause malfunctions, but also memory corruption, e.g., buffer overflows, which might allow an attacker to crash the device or execute code on it.
+
+**Test Objectives**
+
+- Based on [ISTG-FW-INFO-001](#disclosure-of-source-code-and-binaries-istg-fw-info-001) and [ISTG-FW-INFO-002](#disclosure-of-implementation-details-istg-fw-info-002), the processes that handle input from untrustworthy sources and their parsers have to be identified.
+
+- It must be determined whether input to these processes is validated, e.g., by reviewing the source code or by reverse engineering the binaries for the use of unsafe functions such as `strcpy` or `sprintf` on untrusted data.
+
+- In case that an input validation mechanism is implemented, it has to be checked if there is a way to submit data which does not comply with the intended data structure and value ranges. Fuzzing is an efficient way to do this, e.g., with a network protocol fuzzer like [boofuzz][boofuzz] against services exposed by the device, or with a coverage-guided fuzzer like [AFL++][aflplusplus] or [FirmAFL][firmafl] against binaries extracted from the firmware and run in an emulator.
+
+**Remediation**
+
+The firmware has to validate all input from untrustworthy sources and reject malformed input. Unsafe functions should be replaced with bounded alternatives, and the binaries should be built with memory protection options (see [ISTG-FW-INFO-004](#insecure-binary-compilation-options-istg-fw-info-004)).
+
+**References**
+
+For this test case, data from the following sources was consolidated:
+
+* OWASP ["Firmware Security Testing Methodology"][owasp_fstm]
+* OWASP ["Fuzzing"][owasp_fuzzing]
+* ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
+* ["CWE-20: Improper Input Validation"][cwe_20]
+* ["CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer"][cwe_119]
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V1.3.3 (unsafe C/C++ functions replaced with safe equivalents)
+
+### Code or Command Injection (ISTG-FW-INPV-002)
+
+**Required Access Levels**
+
+<table width="100%">
+	<tr valign="top">
+		<th width="1%" align="left">Physical</th>
+ <td><i>PA-1</i> - <i>PA-4</i><br>(depending on how the input processed by the firmware can be supplied, e.g., remotely via a network service or via an internal interface)</td>
+	</tr>
+	<tr valign="top">
+		<th align="left">Authorization</th>
+		<td><i>AA-1</i> - <i>AA-4</i><br>(depending on the access model for the given device) </td>
+	</tr>
+</table>
+
+**Summary**
+
+Firmware frequently passes input to a shell or an interpreter, e.g., when a web interface or a configuration service builds commands like `ping`, `ifconfig` or `iptables` from user-supplied values. If this input is not validated or escaped, an attacker might be able to inject code or commands, which are then executed with the privileges of the process, often as root.
+
+**Test Objectives**
+
+- Based on [ISTG-FW-INFO-001](#disclosure-of-source-code-and-binaries-istg-fw-info-001), the source code, scripts and binaries have to be checked for calls that pass input to a shell or an interpreter, e.g., `system()`, `popen()` or `exec` family functions, and for whether that input can be influenced by an attacker.
+
+- Based on [ISTG-FW-INPV-001](#insufficient-input-validation-istg-fw-inpv-001), it must be checked whether it is possible to submit code or commands, which are then executed by the system, e.g., by using shell metacharacters such as `;`, `|`, `` ` `` or `$()` in input fields and protocol messages.
+
+**Remediation**
+
+The firmware should avoid passing input to a shell or an interpreter. Where this cannot be avoided, the input must be validated against an allow list and properly escaped, and the process should run with the least privileges required.
+
+**References**
+
+For this test case, data from the following sources was consolidated:
+
+* OWASP ["Firmware Security Testing Methodology"][owasp_fstm]
+* ["Practical IoT Hacking"][practical_iot_hacking] by Fotios Chantzis, Ioannis Stais, Paulino Calderon, Evangelos Deirmentzoglou, and Beau Woods
+* ["CWE-78: Improper Neutralization of Special Elements used in an OS Command"][cwe_78]
+* OWASP [IoT Security Verification Standard (ISVS)](https://owasp.org/IoT-Security-Verification-Standard-ISVS/) — Related requirements: V1.3.15 (embedded applications not susceptible to OS command injection)
+
 
 
 [owasp_fstm]: https://github.com/scriptingxss/owasp-fstm	"OWASP Firmware Security Testing Methodology"
@@ -510,3 +597,9 @@ For this test case, data from the following sources was consolidated:
 [cwe_119]: https://cwe.mitre.org/data/definitions/119.html	"CWE-119: Improper Restriction of Operations within the Bounds of a Memory Buffer"
 [cwe_121]: https://cwe.mitre.org/data/definitions/121.html	"CWE-121: Stack-based Buffer Overflow"
 [cwe_693]: https://cwe.mitre.org/data/definitions/693.html	"CWE-693: Protection Mechanism Failure"
+[owasp_fuzzing]: https://owasp.org/www-community/Fuzzing	"OWASP Fuzzing"
+[boofuzz]: https://github.com/jtpereyda/boofuzz	"boofuzz"
+[aflplusplus]: https://github.com/AFLplusplus/AFLplusplus	"AFL++"
+[firmafl]: https://github.com/zyw-200/FirmAFL	"FirmAFL"
+[cwe_20]: https://cwe.mitre.org/data/definitions/20.html	"CWE-20: Improper Input Validation"
+[cwe_78]: https://cwe.mitre.org/data/definitions/78.html	"CWE-78: Improper Neutralization of Special Elements used in an OS Command"
