@@ -43,7 +43,7 @@ Security assurance and test coverage can be demonstrated with the overview of Io
 
       3.3.1. [Installed Firmware (ISTG-FW[INST])](./src/03_test_cases/firmware/installed_firmware.md)
 
-      3.3.1. [Firmware Update Mechnanism (ISTG-FW[UPDT])](./src/03_test_cases/firmware/firmware_update_mechanism.md)
+      3.3.2. [Firmware Update Mechanism (ISTG-FW[UPDT])](./src/03_test_cases/firmware/firmware_update_mechanism.md)
 
    3.4. [Data Exchange Services (ISTG-DES)](./src/03_test_cases/data_exchange_services/README.md)
 
