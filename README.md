@@ -15,7 +15,7 @@ Security assurance and test coverage can be demonstrated with the overview of Io
 
 
 
-- 🔔[Click here to read the OWASP ISTG 📖📚]( https://owasp.org/owasp-istg/)🔔
+- 🔔[Click here to read the OWASP ISTG 📖📚](https://owasp.org/projects/iot-security-testing-guide)🔔
 - ✅ [Get the latest ISTG Checklists](https://github.com/OWASP/owasp-istg/tree/main/checklists)✅ 
 - 📝 🔍 [Contribute to ISTG](https://owasp.org/www-project-iot-security-testing-guide/#div-contributing) — see also the [contribution guidelines](https://github.com/OWASP/owasp-istg/blob/main/CONTRIBUTING.md) for the conventions used in this repository
 
